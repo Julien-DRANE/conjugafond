@@ -12,7 +12,7 @@
         "subjonctif présent": ["que j'assaille", "que tu assailles", "qu'il assaille", "que nous assailions", "que vous assailiez", "qu'ils assailent"],
         "impératif": ["assaille", "assailons", "assaillez"],
         "passé simple": ["j'assaillis", "tu assaillis", "il assaillit", "nous assaillîmes", "vous assaillîtes", "ils assaillirent"],
-        "participe présent": "assaillant"
+        "participe présent": ["assaillant"],
       }
     },
     {
