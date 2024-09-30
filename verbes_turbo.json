@@ -3,13 +3,13 @@
     {
       "infinitif": "assaillir",
       "conjugaisons": {
-        "présent": ["j'assaille", "tu assailles", "il assaille", "nous assailons", "vous assaillez", "ils assailent"],
+        "présent": ["j'assaille", "tu assailles", "il assaille", "nous assaillons", "vous assaillez", "ils assaillent"],
         "futur": ["j'assaillirai", "tu assailliras", "il assaillira", "nous assaillirons", "vous assaillirez", "ils assailliront"],
         "imparfait": ["j'assaillais", "tu assaillais", "il assaillait", "nous assaillions", "vous assailliez", "ils assaillaient"],
         "passé composé": ["j'ai assailli", "tu as assailli", "il a assailli", "nous avons assailli", "vous avez assailli", "ils ont assailli"],
         "imparfait du subjonctif": ["que j'assaillisse", "que tu assaillisses", "qu'il assaillît", "que nous assaillissions", "que vous assaillissiez", "qu'ils assaillissent"],
         "conditionnel présent": ["j'assaillirais", "tu assaillirais", "il assaillirait", "nous assaillirions", "vous assailliriez", "ils assailliraient"],
-        "subjonctif présent": ["que j'assaille", "que tu assailles", "qu'il assaille", "que nous assailions", "que vous assailiez", "qu'ils assailent"],
+        "subjonctif présent": ["que j'assaille", "que tu assailles", "qu'il assaille", "que nous assaillions", "que vous assailliez", "qu'ils assaillent"],
         "impératif": ["assaille", "assailons", "assaillez"],
         "passé simple": ["j'assaillis", "tu assaillis", "il assaillit", "nous assaillîmes", "vous assaillîtes", "ils assaillirent"],
         "participe présent": "assaillant"
@@ -18,7 +18,7 @@
     {
       "infinitif": "bouillir",
       "conjugaisons": {
-        "présent": ["je bouille", "tu bouilles", "il bouille", "nous bouillons", "vous bouillez", "ils bouillent"],
+        "présent": ["je bous", "tu bous", "il bout", "nous bouillons", "vous bouillez", "ils bouillent"],
         "futur": ["je bouillirai", "tu bouilliras", "il bouillira", "nous bouillirons", "vous bouillirez", "ils bouilliront"],
         "imparfait": ["je bouillais", "tu bouillais", "il bouillait", "nous bouillions", "vous bouilliez", "ils bouillaient"],
         "passé composé": ["j'ai bouilli", "tu as bouilli", "il a bouilli", "nous avons bouilli", "vous avez bouilli", "ils ont bouilli"],
@@ -43,21 +43,6 @@
         "impératif": ["circoncis", "circoncisons", "circoncisez"],
         "passé simple": ["je circoncis", "tu circoncis", "il circoncit", "nous circoncîmes", "vous circoncîtes", "ils circoncirent"],
         "participe présent": "circoncisant"
-      }
-    },
-    {
-      "infinitif": "clore",
-      "conjugaisons": {
-        "présent": ["je clos", "tu clos", "il clos", "nous closons", "vous closez", "ils closent"],
-        "futur": ["je clorai", "tu cloras", "il clora", "nous clorons", "vous clorerez", "ils cloront"],
-        "imparfait": ["je clorais", "tu clorais", "il clorait", "nous clorions", "vous cloriez", "ils cloraient"],
-        "passé composé": ["j'ai clos", "tu as clos", "il a clos", "nous avons clos", "vous avez clos", "ils ont clos"],
-        "imparfait du subjonctif": ["que je close", "que tu closes", "qu'il closât", "que nous closions", "que vous closiez", "qu'ils closent"],
-        "conditionnel présent": ["je clorais", "tu clorais", "il clorait", "nous clorions", "vous cloririez", "ils cloraient"],
-        "subjonctif présent": ["que je close", "que tu closes", "qu'il close", "que nous closions", "que vous closiez", "qu'ils closent"],
-        "impératif": ["clos", "closons", "closez"],
-        "passé simple": ["je clos", "tu clos", "il clos", "nous closons", "vous closez", "ils closent"],
-        "participe présent": "closant"
       }
     },
     {
@@ -123,13 +108,13 @@
     {
       "infinitif": "échoir",
       "conjugaisons": {
-        "présent": ["j'échois", "tu échois", "il échoit", "nous échoyons", "vous échoyez", "ils échoient"],
-        "futur": ["j'échoirai", "tu échoiras", "il échoira", "nous échoirons", "vous échoirez", "ils échoiront"],
+        "présent": ["il échoit", "il échoit", "il échoit", "il échoit", "il échoit", "il échoit"],
+        "futur": ["il échoira", "il échoira", "il échoira", "ils échoiront", "ils échoiront", "ils échoiront"],
         "imparfait": ["j'échoyais", "tu échoyais", "il échoyait", "nous échoyions", "vous échoyiez", "ils échoyaient"],
         "passé composé": ["j'ai échu", "tu as échu", "il a échu", "nous avons échu", "vous avez échu", "ils ont échu"],
         "imparfait du subjonctif": ["que j'échoyisse", "que tu échoyisses", "qu'il échoyît", "que nous échoyissions", "que vous échoyissiez", "qu'ils échoyissent"],
         "conditionnel présent": ["j'échoirais", "tu échoirais", "il échoirait", "nous échoirions", "vous échoiriez", "ils échoiraient"],
-        "subjonctif présent": ["que j'échoie", "que tu échoies", "qu'il échoie", "que nous échoyions", "que vous échoyiez", "qu'ils échoient"],
+        "subjonctif présent": ["qu'il échoie", "qu'il échoie", "qu'il échoie", "qu'il échoie", "qu'il échoie", "qu'il échoie"],
         "impératif": ["échois"],
         "passé simple": ["il échut"],
         "participe présent": "échoyant"
