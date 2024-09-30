@@ -1,0 +1,309 @@
+/* Style général */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f0f4c3, #e1bee7);
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* En-tête */
+header {
+    background-color: #ffcccb;
+    padding: 20px;
+    text-align: center;
+}
+
+h1.logo {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+}
+
+/* Instruction sous le titre */
+.instruction {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Symbole x2 pour le mode TURBO */
+.turbo-x2 {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff1744;
+    margin-top: 10px;
+    animation: pulse 1s infinite;
+}
+
+/* Animation pour le symbole x2 */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Zone de jeu */
+.game-area {
+    display: flex;
+    padding: 20px;
+}
+
+/* Panneau de gauche */
+.left-panel {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-controls button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    background-color: #8c9eff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-controls button:hover {
+    background-color: #536dfe;
+}
+
+.game-controls button.active {
+    background-color: #ba68c8; /* Couleur pour le bouton actif */
+}
+
+/* Panneau central */
+.center-panel {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cible */
+.target {
+    background-color: #fff9c4;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+}
+
+.target h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Temps */
+#temps-container {
+    font-size: 28px; /* Taille plus grande pour le temps */
+    font-weight: bold;
+}
+
+/* Phrase */
+.phrase {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+/* Input et bouton Valider */
+input#reponse, button {
+    padding: 10px;
+    font-size: 1em;
+    margin: 5px;
+}
+
+input#reponse {
+    width: 60%;
+    max-width: 300px;
+}
+
+/* Bouton Valider - mise à jour */
+button {
+    background-color: #4CAF50; /* Couleur verte */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #388E3C; /* Vert plus foncé lors du survol */
+}
+
+/* Bouton Solution */
+#bouton-solution {
+    background-color: #ff7043;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s;
+}
+
+#bouton-solution:hover {
+    background-color: #ff5722;
+}
+
+/* Bulle de solution */
+.solution-bulle {
+    position: absolute;
+    background-color: #ffecb3;
+    color: #333;
+    border: 1px solid #f57f17;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    width: 300px;
+    max-width: 100%;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Bouton Nouvelle Partie */
+#nouvelle-partie {
+    padding: 15px 25px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%; /* Largeur du bouton */
+    text-align: center;
+}
+
+#nouvelle-partie:hover {
+    background-color: #45a049;
+}
+
+/* Mode TURBO */
+body.turbo-mode {
+    background: linear-gradient(to right, #ff8a80, #d500f9);
+}
+
+body.turbo-mode header {
+    background-color: #ff4081;
+}
+
+body.turbo-mode .target {
+    background-color: #ffecb3;
+    color: #d500f9;
+}
+
+body.turbo-mode button {
+    background-color: #4CAF50; /* Couleur verte maintenue en mode TURBO */
+    border: none;
+}
+
+body.turbo-mode button:hover {
+    background-color: #388E3C; /* Vert plus foncé lors du survol */
+}
+
+body.turbo-mode #modeTurbo {
+    background-color: #d500f9;
+    border: 2px solid #880e4f;
+}
+
+body.turbo-mode .final-score {
+    color: #ff1744;
+}
+/* Historique */
+#historique-container {
+    background-color: #e0f7fa;
+    border: 1px solid #f57f17;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 300px;
+    overflow-y: auto;
+    width: 100%;
+}
+
+/* Enlever les puces sous l'historique */
+#historique {
+    list-style-type: none; /* Enlève les puces de la liste */
+    padding: 0;
+    margin: 0;
+}
+
+/* Appliquer des marges pour chaque élément de l'historique */
+#historique li {
+    margin: 5px 0; /* Espacement vertical entre les éléments */
+}
+/* Affichage du score */
+.score-container {
+    margin-top: 20px;
+    font-size: 36px; /* Taille de police plus grande */
+    font-weight: bold;
+    color: #00468B; /* Couleur verte pour le score */
+    text-align: center;
+}
+
+/* Style spécifique pour l'élément du score */
+#score {
+    font-size: 48px; /* Taille de police plus grande pour le score */
+    font-weight: bold;
+    color: #00468B; /* Vert plus foncé pour le score */
+}
+
+/* Style pour le score final affiché à la fin de la partie */
+.final-score {
+    font-size: 48px; /* Taille plus grande pour le score final */
+    font-weight: bold;
+    color: #FF5722; /* Couleur rouge-orange pour le score final */
+    margin-top: 20px;
+    text-align: center;
+}
+/* Style spécifique pour le bouton Mode TURBO */
+#modeTurbo {
+    background-color: #1E88E5; /* Couleur de fond actuelle */
+    border: 3px solid #ff8a80; /* Contour rouge clair */
+    color: white;
+    border-radius: 8px; /* Bordures arrondies */
+    font-size: 18px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: border 0.3s, background-color 0.3s;
+}
+
+/* Effet de survol pour le bouton Mode TURBO */
+#modeTurbo:hover {
+    background-color: #c2185b; /* Couleur de fond plus foncée au survol */
+    border: 3px solid #ff5252; /* Contour rouge clair plus foncé */
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONJUGAFOND</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 class="logo">CONJUGAFOND</h1>
+        <p class="instruction">Conjugue 5 verbes correctement pour atteindre le score maximum ! Attention aux pièges !</p>
+        <div class="score-grid">
+            <p>Présent: 1pt | Futur: 2pts | Passé: 3pts | Imparfait: 4pts</p>
+            <div id="turbo-x2" class="turbo-x2" style="display: none;">x2</div> <!-- Symbole x2 pour mode TURBO -->
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="game-area">
+            <!-- Panneau de gauche -->
+            <div class="left-panel">
+                <div class="game-controls">
+                    <label for="niveau">Mode :</label>
+                    <button id="modeAleatoire" class="active" onclick="activerModeAleatoire()">Mode Aléatoire (Actif)</button>
+                    
+                    <!-- Bouton TURBO -->
+                    <button id="modeTurbo" onclick="activerModeTurbo()">Mode TURBO (Inactif)</button>
+
+                    <label for="niveau">Choisir le groupe de verbes :</label>
+                    <button id="premierGroupe" onclick="choisirGroupe('premierGroupe')">1er Groupe</button>
+                    <button id="deuxiemeGroupe" onclick="choisirGroupe('deuxiemeGroupe')">2ème Groupe</button>
+                    <button id="troisiemeGroupe" onclick="choisirGroupe('troisiemeGroupe')">3ème Groupe</button>
+                </div>
+            </div>
+
+            <!-- Panneau central -->
+            <div class="center-panel">
+                <div class="target">
+                    <h2 id="verbe-container">Verbe : </h2>
+                    <div id="temps-container">Temps : </div>
+                </div>
+
+                <div id="phrase-container" class="phrase">
+                    <!-- La phrase à compléter s'affichera ici -->
+                </div>
+
+                <input type="text" id="reponse" placeholder="Entrez le verbe conjugué" onkeydown="detecterEntree(event)">
+                <button onclick="verifierReponse()">Valider</button>
+                
+                <!-- Bouton Solution -->
+                <button id="bouton-solution" onmousedown="afficherSolution()" onmouseup="masquerSolution()" onmouseleave="masquerSolution()">
+                    Solution
+                </button>
+                
+                <!-- Bulle de solution -->
+                <div id="solution-bulle" class="solution-bulle" style="display: none;">
+                    <span id="solution-text"></span>
+                </div>
+
+                <div class="score-container">
+                    Score : <span id="score">0</span>
+                </div>
+
+                <!-- Section pour afficher le score final -->
+                <div id="final-score" class="final-score" style="display:none;">
+                    Votre score final est : <span id="final-score-value">0</span>
+                </div>
+            </div>
+
+            <!-- Panneau de droite -->
+            <div class="right-panel">
+                <h3>Historique</h3>
+                <div id="historique-container">
+                    <ul id="historique"></ul>
+                </div>
+                <!-- Ajout du bouton "Nouvelle Partie" dans le panneau de droite -->
+                <button id="nouvelle-partie" onclick="resetGame()">Nouvelle Partie</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusion du script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
