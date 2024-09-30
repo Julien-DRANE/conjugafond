@@ -152,8 +152,8 @@ function mettreAJourHistorique() {
 
 // Vérifier la réponse de l'utilisateur
 function verifierReponse() {
-    const reponseUtilisateur = document.getElementById('reponse').value.trim();
-    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps];
+    const reponseUtilisateur = document.getElementById('reponse').value.trim().toLowerCase(); // Convertir en minuscules
+    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps].map(conjugaison => conjugaison.toLowerCase()); // Convertir les conjugaisons en minuscules
 
     if (conjugaisonsPossibles && conjugaisonsPossibles.includes(reponseUtilisateur)) {
         alert("Bonne réponse !");
@@ -207,6 +207,7 @@ function detecterEntree(event) {
         verifierReponse();
     }
 }
+
 // Afficher la solution dans la bulle
 function afficherSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
@@ -227,5 +228,6 @@ function masquerSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
     solutionBulle.style.display = 'none';
 }
+
 // Charger les verbes au démarrage du jeu
 window.onload = chargerVerbes;
