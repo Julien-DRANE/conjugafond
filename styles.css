@@ -60,11 +60,12 @@ h1.logo {
 .game-area {
     display: flex;
     padding: 20px;
+    flex-wrap: wrap; /* Permet aux panneaux de se réorganiser */
 }
 
 /* Panneau de gauche */
 .left-panel {
-    width: 15%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -86,6 +87,7 @@ h1.logo {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
+    width: 100%; /* Boutons prennent toute la largeur */
 }
 
 .game-controls button:hover {
@@ -98,7 +100,7 @@ h1.logo {
 
 /* Panneau central */
 .center-panel {
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -111,7 +113,7 @@ h1.logo {
     margin-bottom: 20px;
     border-radius: 10px;
     text-align: center;
-    width: 80%;
+    width: 80%; /* Largeur adaptée */
 }
 
 .target h2 {
@@ -153,6 +155,7 @@ button {
     cursor: pointer;
     padding: 10px 20px;
     transition: background-color 0.3s;
+    width: 100%; /* Largeur adaptée */
 }
 
 button:hover {
@@ -170,6 +173,7 @@ button:hover {
     margin-top: 10px;
     padding: 10px 20px;
     transition: background-color 0.3s;
+    width: 100%; /* Largeur adaptée */
 }
 
 #bouton-solution:hover {
@@ -243,6 +247,7 @@ body.turbo-mode #modeTurbo {
 body.turbo-mode .final-score {
     color: #ff1744;
 }
+
 /* Historique */
 #historique-container {
     background-color: #e0f7fa;
@@ -265,6 +270,7 @@ body.turbo-mode .final-score {
 #historique li {
     margin: 5px 0; /* Espacement vertical entre les éléments */
 }
+
 /* Affichage du score */
 .score-container {
     margin-top: 20px;
@@ -289,6 +295,7 @@ body.turbo-mode .final-score {
     margin-top: 20px;
     text-align: center;
 }
+
 /* Style spécifique pour le bouton Mode TURBO */
 #modeTurbo {
     background-color: #1E88E5; /* Couleur de fond actuelle */
@@ -300,10 +307,60 @@ body.turbo-mode .final-score {
     padding: 10px 20px;
     margin-top: 10px;
     transition: border 0.3s, background-color 0.3s;
+    width: 100%; /* Largeur du bouton */
 }
 
 /* Effet de survol pour le bouton Mode TURBO */
 #modeTurbo:hover {
     background-color: #c2185b; /* Couleur de fond plus foncée au survol */
     border: 3px solid #ff5252; /* Contour rouge clair plus foncé */
+}
+
+/* Styles Responsives */
+@media (max-width: 768px) {
+    .left-panel, .right-panel {
+        width: 100%; /* Les panneaux prennent toute la largeur sur mobile */
+        margin-bottom: 20px; /* Ajoute un espacement entre les panneaux */
+    }
+
+    .center-panel {
+        width: 100%; /* Le panneau central prend toute la largeur sur mobile */
+    }
+
+    .game-area {
+        flex-direction: column; /* Empile les panneaux verticalement sur mobile */
+        padding: 10px; /* Réduit le padding */
+    }
+
+    h1.logo {
+        font-size: 28px; /* Réduit la taille de la police du logo */
+    }
+
+    .instruction {
+        font-size: 16px; /* Réduit la taille de la police des instructions */
+    }
+
+    input#reponse {
+        width: 80%; /* Ajuste la largeur de l'input sur mobile */
+    }
+
+    button {
+        font-size: 16px; /* Réduit la taille des boutons */
+    }
+
+    .phrase {
+        font-size: 18px; /* Ajuste la taille de la phrase sur mobile */
+    }
+
+    .solution-bulle {
+        width: 80%; /* Ajuste la largeur de la bulle de solution */
+    }
+
+    .score-container, .final-score {
+        font-size: 24px; /* Ajuste la taille du texte du score */
+    }
+
+    #score, .final-score {
+        font-size: 36px; /* Ajuste la taille du score affiché */
+    }
 }
