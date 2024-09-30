@@ -228,6 +228,24 @@ function masquerSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
     solutionBulle.style.display = 'none';
 }
+// Afficher ou masquer la solution
+function toggleSolution() {
+    const solutionBulle = document.getElementById('solution-bulle');
+    const solutionText = document.getElementById('solution-text');
+    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps];
+
+    if (solutionBulle.style.display === 'block') {
+        solutionBulle.style.display = 'none'; // Masquer la bulle si elle est visible
+    } else {
+        if (conjugaisonsPossibles) {
+            solutionText.innerText = conjugaisonsPossibles.join(', ');
+            solutionBulle.style.display = 'block'; // Afficher la bulle
+        } else {
+            solutionText.innerText = "Pas de solution disponible.";
+            solutionBulle.style.display = 'block';
+        }
+    }
+}
 
 // Charger les verbes au démarrage du jeu
 window.onload = chargerVerbes;
