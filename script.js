@@ -208,26 +208,6 @@ function detecterEntree(event) {
     }
 }
 
-// Afficher la solution dans la bulle
-function afficherSolution() {
-    const solutionBulle = document.getElementById('solution-bulle');
-    const solutionText = document.getElementById('solution-text');
-    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps];
-
-    if (conjugaisonsPossibles) {
-        solutionText.innerText = conjugaisonsPossibles.join(', ');
-        solutionBulle.style.display = 'block';
-    } else {
-        solutionText.innerText = "Pas de solution disponible.";
-        solutionBulle.style.display = 'block';
-    }
-}
-
-// Masquer la solution
-function masquerSolution() {
-    const solutionBulle = document.getElementById('solution-bulle');
-    solutionBulle.style.display = 'none';
-}
 // Afficher ou masquer la solution
 function toggleSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
