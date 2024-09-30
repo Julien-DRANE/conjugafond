@@ -25,7 +25,7 @@
         "imparfait du subjonctif": ["que je bouillisse", "que tu bouillisses", "qu'il bouillît", "que nous bouillissions", "que vous bouillissiez", "qu'ils bouillissent"],
         "conditionnel présent": ["je bouillirais", "tu bouillirais", "il bouillirait", "nous bouillirions", "vous bouilliriez", "ils bouilliraient"],
         "subjonctif présent": ["que je bouille", "que tu bouilles", "qu'il bouille", "que nous bouillions", "que vous bouilliez", "qu'ils bouillent"],
-        "impératif": ["bouille", "bouillons", "bouillez"],
+        "impératif": ["bous", "bouillons", "bouillez"],
         "passé simple": ["je bouillis", "tu bouillis", "il bouillit", "nous bouillîmes", "vous bouillîtes", "ils bouillirent"],
         "participe présent": "bouillant"
       }
