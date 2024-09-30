@@ -132,7 +132,7 @@
         "subjonctif présent": ["que j'échoie", "que tu échoies", "qu'il échoie", "que nous échoyions", "que vous échoyiez", "qu'ils échoient"],
         "impératif": ["échois"],
         "passé simple": ["il échut"],
-        "participe présent": "échoyant"
+        "participe présent": ["échoyant"]
       }
     },
     {
@@ -147,7 +147,7 @@
         "subjonctif présent": ["que je frise", "que tu frises", "qu'il frise", "que nous frisions", "que vous frisiez", "qu'ils frisent"],
         "impératif": ["fris", "frisons", "frisez"],
         "passé simple": ["je fris", "tu fris", "il frit", "nous frîmes", "vous frîtes", "ils frirent"],
-        "participe présent": "frisant"
+        "participe présent": ["frisant"]
       }
     },
     {
@@ -162,7 +162,7 @@
         "subjonctif présent": ["que je gise", "que tu gises", "qu'il gise", "que nous gisions", "que vous gisiez", "qu'ils gisent"],
         "impératif": ["gis"],
         "passé simple": ["je gis", "tu gis", "il git", "nous gîmes", "vous gîtes", "ils girent"],
-        "participe présent": "gisant"
+        "participe présent": ["gisant"]
       }
     },
     {
@@ -177,7 +177,7 @@
         "subjonctif présent": ["que je meure", "que tu meures", "qu'il meure", "que nous mourions", "que vous mouriez", "qu'ils meurent"],
         "impératif": ["meurs", "mourons", "mourez"],
         "passé simple": ["je mourus", "tu mourus", "il mourut", "nous mourûmes", "vous mourûtes", "ils moururent"],
-        "participe présent": "mourant"
+        "participe présent": ["mourant"]
       }
     },
     {
@@ -192,7 +192,7 @@
         "subjonctif présent": ["que je meuve", "que tu meuves", "qu'il meuve", "que nous mouvions", "que vous mouviez", "qu'ils meuvent"],
         "impératif": ["meus", "mouvons", "mouvez"],
         "passé simple": ["je mus", "tu mus", "il mut", "nous mûmes", "vous mûtes", "ils murent"],
-        "participe présent": "mouvant"
+        "participe présent": ["mouvant"]
       }
     },
     {
@@ -207,7 +207,7 @@
         "subjonctif présent": ["que je paisse", "que tu paisses", "qu'il paisse", "que nous paissions", "que vous paissiez", "qu'ils paissent"],
         "impératif": ["pais", "paissons", "paissez"],
         "passé simple": ["je paquis", "tu paquis", "il paquit", "nous paquîmes", "vous paquîtes", "ils paquirent"],
-        "participe présent": "paissant"
+        "participe présent": ["paissant"]
       }
     },
     {
@@ -221,7 +221,7 @@
         "conditionnel présent": ["il pleuvrait"],
         "subjonctif présent": ["qu'il pleuve"],
         "passé simple": ["il plut"],
-        "participe présent": "pleuvant"
+        "participe présent": ["pleuvant"]
       }
     },
     {
@@ -236,7 +236,7 @@
         "subjonctif présent": ["que je pourvoie", "que tu pourvoies", "qu'il pourvoie", "que nous pourvoyions", "que vous pourvoyiez", "qu'ils pourvoient"],
         "impératif": ["pourvois", "pourvoyons", "pourvoyez"],
         "passé simple": ["je pourvus", "tu pourvus", "il pourvut", "nous pourvûmes", "vous pourvûtes", "ils pourvurent"],
-        "participe présentant": "pourvoyant"
+        "participe présentant": ["pourvoyant"]
       }
     },
     {
@@ -251,7 +251,7 @@
         "subjonctif présent": ["que je résolve", "que tu résolves", "qu'il résolve", "que nous résolvions", "que vous résolviez", "qu'ils résolvent"],
         "impératif": ["résous", "résolvons", "résolvez"],
         "passé simple": ["je résolus", "tu résolus", "il résolut", "nous résolûmes", "vous résolûtes", "ils résolurent"],
-        "participe présent": "résolvant"
+        "participe présent": ["résolvant"]
       }
     },
     {
@@ -266,7 +266,7 @@
         "subjonctif présent": ["que je vête", "que tu vêtes", "qu'il vête", "que nous vêtions", "que vous vêtiez", "qu'ils vêtent"],
         "impératif": ["vêts", "vêtons", "vêtez"],
         "passé simple": ["je vêtis", "tu vêtis", "il vêtit", "nous vêtîmes", "vous vêtîtes", "ils vêtirent"],
-        "participe présentant": "vêtant"
+        "participe présentant": ["vêtant"]
       }
     }
   ]
