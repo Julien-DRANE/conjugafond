@@ -49,14 +49,15 @@
                 <button onclick="verifierReponse()">Valider</button>
                 
                 <!-- Bouton Solution -->
-                <button id="bouton-solution" onmousedown="afficherSolution()" onmouseup="masquerSolution()" onmouseleave="masquerSolution()">
-                    Solution
+                <button id="bouton-solution" onclick="toggleSolution()">
+                Solution
                 </button>
-                
+
                 <!-- Bulle de solution -->
                 <div id="solution-bulle" class="solution-bulle" style="display: none;">
-                    <span id="solution-text"></span>
+                <span id="solution-text"></span>
                 </div>
+
 
                 <div class="score-container">
                     Score : <span id="score">0</span>
