@@ -246,7 +246,7 @@
         "futur": ["je résoudrai", "tu résoudras", "il résoudra", "nous résoudrons", "vous résoudrez", "ils résoudront"],
         "imparfait": ["je résolvais", "tu résolvais", "il résolvait", "nous résolvions", "vous résolviez", "ils résolvaient"],
         "passé composé": ["j'ai résolu", "tu as résolu", "il a résolu", "nous avons résolu", "vous avez résolu", "ils ont résolu"],
-        "imparfait du subjonctif": ["que je résolusse", "que tu résolvusses", "qu'il résolvût", "que nous résolvussions", "que vous résolvussiez", "qu'ils résolvussent"],
+        "imparfait du subjonctif": ["que je résolusse", "que tu résolusses", "qu'il on résolût", "que nous résolussions", "que vous résolussiez", "qu'ils résolussent"],
         "conditionnel présent": ["je résoudrais", "tu résoudrais", "il résoudrait", "nous résoudrions", "vous résoudriez", "ils résoudraient"],
         "subjonctif présent": ["que je résolve", "que tu résolves", "qu'il résolve", "que nous résolvions", "que vous résolviez", "qu'ils résolvent"],
         "impératif": ["résous", "résolvons", "résolvez"],
