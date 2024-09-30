@@ -187,7 +187,7 @@
         "futur": ["je mouvrai", "tu mouvras", "il mouvra", "nous mouvrons", "vous mouvrez", "ils mouvront"],
         "imparfait": ["je mouvais", "tu mouvais", "il mouvait", "nous mouvions", "vous mouviez", "ils mouvaient"],
         "passé composé": ["j'ai mu", "tu as mu", "il a mu", "nous avons mu", "vous avez mu", "ils ont mu"],
-        "imparfait du subjonctif": ["que je meusse", "que tu meusses", "qu'il meût", "que nous meussions", "que vous meussiez", "qu'ils meussent"],
+        "imparfait du subjonctif": ["que je musse", "que tu musses", "qu'il mût", "que nous mussions", "que vous mussiez", "qu'ils mussent"],
         "conditionnel présent": ["je mouvrais", "tu mouvrais", "il mouvrait", "nous mouvrions", "vous mouvriez", "ils mouvraient"],
         "subjonctif présent": ["que je meuve", "que tu meuves", "qu'il meuve", "que nous mouvions", "que vous mouviez", "qu'ils meuvent"],
         "impératif": ["meus", "mouvons", "mouvez"],
