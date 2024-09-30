@@ -181,21 +181,6 @@
       }
     },
     {
-      "infinitif": "paître",
-      "conjugaisons": {
-        "présent": ["je pais", "tu pais", "il paît", "nous paissons", "vous paissez", "ils paissent"],
-        "futur": ["je paîtrai", "tu paîtras", "il paîtra", "nous paîtrons", "vous paîtrez", "ils paîtront"],
-        "imparfait": ["je paissais", "tu paissais", "il paissait", "nous paissions", "vous paissiez", "ils paissaient"],
-        "passé composé": ["j'ai pâtu", "tu as pâtu", "il a pâtu", "nous avons pâtu", "vous avez pâtu", "ils ont pâtu"],
-        "imparfait du subjonctif": ["que je paississe", "que tu paississes", "qu'il paissît", "que nous paissions", "que vous paissiez", "qu'ils paissent"],
-        "conditionnel présent": ["je paîtrais", "tu paîtrais", "il paîtrait", "nous paîtrions", "vous paîtriez", "ils paîtraient"],
-        "subjonctif présent": ["que je paisse", "que tu paisses", "qu'il paisse", "que nous paissions", "que vous paissiez", "qu'ils paissent"],
-        "impératif": ["pais", "paissons", "paissez"],
-        "passé simple": ["je paquis", "tu paquis", "il paquit", "nous paquîmes", "vous paquîtes", "ils paquirent"],
-        "participe présent": "paissant"
-      }
-    },
-    {
       "infinitif": "pleuvoir",
       "conjugaisons": {
         "présent": ["il pleut"],
