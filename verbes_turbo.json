@@ -12,7 +12,7 @@
         "subjonctif présent": ["que j'assaille", "que tu assailles", "qu'il assaille", "que nous assailions", "que vous assailiez", "qu'ils assailent"],
         "impératif": ["assaille", "assailons", "assaillez"],
         "passé simple": ["j'assaillis", "tu assaillis", "il assaillit", "nous assaillîmes", "vous assaillîtes", "ils assaillirent"],
-        "participe présent": ["assaillant"],
+        "participe présent": ["assaillant"]
       }
     },
     {
@@ -27,7 +27,7 @@
         "subjonctif présent": ["que je bouille", "que tu bouilles", "qu'il bouille", "que nous bouillions", "que vous bouilliez", "qu'ils bouillent"],
         "impératif": ["bous", "bouillons", "bouillez"],
         "passé simple": ["je bouillis", "tu bouillis", "il bouillit", "nous bouillîmes", "vous bouillîtes", "ils bouillirent"],
-        "participe présent": ["bouillant"],
+        "participe présent": ["bouillant"]
       }
     },
     {
@@ -42,7 +42,7 @@
         "subjonctif présent": ["que je circoncise", "que tu circoncises", "qu'il circoncise", "que nous circoncisions", "que vous circoncisiez", "qu'ils circoncisent"],
         "impératif": ["circoncis", "circoncisons", "circoncisez"],
         "passé simple": ["je circoncis", "tu circoncis", "il circoncit", "nous circoncîmes", "vous circoncîtes", "ils circoncirent"],
-        "participe présent": ["circoncisant"],
+        "participe présent": ["circoncisant"]
       }
     },
     {
@@ -57,7 +57,7 @@
         "subjonctif présent": ["que je close", "que tu closes", "qu'il close", "que nous closions", "que vous closiez", "qu'ils closent"],
         "impératif": ["clos", "closons", "closez"],
         "passé simple": ["je clos", "tu clos", "il clos", "nous closons", "vous closez", "ils closent"],
-        "participe présent": ["closant"],
+        "participe présent": ["closant"]
       }
     },
     {
@@ -72,7 +72,7 @@
         "subjonctif présent": ["que je conclue", "que tu conclues", "qu'il conclue", "que nous concluions", "que vous concluiez", "qu'ils concluent"],
         "impératif": ["conclus", "concluons", "concluez"],
         "passé simple": ["je conclus", "tu conclus", "il conclut", "nous conclûmes", "vous conclûtes", "ils conclurent"],
-        "participe présent": ["concluant"],
+        "participe présent": ["concluant"]
       }
     },
     {
@@ -87,7 +87,7 @@
         "subjonctif présent": ["que je confise", "que tu confises", "qu'il confise", "que nous confissions", "que vous confisiez", "qu'ils confisent"],
         "impératif": ["confis", "confisons", "confisez"],
         "passé simple": ["je confis", "tu confis", "il confit", "nous confîmes", "vous confîtes", "ils confirent"],
-        "participe présent": ["confisant"],
+        "participe présent": ["confisant"]
       }
     },
     {
@@ -102,7 +102,7 @@
         "subjonctif présent": ["que je conquière", "que tu conquières", "qu'il conquière", "que nous conquérions", "que vous conquériez", "qu'ils conquièrent"],
         "impératif": ["conquiers", "conquérons", "conquérez"],
         "passé simple": ["je conquis", "tu conquis", "il conquit", "nous conquîmes", "vous conquîtes", "ils conquirent"],
-        "participe présent": "conquérant"
+        "participe présent": ["conquérant"]
       }
     },
     {
