@@ -123,15 +123,15 @@
     {
       "infinitif": "frire",
       "conjugaisons": {
-        "présent": ["je fris", "tu fris", "il frit", "nous frisons", "vous frisez", "ils frisent"],
+        "présent": ["je fris", "tu fris", "il frit", "0, "0", "0"],
         "futur": ["je frirai", "tu friras", "il frira", "nous frirons", "vous frirez", "ils friront"],
-        "imparfait": ["je frisais", "tu frisais", "il frisait", "nous frisions", "vous frisiez", "ils frisaient"],
+        "imparfait": ["0", "0", "0", "0", "0", "0"],
         "passé composé": ["j'ai frit", "tu as frit", "il a frit", "nous avons frit", "vous avez frit", "ils ont frit"],
-        "imparfait du subjonctif": ["que je frisse", "que tu frisses", "qu'il frît", "que nous frissions", "que vous frissiez", "qu'ils frissent"],
-        "conditionnel présent": ["je frirais", "tu frirais", "il frirait", "nous fririons", "vous fririez", "ils friraient"],
-        "subjonctif présent": ["que je frise", "que tu frises", "qu'il frise", "que nous frisions", "que vous frisiez", "qu'ils frisent"],
-        "impératif": ["fris", "frisons", "frisez"],
-        "passé simple": ["je fris", "tu fris", "il frit", "nous frîmes", "vous frîtes", "ils frirent"],
+        "imparfait du subjonctif": ["0", "0", "0", "0", "0", "0"],
+        "conditionnel présent": ["je frirais", "tu frirais", "il frirait", "0", "0", "0"],
+        "subjonctif présent": ["0", "0", "0", "0", "0", "0"],
+        "impératif": ["fris", "0", "0"],
+        "passé simple": ["0", "0", "0", "0", "0", "0"],
         "participe présent": "frisant"
       }
     },
