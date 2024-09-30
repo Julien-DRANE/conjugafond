@@ -136,21 +136,6 @@
       }
     },
     {
-      "infinitif": "gésir",
-      "conjugaisons": {
-        "présent": ["je gis", "tu gis", "il git", "nous gisons", "vous gisez", "ils gisent"],
-        "futur": ["je gésirai", "tu gésiras", "il gésira", "nous gésirons", "vous gésirez", "ils gésiront"],
-        "imparfait": ["je gisais", "tu gisais", "il gisait", "nous gisions", "vous gisiez", "ils gisaient"],
-        "passé composé": ["j'ai gis", "tu as gis", "il a gis", "nous avons gis", "vous avez gis", "ils ont gis"],
-        "imparfait du subjonctif": ["que je gisisse", "que tu gisisses", "qu'il gisît", "que nous gisissions", "que vous gisissiez", "qu'ils gisissent"],
-        "conditionnel présent": ["je gésirais", "tu gésirais", "il gésirait", "nous gésirions", "vous gésiriez", "ils gésiraient"],
-        "subjonctif présent": ["que je gise", "que tu gises", "qu'il gise", "que nous gisions", "que vous gisiez", "qu'ils gisent"],
-        "impératif": ["gis"],
-        "passé simple": ["je gis", "tu gis", "il git", "nous gîmes", "vous gîtes", "ils girent"],
-        "participe présent": "gisant"
-      }
-    },
-    {
       "infinitif": "mourir",
       "conjugaisons": {
         "présent": ["je meurs", "tu meurs", "il meurt", "nous mourons", "vous mourez", "ils meurent"],
