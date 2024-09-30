@@ -52,7 +52,7 @@
         "futur": ["je clorai", "tu cloras", "il clora", "nous clorons", "vous clorerez", "ils cloront"],
         "imparfait": ["0", "0", "0", "0", "0", "0"],
         "passé composé": ["j'ai clos", "tu as clos", "il a clos", "nous avons clos", "vous avez clos", "ils ont clos"],
-        "imparfait du subjonctif": ["que je close", "que tu closes", "qu'il closât", "que nous closions", "que vous closiez", "qu'ils closent"],
+        "imparfait du subjonctif": ["0", "0", "0", "0", "0", "0"],
         "conditionnel présent": ["je clorais", "tu clorais", "il clorait", "nous clorions", "vous cloririez", "ils cloraient"],
         "subjonctif présent": ["que je close", "que tu closes", "qu'il close", "que nous closions", "que vous closiez", "qu'ils closent"],
         "impératif": ["clos", "closons", "closez"],
