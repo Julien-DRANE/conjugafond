@@ -1,0 +1,414 @@
+{
+  "premierGroupe": [
+    {
+      "infinitif": "aimer",
+      "conjugaisons": {
+        "présent": ["aime", "aimes", "aime", "aimons", "aimez", "aiment"],
+        "futur": ["aimerai", "aimeras", "aimera", "aimerons", "aimerez", "aimeront"],
+        "passé composé": ["ai aimé", "as aimé", "a aimé", "avons aimé", "avez aimé", "ont aimé"],
+        "imparfait": ["aimais", "aimais", "aimait", "aimions", "aimiez", "aimaient"]
+      }
+    },
+    {
+      "infinitif": "parler",
+      "conjugaisons": {
+        "présent": ["parle", "parles", "parle", "parlons", "parlez", "parlent"],
+        "futur": ["parlerai", "parleras", "parlera", "parlerons", "parlerez", "parleront"],
+        "passé composé": ["ai parlé", "as parlé", "a parlé", "avons parlé", "avez parlé", "ont parlé"],
+        "imparfait": ["parlais", "parlais", "parlait", "parlions", "parliez", "parlaient"]
+      }
+    },
+    {
+      "infinitif": "jouer",
+      "conjugaisons": {
+        "présent": ["joue", "joues", "joue", "jouons", "jouez", "jouent"],
+        "futur": ["jouerai", "joueras", "jouera", "jouerons", "jouerez", "joueront"],
+        "passé composé": ["ai joué", "as joué", "a joué", "avons joué", "avez joué", "ont joué"],
+        "imparfait": ["jouais", "jouais", "jouait", "jouions", "jouiez", "jouaient"]
+      }
+    },
+    {
+      "infinitif": "travailler",
+      "conjugaisons": {
+        "présent": ["travaille", "travailles", "travaille", "travaillons", "travaillez", "travaillent"],
+        "futur": ["travaillerai", "travailleras", "travaillera", "travaillerons", "travaillerez", "travailleront"],
+        "passé composé": ["ai travaillé", "as travaillé", "a travaillé", "avons travaillé", "avez travaillé", "ont travaillé"],
+        "imparfait": ["travaillais", "travaillais", "travaillait", "travaillions", "travailliez", "travaillaient"]
+      }
+    },
+    {
+      "infinitif": "regarder",
+      "conjugaisons": {
+        "présent": ["regarde", "regardes", "regarde", "regardons", "regardez", "regardent"],
+        "futur": ["regarderai", "regarderas", "regardera", "regarderons", "regarderez", "regarderont"],
+        "passé composé": ["ai regardé", "as regardé", "a regardé", "avons regardé", "avez regardé", "ont regardé"],
+        "imparfait": ["regardais", "regardais", "regardait", "regardions", "regardiez", "regardaient"]
+      }
+    },
+    {
+      "infinitif": "écouter",
+      "conjugaisons": {
+        "présent": ["écoute", "écoutes", "écoute", "écoutons", "écoutez", "écoutent"],
+        "futur": ["écouterai", "écouteras", "écoutera", "écouterons", "écouterez", "écouteront"],
+        "passé composé": ["ai écouté", "as écouté", "a écouté", "avons écouté", "avez écouté", "ont écouté"],
+        "imparfait": ["écoutais", "écoutais", "écoutait", "écoutions", "écoutiez", "écoutaient"]
+      }
+    },
+    {
+      "infinitif": "aider",
+      "conjugaisons": {
+        "présent": ["aide", "aides", "aide", "aidons", "aidez", "aident"],
+        "futur": ["aiderai", "aideras", "aidera", "aiderons", "aiderez", "aideront"],
+        "passé composé": ["ai aidé", "as aidé", "a aidé", "avons aidé", "avez aidé", "ont aidé"],
+        "imparfait": ["aidais", "aidais", "aidait", "aidions", "aidiez", "aidaient"]
+      }
+    },
+    {
+      "infinitif": "demander",
+      "conjugaisons": {
+        "présent": ["demande", "demandes", "demande", "demandons", "demandez", "demandent"],
+        "futur": ["demanderai", "demanderas", "demandera", "demanderons", "demanderez", "demanderont"],
+        "passé composé": ["ai demandé", "as demandé", "a demandé", "avons demandé", "avez demandé", "ont demandé"],
+        "imparfait": ["demandais", "demandais", "demandait", "demandions", "demandiez", "demandaient"]
+      }
+    },
+    {
+      "infinitif": "marcher",
+      "conjugaisons": {
+        "présent": ["marche", "marches", "marche", "marchons", "marchez", "marchent"],
+        "futur": ["marcherai", "marcheras", "marchera", "marcherons", "marcherez", "marcheront"],
+        "passé composé": ["ai marché", "as marché", "a marché", "avons marché", "avez marché", "ont marché"],
+        "imparfait": ["marchais", "marchais", "marchait", "marchions", "marchiez", "marchaient"]
+      }
+    },
+    {
+      "infinitif": "fermer",
+      "conjugaisons": {
+        "présent": ["ferme", "fermes", "ferme", "fermons", "fermez", "ferment"],
+        "futur": ["fermerai", "fermeras", "fermera", "fermerons", "fermez", "fermeront"],
+        "passé composé": ["ai fermé", "as fermé", "a fermé", "avons fermé", "avez fermé", "ont fermé"],
+        "imparfait": ["fermais", "fermais", "fermait", "fermions", "fermiez", "fermaient"]
+      }
+    },
+    {
+      "infinitif": "chercher",
+      "conjugaisons": {
+        "présent": ["cherche", "cherches", "cherche", "cherchons", "cherchez", "cherchent"],
+        "futur": ["chercherai", "chercheras", "cherchera", "chercherons", "chercherez", "chercheront"],
+        "passé composé": ["ai cherché", "as cherché", "a cherché", "avons cherché", "avez cherché", "ont cherché"],
+        "imparfait": ["cherchais", "cherchais", "cherchait", "cherchions", "cherchiez", "cherchaient"]
+      }
+    },
+    {
+      "infinitif": "trouver",
+      "conjugaisons": {
+        "présent": ["trouve", "trouves", "trouve", "trouvons", "trouvez", "trouvent"],
+        "futur": ["trouverai", "trouveras", "trouvera", "trouverons", "trouverez", "trouveront"],
+        "passé composé": ["ai trouvé", "as trouvé", "a trouvé", "avons trouvé", "avez trouvé", "ont trouvé"],
+        "imparfait": ["trouvais", "trouvais", "trouvait", "trouvions", "trouviez", "trouvaient"]
+      }
+    },
+    {
+      "infinitif": "porter",
+      "conjugaisons": {
+        "présent": ["porte", "portes", "porte", "portons", "portez", "portent"],
+        "futur": ["porterai", "porteras", "portera", "porterons", "porterez", "porteront"],
+        "passé composé": ["ai porté", "as porté", "a porté", "avons porté", "avez porté", "ont porté"],
+        "imparfait": ["portais", "portais", "portait", "portions", "portiez", "portaient"]
+      }
+    },
+    {
+      "infinitif": "réparer",
+      "conjugaisons": {
+        "présent": ["répare", "répares", "répare", "réparons", "réparez", "réparent"],
+        "futur": ["réparerai", "réparerai", "répareras", "réparera", "réparerons", "réparerez", "répareront"],
+        "passé composé": ["ai réparé", "as réparé", "a réparé", "avons réparé", "avez réparé", "ont réparé"],
+        "imparfait": ["réparais", "réparais", "réparait", "réparions", "répariez", "réparaient"]
+      }
+    },
+    {
+      "infinitif": "visiter",
+      "conjugaisons": {
+        "présent": ["visite", "visites", "visite", "visitons", "visitez", "visitent"],
+        "futur": ["visiterai", "visiteras", "visitera", "visiterons", "visiterez", "visiteront"],
+        "passé composé": ["ai visité", "as visité", "a visité", "avons visité", "avez visité", "ont visité"],
+        "imparfait": ["visitais", "visitais", "visitait", "visitons", "visitiez", "visitaient"]
+      }
+    },
+    {
+      "infinitif": "montrer",
+      "conjugaisons": {
+        "présent": ["montre", "montres", "montre", "montrons", "montrez", "montrent"],
+        "futur": ["montrerai", "montreras", "montrera", "montrerons", "montrerez", "montreront"],
+        "passé composé": ["ai montré", "as montré", "a montré", "avons montré", "avez montré", "ont montré"],
+        "imparfait": ["montrais", "montrais", "montrait", "montrions", "montriez", "montraient"]
+      }
+    }
+  ],
+  "deuxiemeGroupe": [
+    {
+      "infinitif": "finir",
+      "conjugaisons": {
+        "présent": ["finis", "finis", "finit", "finissons", "finissez", "finissent"],
+        "futur": ["finirai", "finiras", "finira", "finirons", "finirez", "finiront"],
+        "passé composé": ["ai fini", "as fini", "a fini", "avons fini", "avez fini", "ont fini"],
+        "imparfait": ["finissais", "finissais", "finissait", "finissions", "finissiez", "finissaient"]
+      }
+    },
+    {
+      "infinitif": "réfléchir",
+      "conjugaisons": {
+        "présent": ["réfléchis", "réfléchis", "réfléchit", "réfléchissons", "réfléchissez", "réfléchissent"],
+        "futur": ["réfléchirai", "réfléchiras", "réfléchira", "réfléchirons", "réfléchirez", "réfléchiront"],
+        "passé composé": ["ai réfléchi", "as réfléchi", "a réfléchi", "avons réfléchi", "avez réfléchi", "ont réfléchi"],
+        "imparfait": ["réfléchissais", "réfléchissais", "réfléchissait", "réfléchissions", "réfléchissiez", "réfléchissaient"]
+      }
+    },
+    {
+      "infinitif": "agir",
+      "conjugaisons": {
+        "présent": ["agis", "agis", "agit", "agissons", "agissez", "agissent"],
+        "futur": ["agirai", "agiras", "agira", "agirons", "agirez", "agiront"],
+        "passé composé": ["ai agi", "as agi", "a agi", "avons agi", "avez agi", "ont agi"],
+        "imparfait": ["agissais", "agissais", "agissait", "agissions", "agissiez", "agissaient"]
+      }
+    },
+    {
+      "infinitif": "bâtir",
+      "conjugaisons": {
+        "présent": ["bâtis", "bâtis", "bâtit", "bâtissons", "bâtissez", "bâtissent"],
+        "futur": ["bâtirai", "bâtiras", "bâtira", "bâtirons", "bâtirez", "bâtiront"],
+        "passé composé": ["ai bâti", "as bâti", "a bâti", "avons bâti", "avez bâti", "ont bâti"],
+        "imparfait": ["bâtissais", "bâtissais", "bâtissait", "bâtissions", "bâtissiez", "bâtissaient"]
+      }
+    },
+    {
+      "infinitif": "punir",
+      "conjugaisons": {
+        "présent": ["punis", "punis", "punit", "punissons", "punissez", "punissent"],
+        "futur": ["punirai", "puniras", "punira", "punirons", "punirez", "puniront"],
+        "passé composé": ["ai puni", "as puni", "a puni", "avons puni", "avez puni", "ont puni"],
+        "imparfait": ["punissais", "punissais", "punissait", "punissions", "punissiez", "punissaient"]
+      }
+    },
+    {
+      "infinitif": "applaudir",
+      "conjugaisons": {
+        "présent": ["applaudis", "applaudis", "applaudit", "applaudissons", "applaudissez", "applaudissent"],
+        "futur": ["applaudirai", "applaudiras", "applaudira", "applaudirons", "applaudirez", "applaudiront"],
+        "passé composé": ["ai applaudi", "as applaudi", "a applaudi", "avons applaudi", "avez applaudi", "ont applaudi"],
+        "imparfait": ["applaudissais", "applaudissais", "applaudissait", "applaudissions", "applaudissiez", "applaudissaient"]
+      }
+    },
+    {
+      "infinitif": "démolir",
+      "conjugaisons": {
+        "présent": ["démolis", "démolis", "démolit", "démolissons", "démolissez", "démolissent"],
+        "futur": ["démolirai", "démoliras", "démolira", "démolirons", "démolirez", "démoliront"],
+        "passé composé": ["ai démoli", "as démoli", "a démoli", "avons démoli", "avez démoli", "ont démoli"],
+        "imparfait": ["démolissais", "démolissais", "démolissait", "démolissions", "démolissiez", "démolissaient"]
+      }
+    },
+    {
+      "infinitif": "rajeunir",
+      "conjugaisons": {
+        "présent": ["rajeunis", "rajeunis", "rajeunis", "rajeunissons", "rajeunissez", "rajeunissent"],
+        "futur": ["rajeunirai", "rajeuniras", "rajeunira", "rajeunirons", "rajeunirez", "rajeuniront"],
+        "passé composé": ["ai rajeuni", "as rajeuni", "a rajeuni", "avons rajeuni", "avez rajeuni", "ont rajeuni"],
+        "imparfait": ["rajeunissais", "rajeunissais", "rajeunissait", "rajeunissions", "rajeunissiez", "rajeunissaient"]
+      }
+    },
+    {
+      "infinitif": "guérir",
+      "conjugaisons": {
+        "présent": ["guéris", "guéris", "guérit", "guérissons", "guérissez", "guérissent"],
+        "futur": ["guérirai", "guériras", "guérira", "guérirons", "guérirez", "guériront"],
+        "passé composé": ["ai guéri", "as guéri", "a guéri", "avons guéri", "avez guéri", "ont guéri"],
+        "imparfait": ["guérissais", "guérissais", "guérissait", "guérissions", "guérissiez", "guérissaient"]
+      }
+    },
+    {
+      "infinitif": "frémir",
+      "conjugaisons": {
+        "présent": ["frémis", "frémis", "frémit", "frémissons", "frémissez", "frémissent"],
+        "futur": ["frémirai", "frémiras", "frémira", "frémirons", "frémirez", "frémiront"],
+        "passé composé": ["ai frémis", "as frémis", "a frémis", "avons frémis", "avez frémis", "ont frémis"],
+        "imparfait": ["frémissais", "frémissais", "frémissait", "frémissions", "frémissiez", "frémissaient"]
+      }
+    },
+    {
+      "infinitif": "éclaircir",
+      "conjugaisons": {
+        "présent": ["éclaircis", "éclaircis", "éclaircit", "éclaircissons", "éclaircissez", "éclaircissent"],
+        "futur": ["éclaircirai", "éclairciras", "éclaircira", "éclaircirons", "éclaircirez", "éclairciront"],
+        "passé composé": ["ai éclairci", "as éclairci", "a éclairci", "avons éclairci", "avez éclairci", "ont éclairci"],
+        "imparfait": ["éclaircissais", "éclaircissais", "éclaircissait", "éclaircissions", "éclaircissiez", "éclaircissaient"]
+      }
+    },
+    {
+      "infinitif": "découvrir",
+      "conjugaisons": {
+        "présent": ["découvre", "découvres", "découvre", "découvrons", "découvrez", "découvrent"],
+        "futur": ["découvrirai", "découvriras", "découvrira", "découvrirons", "découvrirez", "découvriront"],
+        "passé composé": ["ai découvert", "as découvert", "a découvert", "avons découvert", "avez découvert", "ont découvert"],
+        "imparfait": ["découvrais", "découvrais", "découvrait", "découvrions", "découvriez", "découvraient"]
+      }
+    },
+    {
+      "infinitif": "saisir",
+      "conjugaisons": {
+        "présent": ["saisis", "saisis", "saisit", "saisissons", "saisissez", "saisissent"],
+        "futur": ["saisirai", "saisiras", "saisira", "saisirons", "saisirez", "saisiront"],
+        "passé composé": ["ai saisi", "as saisi", "a saisi", "avons saisi", "avez saisi", "ont saisi"],
+        "imparfait": ["saisissais", "saisissais", "saisissait", "saisissions", "saisissiez", "saisissaient"]
+      }
+    },
+    {
+      "infinitif": "partir",
+      "conjugaisons": {
+        "présent": ["pars", "pars", "part", "partons", "partez", "partent"],
+        "futur": ["partirai", "partiras", "partira", "partirons", "partirez", "partiront"],
+        "passé composé": ["suis parti(e)", "es parti(e)", "est parti(e)", "sommes parti(e)s", "êtes parti(e)s", "sont parti(e)s"],
+        "imparfait": ["partais", "partais", "partait", "partions", "partiez", "partaient"]
+      }
+    }
+  ],
+  "troisiemeGroupe": [
+    {
+      "infinitif": "prendre",
+      "conjugaisons": {
+        "présent": ["prends", "prends", "prend", "prenons", "prenez", "prennent"],
+        "futur": ["prendrai", "prendras", "prendra", "prendrons", "prendrez", "prendront"],
+        "passé composé": ["ai pris", "as pris", "a pris", "avons pris", "avez pris", "ont pris"],
+        "imparfait": ["prenais", "prenais", "prenait", "prenions", "preniez", "prenaient"]
+      }
+    },
+    {
+      "infinitif": "mettre",
+      "conjugaisons": {
+        "présent": ["mets", "mets", "met", "mettons", "mettez", "mettent"],
+        "futur": ["mettrai", "mettras", "mettra", "mettrons", "mettrez", "mettront"],
+        "passé composé": ["ai mis", "as mis", "a mis", "avons mis", "avez mis", "ont mis"],
+        "imparfait": ["mettais", "mettais", "mettait", "mettions", "mettiez", "mettaient"]
+      }
+    },
+    {
+      "infinitif": "voir",
+      "conjugaisons": {
+        "présent": ["vois", "vois", "voit", "voyons", "voyez", "voient"],
+        "futur": ["verrai", "verras", "verra", "verrons", "verrez", "verront"],
+        "passé composé": ["ai vu", "as vu", "a vu", "avons vu", "avez vu", "ont vu"],
+        "imparfait": ["voyais", "voyais", "voyait", "voyions", "voyiez", "voyaient"]
+      }
+    },
+    {
+      "infinitif": "faire",
+      "conjugaisons": {
+        "présent": ["fais", "fais", "fait", "faisons", "faites", "font"],
+        "futur": ["ferai", "feras", "fera", "ferons", "ferez", "feront"],
+        "passé composé": ["ai fait", "as fait", "a fait", "avons fait", "avez fait", "ont fait"],
+        "imparfait": ["faisais", "faisais", "faisait", "faisions", "faisiez", "faisaient"]
+      }
+    },
+    {
+      "infinitif": "dire",
+      "conjugaisons": {
+        "présent": ["dis", "dis", "dit", "disons", "dites", "disent"],
+        "futur": ["dirai", "diras", "dira", "dirons", "direz", "diront"],
+        "passé composé": ["ai dit", "as dit", "a dit", "avons dit", "avez dit", "ont dit"],
+        "imparfait": ["disais", "disais", "disait", "disions", "disiez", "disaient"]
+      }
+    },
+    {
+      "infinitif": "pouvoir",
+      "conjugaisons": {
+        "présent": ["peux", "peux", "peut", "pouvons", "pouvez", "peuvent"],
+        "futur": ["pourrai", "pourras", "pourra", "pourrons", "pourrez", "pourront"],
+        "passé composé": ["ai pu", "as pu", "a pu", "avons pu", "avez pu", "ont pu"],
+        "imparfait": ["pouvais", "pouvais", "pouvait", "pouvions", "pouviez", "pouvaient"]
+      }
+    },
+    {
+      "infinitif": "vouloir",
+      "conjugaisons": {
+        "présent": ["veux", "veux", "veut", "voulons", "voulez", "veulent"],
+        "futur": ["voudrai", "voudras", "voudra", "voudrons", "voudrez", "voudront"],
+        "passé composé": ["ai voulu", "as voulu", "a voulu", "avons voulu", "avez voulu", "ont voulu"],
+        "imparfait": ["voulais", "voulais", "voulait", "voulions", "vouliez", "voulaient"]
+      }
+    },
+    {
+      "infinitif": "devoir",
+      "conjugaisons": {
+        "présent": ["dois", "dois", "doit", "devons", "devez", "doivent"],
+        "futur": ["devrai", "devras", "devra", "devrons", "devrez", "devront"],
+        "passé composé": ["ai dû", "as dû", "a dû", "avons dû", "avez dû", "ont dû"],
+        "imparfait": ["devais", "devais", "devait", "devions", "deviez", "devaient"]
+      }
+    },
+    {
+      "infinitif": "lire",
+      "conjugaisons": {
+        "présent": ["lis", "lis", "lit", "lisons", "lisez", "lisent"],
+        "futur": ["lirais", "liras", "lira", "lirons", "lirez", "liront"],
+        "passé composé": ["ai lu", "as lu", "a lu", "avons lu", "avez lu", "ont lu"],
+        "imparfait": ["lisais", "lisais", "lisait", "lisions", "lisiez", "lisaient"]
+      }
+    },
+    {
+      "infinitif": "écrire",
+      "conjugaisons": {
+        "présent": ["écris", "écris", "écrit", "écrivons", "écrivez", "écrivent"],
+        "futur": ["écrirai", "écriras", "écrira", "écrirons", "écrirez", "écriront"],
+        "passé composé": ["ai écrit", "as écrit", "a écrit", "avons écrit", "avez écrit", "ont écrit"],
+        "imparfait": ["écrivais", "écrivais", "écrivait", "écrivions", "écriviez", "écrivaient"]
+      }
+    },
+    {
+      "infinitif": "vivre",
+      "conjugaisons": {
+        "présent": ["vis", "vis", "vit", "vivons", "vivez", "vivent"],
+        "futur": ["vivrai", "vivras", "vivra", "vivrons", "vivrez", "vivront"],
+        "passé composé": ["ai vécu", "as vécu", "a vécu", "avons vécu", "avez vécu", "ont vécu"],
+        "imparfait": ["vivais", "vivais", "vivait", "vivions", "viviez", "vivaient"]
+      }
+    },
+    {
+      "infinitif": "boire",
+      "conjugaisons": {
+        "présent": ["bois", "bois", "boit", "buvons", "buvez", "boivent"],
+        "futur": ["boirai", "boiras", "boira", "boirons", "boirez", "boiront"],
+        "passé composé": ["ai bu", "as bu", "a bu", "avons bu", "avez bu", "ont bu"],
+        "imparfait": ["buvais", "buvais", "buvait", "buvions", "buviez", "buvaient"]
+      }
+    },
+    {
+      "infinitif": "courir",
+      "conjugaisons": {
+        "présent": ["cours", "cours", "court", "courons", "courez", "courent"],
+        "futur": ["courrai", "courras", "courra", "courrons", "courrez", "courront"],
+        "passé composé": ["ai couru", "as couru", "a couru", "avons couru", "avez couru", "ont couru"],
+        "imparfait": ["courais", "courais", "courait", "courions", "couriez", "couraient"]
+      }
+    },
+    {
+      "infinitif": "savoir",
+      "conjugaisons": {
+        "présent": ["sais", "sais", "sait", "savons", "savez", "savent"],
+        "futur": ["saurai", "sauras", "saura", "saurons", "saurez", "sauront"],
+        "passé composé": ["ai su", "as su", "a su", "avons su", "avez su", "ont su"],
+        "imparfait": ["savais", "savais", "savait", "savions", "saviez", "savaient"]
+      }
+    },
+    {
+      "infinitif": "recevoir",
+      "conjugaisons": {
+        "présent": ["reçois", "reçois", "reçoit", "recevons", "recevez", "reçoivent"],
+        "futur": ["recevrai", "recevras", "recevra", "recevrons", "recevrez", "recevront"],
+        "passé composé": ["ai reçu", "as reçu", "a reçu", "avons reçu", "avez reçu", "ont reçu"],
+        "imparfait": ["recevais", "recevais", "recevait", "recevions", "receviez", "recevaient"]
+      }
+    }
+  ]
+}
+

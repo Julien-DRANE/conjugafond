@@ -1,0 +1,273 @@
+{
+  "TURBO": [
+    {
+      "infinitif": "assaillir",
+      "conjugaisons": {
+        "présent": ["j'assaille", "tu assailles", "il assaille", "nous assailons", "vous assaillez", "ils assailent"],
+        "futur": ["j'assaillirai", "tu assailliras", "il assaillira", "nous assaillirons", "vous assaillirez", "ils assailliront"],
+        "imparfait": ["j'assaillais", "tu assaillais", "il assaillait", "nous assaillions", "vous assailliez", "ils assaillaient"],
+        "passé composé": ["j'ai assailli", "tu as assailli", "il a assailli", "nous avons assailli", "vous avez assailli", "ils ont assailli"],
+        "imparfait du subjonctif": ["que j'assaillisse", "que tu assaillisses", "qu'il assaillît", "que nous assaillissions", "que vous assaillissiez", "qu'ils assaillissent"],
+        "conditionnel présent": ["j'assaillirais", "tu assaillirais", "il assaillirait", "nous assaillirions", "vous assailliriez", "ils assailliraient"],
+        "subjonctif présent": ["que j'assaille", "que tu assailles", "qu'il assaille", "que nous assailions", "que vous assailiez", "qu'ils assailent"],
+        "impératif": ["assaille", "assailons", "assaillez"],
+        "passé simple": ["j'assaillis", "tu assaillis", "il assaillit", "nous assaillîmes", "vous assaillîtes", "ils assaillirent"],
+        "participe présent": "assaillant"
+      }
+    },
+    {
+      "infinitif": "bouillir",
+      "conjugaisons": {
+        "présent": ["je bouille", "tu bouilles", "il bouille", "nous bouillons", "vous bouillez", "ils bouillent"],
+        "futur": ["je bouillirai", "tu bouilliras", "il bouillira", "nous bouillirons", "vous bouillirez", "ils bouilliront"],
+        "imparfait": ["je bouillais", "tu bouillais", "il bouillait", "nous bouillions", "vous bouilliez", "ils bouillaient"],
+        "passé composé": ["j'ai bouilli", "tu as bouilli", "il a bouilli", "nous avons bouilli", "vous avez bouilli", "ils ont bouilli"],
+        "imparfait du subjonctif": ["que je bouillisse", "que tu bouillisses", "qu'il bouillît", "que nous bouillissions", "que vous bouillissiez", "qu'ils bouillissent"],
+        "conditionnel présent": ["je bouillirais", "tu bouillirais", "il bouillirait", "nous bouillirions", "vous bouilliriez", "ils bouilliraient"],
+        "subjonctif présent": ["que je bouille", "que tu bouilles", "qu'il bouille", "que nous bouillions", "que vous bouilliez", "qu'ils bouillent"],
+        "impératif": ["bouille", "bouillons", "bouillez"],
+        "passé simple": ["je bouillis", "tu bouillis", "il bouillit", "nous bouillîmes", "vous bouillîtes", "ils bouillirent"],
+        "participe présent": "bouillant"
+      }
+    },
+    {
+      "infinitif": "circoncire",
+      "conjugaisons": {
+        "présent": ["je circoncis", "tu circoncis", "il circoncit", "nous circoncisons", "vous circoncisez", "ils circoncisent"],
+        "futur": ["je circoncirai", "tu circonciras", "il circoncira", "nous circoncirons", "vous circoncirez", "ils circonciront"],
+        "imparfait": ["je circoncisais", "tu circoncisais", "il circoncisait", "nous circoncisions", "vous circoncisiez", "ils circoncisaient"],
+        "passé composé": ["j'ai circoncis", "tu as circoncis", "il a circoncis", "nous avons circoncis", "vous avez circoncis", "ils ont circoncis"],
+        "imparfait du subjonctif": ["que je circoncisse", "que tu circoncisses", "qu'il circoncît", "que nous circoncissions", "que vous circoncissiez", "qu'ils circoncissent"],
+        "conditionnel présent": ["je circoncirais", "tu circoncirais", "il circoncirait", "nous circoncirions", "vous circonciriez", "ils circonciraient"],
+        "subjonctif présent": ["que je circoncise", "que tu circoncises", "qu'il circoncise", "que nous circoncisions", "que vous circoncisiez", "qu'ils circoncisent"],
+        "impératif": ["circoncis", "circoncisons", "circoncisez"],
+        "passé simple": ["je circoncis", "tu circoncis", "il circoncit", "nous circoncîmes", "vous circoncîtes", "ils circoncirent"],
+        "participe présent": "circoncisant"
+      }
+    },
+    {
+      "infinitif": "clore",
+      "conjugaisons": {
+        "présent": ["je clos", "tu clos", "il clos", "nous closons", "vous closez", "ils closent"],
+        "futur": ["je clorai", "tu cloras", "il clora", "nous clorons", "vous clorerez", "ils cloront"],
+        "imparfait": ["je clorais", "tu clorais", "il clorait", "nous clorions", "vous cloriez", "ils cloraient"],
+        "passé composé": ["j'ai clos", "tu as clos", "il a clos", "nous avons clos", "vous avez clos", "ils ont clos"],
+        "imparfait du subjonctif": ["que je close", "que tu closes", "qu'il closât", "que nous closions", "que vous closiez", "qu'ils closent"],
+        "conditionnel présent": ["je clorais", "tu clorais", "il clorait", "nous clorions", "vous cloririez", "ils cloraient"],
+        "subjonctif présent": ["que je close", "que tu closes", "qu'il close", "que nous closions", "que vous closiez", "qu'ils closent"],
+        "impératif": ["clos", "closons", "closez"],
+        "passé simple": ["je clos", "tu clos", "il clos", "nous closons", "vous closez", "ils closent"],
+        "participe présent": "closant"
+      }
+    },
+    {
+      "infinitif": "conclure",
+      "conjugaisons": {
+        "présent": ["je conclus", "tu conclus", "il conclut", "nous concluons", "vous concluez", "ils concluent"],
+        "futur": ["je conclurai", "tu concluras", "il conclura", "nous conclurons", "vous conclurez", "ils concluront"],
+        "imparfait": ["je concluais", "tu concluais", "il concluait", "nous concluions", "vous concluiez", "ils concluaient"],
+        "passé composé": ["j'ai conclu", "tu as conclu", "il a conclu", "nous avons conclu", "vous avez conclu", "ils ont conclu"],
+        "imparfait du subjonctif": ["que je conclusse", "que tu conclusses", "qu'il conclût", "que nous conclussions", "que vous conclussiez", "qu'ils conclussent"],
+        "conditionnel présent": ["je conclurais", "tu conclurais", "il conclurait", "nous conclurions", "vous concluriez", "ils concluraient"],
+        "subjonctif présent": ["que je conclue", "que tu conclues", "qu'il conclue", "que nous concluions", "que vous concluiez", "qu'ils concluent"],
+        "impératif": ["conclus", "concluons", "concluez"],
+        "passé simple": ["je conclus", "tu conclus", "il conclut", "nous conclûmes", "vous conclûtes", "ils conclurent"],
+        "participe présent": "concluant"
+      }
+    },
+    {
+      "infinitif": "confire",
+      "conjugaisons": {
+        "présent": ["je confis", "tu confis", "il confit", "nous confisons", "vous confisez", "ils confisent"],
+        "futur": ["je confirai", "tu confiras", "il confira", "nous confirons", "vous confirez", "ils confiront"],
+        "imparfait": ["je confisais", "tu confisais", "il confisait", "nous confisions", "vous confisiez", "ils confisaient"],
+        "passé composé": ["j'ai confit", "tu as confit", "il a confit", "nous avons confit", "vous avez confit", "ils ont confit"],
+        "imparfait du subjonctif": ["que je confisse", "que tu confisses", "qu'il confît", "que nous confissions", "que vous confissiez", "qu'ils confissent"],
+        "conditionnel présent": ["je confirais", "tu confirais", "il confirait", "nous confirions", "vous confiriez", "ils confiraient"],
+        "subjonctif présent": ["que je confise", "que tu confises", "qu'il confise", "que nous confissions", "que vous confisiez", "qu'ils confisent"],
+        "impératif": ["confis", "confisons", "confisez"],
+        "passé simple": ["je confis", "tu confis", "il confit", "nous confîmes", "vous confîtes", "ils confirent"],
+        "participe présent": "confisant"
+      }
+    },
+    {
+      "infinitif": "conquérir",
+      "conjugaisons": {
+        "présent": ["je conquiers", "tu conquiers", "il conquiert", "nous conquérons", "vous conquérez", "ils conquièrent"],
+        "futur": ["je conquerrai", "tu conquerras", "il conquerra", "nous conquerrons", "vous conquérrez", "ils conquerront"],
+        "imparfait": ["je conquérais", "tu conquérais", "il conquérait", "nous conquérions", "vous conquériez", "ils conquéraient"],
+        "passé composé": ["j'ai conquis", "tu as conquis", "il a conquis", "nous avons conquis", "vous avez conquis", "ils ont conquis"],
+        "imparfait du subjonctif": ["que je conquérisse", "que tu conquérisses", "qu'il conquérît", "que nous conquérissions", "que vous conquérissiez", "qu'ils conquérissent"],
+        "conditionnel présent": ["je conquerrais", "tu conquerrais", "il conquerrait", "nous conquerrions", "vous conquerreriez", "ils conquerraient"],
+        "subjonctif présent": ["que je conquière", "que tu conquières", "qu'il conquière", "que nous conquérions", "que vous conquériez", "qu'ils conquièrent"],
+        "impératif": ["conquiers", "conquérons", "conquérez"],
+        "passé simple": ["je conquis", "tu conquis", "il conquit", "nous conquîmes", "vous conquîtes", "ils conquirent"],
+        "participe présent": "conquérant"
+      }
+    },
+    {
+      "infinitif": "coudre",
+      "conjugaisons": {
+        "présent": ["je couds", "tu couds", "il coud", "nous cousons", "vous cousez", "ils cousent"],
+        "futur": ["je coudrai", "tu coudras", "il coudra", "nous coudrons", "vous coudrez", "ils coudront"],
+        "imparfait": ["je cousais", "tu cousais", "il cousait", "nous cousions", "vous cousiez", "ils cousaient"],
+        "passé composé": ["j'ai cousu", "tu as cousu", "il a cousu", "nous avons cousu", "vous avez cousu", "ils ont cousu"],
+        "imparfait du subjonctif": ["que je cousisse", "que tu cousisses", "qu'il cousît", "que nous cousissions", "que vous cousissiez", "qu'ils cousissent"],
+        "conditionnel présent": ["je coudrais", "tu coudrais", "il coudrait", "nous coudrions", "vous coudriez", "ils coudraient"],
+        "subjonctif présent": ["que je couse", "que tu couses", "qu'il couse", "que nous cousions", "que vous cousiez", "qu'ils cousent"],
+        "impératif": ["couds", "cousons", "cousez"],
+        "passé simple": ["je cousis", "tu cousis", "il cousit", "nous cousîmes", "vous cousîtes", "ils cousirent"],
+        "participe présent": "cousant"
+      }
+    },
+    {
+      "infinitif": "échoir",
+      "conjugaisons": {
+        "présent": ["j'échois", "tu échois", "il échoit", "nous échoyons", "vous échoyez", "ils échoient"],
+        "futur": ["j'échoirai", "tu échoiras", "il échoira", "nous échoirons", "vous échoirez", "ils échoiront"],
+        "imparfait": ["j'échoyais", "tu échoyais", "il échoyait", "nous échoyions", "vous échoyiez", "ils échoyaient"],
+        "passé composé": ["j'ai échu", "tu as échu", "il a échu", "nous avons échu", "vous avez échu", "ils ont échu"],
+        "imparfait du subjonctif": ["que j'échoyisse", "que tu échoyisses", "qu'il échoyît", "que nous échoyissions", "que vous échoyissiez", "qu'ils échoyissent"],
+        "conditionnel présent": ["j'échoirais", "tu échoirais", "il échoirait", "nous échoirions", "vous échoiriez", "ils échoiraient"],
+        "subjonctif présent": ["que j'échoie", "que tu échoies", "qu'il échoie", "que nous échoyions", "que vous échoyiez", "qu'ils échoient"],
+        "impératif": ["échois"],
+        "passé simple": ["il échut"],
+        "participe présent": "échoyant"
+      }
+    },
+    {
+      "infinitif": "frire",
+      "conjugaisons": {
+        "présent": ["je fris", "tu fris", "il frit", "nous frisons", "vous frisez", "ils frisent"],
+        "futur": ["je frirai", "tu friras", "il frira", "nous frirons", "vous frirez", "ils friront"],
+        "imparfait": ["je frisais", "tu frisais", "il frisait", "nous frisions", "vous frisiez", "ils frisaient"],
+        "passé composé": ["j'ai frit", "tu as frit", "il a frit", "nous avons frit", "vous avez frit", "ils ont frit"],
+        "imparfait du subjonctif": ["que je frisse", "que tu frisses", "qu'il frît", "que nous frissions", "que vous frissiez", "qu'ils frissent"],
+        "conditionnel présent": ["je frirais", "tu frirais", "il frirait", "nous fririons", "vous fririez", "ils friraient"],
+        "subjonctif présent": ["que je frise", "que tu frises", "qu'il frise", "que nous frisions", "que vous frisiez", "qu'ils frisent"],
+        "impératif": ["fris", "frisons", "frisez"],
+        "passé simple": ["je fris", "tu fris", "il frit", "nous frîmes", "vous frîtes", "ils frirent"],
+        "participe présent": "frisant"
+      }
+    },
+    {
+      "infinitif": "gésir",
+      "conjugaisons": {
+        "présent": ["je gis", "tu gis", "il git", "nous gisons", "vous gisez", "ils gisent"],
+        "futur": ["je gésirai", "tu gésiras", "il gésira", "nous gésirons", "vous gésirez", "ils gésiront"],
+        "imparfait": ["je gisais", "tu gisais", "il gisait", "nous gisions", "vous gisiez", "ils gisaient"],
+        "passé composé": ["j'ai gis", "tu as gis", "il a gis", "nous avons gis", "vous avez gis", "ils ont gis"],
+        "imparfait du subjonctif": ["que je gisisse", "que tu gisisses", "qu'il gisît", "que nous gisissions", "que vous gisissiez", "qu'ils gisissent"],
+        "conditionnel présent": ["je gésirais", "tu gésirais", "il gésirait", "nous gésirions", "vous gésiriez", "ils gésiraient"],
+        "subjonctif présent": ["que je gise", "que tu gises", "qu'il gise", "que nous gisions", "que vous gisiez", "qu'ils gisent"],
+        "impératif": ["gis"],
+        "passé simple": ["je gis", "tu gis", "il git", "nous gîmes", "vous gîtes", "ils girent"],
+        "participe présent": "gisant"
+      }
+    },
+    {
+      "infinitif": "mourir",
+      "conjugaisons": {
+        "présent": ["je meurs", "tu meurs", "il meurt", "nous mourons", "vous mourez", "ils meurent"],
+        "futur": ["je mourrai", "tu mourras", "il mourra", "nous mourrons", "vous mourrez", "ils mourront"],
+        "imparfait": ["je mourais", "tu mourais", "il mourait", "nous mourions", "vous mouriez", "ils mouraient"],
+        "passé composé": ["je suis mort", "tu es mort", "il est mort", "nous sommes morts", "vous êtes morts", "ils sont morts"],
+        "imparfait du subjonctif": ["que je mourusse", "que tu mourusses", "qu'il mourût", "que nous mourussions", "que vous mourussiez", "qu'ils mourussent"],
+        "conditionnel présent": ["je mourrais", "tu mourrais", "il mourrait", "nous mourrions", "vous mourriez", "ils mourraient"],
+        "subjonctif présent": ["que je meure", "que tu meures", "qu'il meure", "que nous mourions", "que vous mouriez", "qu'ils meurent"],
+        "impératif": ["meurs", "mourons", "mourez"],
+        "passé simple": ["je mourus", "tu mourus", "il mourut", "nous mourûmes", "vous mourûtes", "ils moururent"],
+        "participe présent": "mourant"
+      }
+    },
+    {
+      "infinitif": "mouvoir",
+      "conjugaisons": {
+        "présent": ["je meus", "tu meus", "il meut", "nous mouvons", "vous mouvez", "ils meuvent"],
+        "futur": ["je mouvrai", "tu mouvras", "il mouvra", "nous mouvrons", "vous mouvrez", "ils mouvront"],
+        "imparfait": ["je mouvais", "tu mouvais", "il mouvait", "nous mouvions", "vous mouviez", "ils mouvaient"],
+        "passé composé": ["j'ai mu", "tu as mu", "il a mu", "nous avons mu", "vous avez mu", "ils ont mu"],
+        "imparfait du subjonctif": ["que je meusse", "que tu meusses", "qu'il meût", "que nous meussions", "que vous meussiez", "qu'ils meussent"],
+        "conditionnel présent": ["je mouvrais", "tu mouvrais", "il mouvrait", "nous mouvrions", "vous mouvriez", "ils mouvraient"],
+        "subjonctif présent": ["que je meuve", "que tu meuves", "qu'il meuve", "que nous mouvions", "que vous mouviez", "qu'ils meuvent"],
+        "impératif": ["meus", "mouvons", "mouvez"],
+        "passé simple": ["je mus", "tu mus", "il mut", "nous mûmes", "vous mûtes", "ils murent"],
+        "participe présent": "mouvant"
+      }
+    },
+    {
+      "infinitif": "paître",
+      "conjugaisons": {
+        "présent": ["je pais", "tu pais", "il paît", "nous paissons", "vous paissez", "ils paissent"],
+        "futur": ["je paîtrai", "tu paîtras", "il paîtra", "nous paîtrons", "vous paîtrez", "ils paîtront"],
+        "imparfait": ["je paissais", "tu paissais", "il paissait", "nous paissions", "vous paissiez", "ils paissaient"],
+        "passé composé": ["j'ai pâtu", "tu as pâtu", "il a pâtu", "nous avons pâtu", "vous avez pâtu", "ils ont pâtu"],
+        "imparfait du subjonctif": ["que je paississe", "que tu paississes", "qu'il paissît", "que nous paissions", "que vous paissiez", "qu'ils paissent"],
+        "conditionnel présent": ["je paîtrais", "tu paîtrais", "il paîtrait", "nous paîtrions", "vous paîtriez", "ils paîtraient"],
+        "subjonctif présent": ["que je paisse", "que tu paisses", "qu'il paisse", "que nous paissions", "que vous paissiez", "qu'ils paissent"],
+        "impératif": ["pais", "paissons", "paissez"],
+        "passé simple": ["je paquis", "tu paquis", "il paquit", "nous paquîmes", "vous paquîtes", "ils paquirent"],
+        "participe présent": "paissant"
+      }
+    },
+    {
+      "infinitif": "pleuvoir",
+      "conjugaisons": {
+        "présent": ["il pleut"],
+        "futur": ["il pleuvra"],
+        "imparfait": ["il pleuvait"],
+        "passé composé": ["il a plu"],
+        "imparfait du subjonctif": ["qu’il pleuvît"],
+        "conditionnel présent": ["il pleuvrait"],
+        "subjonctif présent": ["qu'il pleuve"],
+        "passé simple": ["il plut"],
+        "participe présent": "pleuvant"
+      }
+    },
+    {
+      "infinitif": "pourvoir",
+      "conjugaisons": {
+        "présent": ["je pourvois", "tu pourvois", "il pourvoit", "nous pourvoyons", "vous pourvoyez", "ils pourvoient"],
+        "futur": ["je pourvoirai", "tu pourvoiras", "il pourvoira", "nous pourvoirons", "vous pourvoirez", "ils pourvoiront"],
+        "imparfait": ["je pourvoyais", "tu pourvoyais", "il pourvoyait", "nous pourvoyions", "vous pourvoyiez", "ils pourvoyaient"],
+        "passé composé": ["j'ai pourvu", "tu as pourvu", "il a pourvu", "nous avons pourvu", "vous avez pourvu", "ils ont pourvu"],
+        "imparfait du subjonctif": ["que je pourvusse", "que tu pourvusses", "qu'il pourvût", "que nous pourvussions", "que vous pourvussiez", "qu'ils pourvussent"],
+        "conditionnel présent": ["je pourvoirais", "tu pourvoirais", "il pourvoirait", "nous pourvoirions", "vous pourvoiriez", "ils pourvoiraient"],
+        "subjonctif présent": ["que je pourvoie", "que tu pourvoies", "qu'il pourvoie", "que nous pourvoyions", "que vous pourvoyiez", "qu'ils pourvoient"],
+        "impératif": ["pourvois", "pourvoyons", "pourvoyez"],
+        "passé simple": ["je pourvus", "tu pourvus", "il pourvut", "nous pourvûmes", "vous pourvûtes", "ils pourvurent"],
+        "participe présentant": "pourvoyant"
+      }
+    },
+    {
+      "infinitif": "résoudre",
+      "conjugaisons": {
+        "présent": ["je résous", "tu résous", "il résout", "nous résolvons", "vous résolvez", "ils résolvent"],
+        "futur": ["je résoudrai", "tu résoudras", "il résoudra", "nous résoudrons", "vous résoudrez", "ils résoudront"],
+        "imparfait": ["je résolvais", "tu résolvais", "il résolvait", "nous résolvions", "vous résolviez", "ils résolvaient"],
+        "passé composé": ["j'ai résolu", "tu as résolu", "il a résolu", "nous avons résolu", "vous avez résolu", "ils ont résolu"],
+        "imparfait du subjonctif": ["que je résolusse", "que tu résolvusses", "qu'il résolvût", "que nous résolvussions", "que vous résolvussiez", "qu'ils résolvussent"],
+        "conditionnel présent": ["je résoudrais", "tu résoudrais", "il résoudrait", "nous résoudrions", "vous résoudriez", "ils résoudraient"],
+        "subjonctif présent": ["que je résolve", "que tu résolves", "qu'il résolve", "que nous résolvions", "que vous résolviez", "qu'ils résolvent"],
+        "impératif": ["résous", "résolvons", "résolvez"],
+        "passé simple": ["je résolus", "tu résolus", "il résolut", "nous résolûmes", "vous résolûtes", "ils résolurent"],
+        "participe présent": "résolvant"
+      }
+    },
+    {
+      "infinitif": "vêtir",
+      "conjugaisons": {
+        "présent": ["je vêts", "tu vêts", "il vêt", "nous vêtons", "vous vêtez", "ils vêtent"],
+        "futur": ["je vêtirai", "tu vêtiras", "il vêtira", "nous vêtirons", "vous vêtirez", "ils vêtiront"],
+        "imparfait": ["je vêtais", "tu vêtais", "il vêtait", "nous vêtions", "vous vêtiez", "ils vêtaient"],
+        "passé composé": ["j'ai vêtu", "tu as vêtu", "il a vêtu", "nous avons vêtu", "vous avez vêtu", "ils ont vêtu"],
+        "imparfait du subjonctif": ["que je vêtisse", "que tu vêtisses", "qu'il vêtît", "que nous vêtissions", "que vous vêtissiez", "qu'ils vêtissent"],
+        "conditionnel présent": ["je vêtirais", "tu vêtirais", "il vêtirait", "nous vêtirions", "vous vêtiriez", "ils vêtiraient"],
+        "subjonctif présent": ["que je vête", "que tu vêtes", "qu'il vête", "que nous vêtions", "que vous vêtiez", "qu'ils vêtent"],
+        "impératif": ["vêts", "vêtons", "vêtez"],
+        "passé simple": ["je vêtis", "tu vêtis", "il vêtit", "nous vêtîmes", "vous vêtîtes", "ils vêtirent"],
+        "participe présentant": "vêtant"
+      }
+    }
+  ]
+}
