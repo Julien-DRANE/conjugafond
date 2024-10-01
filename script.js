@@ -1,6 +1,7 @@
 // Variables globales 
 let verbes;
 let verbesTurbo;
+let verbesExtreme; // Ajouter la variable pour les verbes extrêmes
 let groupeActuel = "premierGroupe";
 
 const sujets = ["je", "tu", "il", "nous", "vous", "ils"];
@@ -15,7 +16,8 @@ const descriptionPronoms = {
 const coefficients = {
     premierGroupe: 1,
     deuxiemeGroupe: 2,
-    troisiemeGroupe: 3
+    troisiemeGroupe: 3,
+    extreme: 3 // Coefficient pour le mode extrême
 };
 let score = 0;
 let currentQuestion = 0;
@@ -25,6 +27,7 @@ let verbeActuel;
 let historique = [];
 let modeAleatoireActif = true;
 let modeTurboActif = false; // Mode TURBO désactivé par défaut
+let modeExtremeActif = false; // Mode Extrême désactivé par défaut
 let groupesUtilises = new Set();
 const tempsTurbo = [
     "présent",
@@ -46,13 +49,16 @@ async function chargerVerbes() {
     try {
         const response = await fetch('verbes.json');
         const responseTurbo = await fetch('verbes_turbo.json');
-        if (!response.ok || !responseTurbo.ok) {
+        const responseExtreme = await fetch('verbes_extreme.json'); // Charger les verbes extrêmes
+        if (!response.ok || !responseTurbo.ok || !responseExtreme.ok) {
             throw new Error('Erreur lors du chargement des fichiers JSON');
         }
         verbes = await response.json();
         verbesTurbo = await responseTurbo.json(); // Charger les verbes TURBO
+        verbesExtreme = await responseExtreme.json(); // Charger les verbes EXTRÊMES
         console.log("Verbes chargés : ", verbes);
         console.log("Verbes TURBO chargés : ", verbesTurbo);
+        console.log("Verbes EXTRÊMES chargés : ", verbesExtreme);
 
         // Générer la première phrase après le chargement des verbes
         genererPhrase(true); // Générer une phrase initiale
@@ -74,13 +80,33 @@ function activerModeTurbo() {
     turboX2.style.display = modeTurboActif ? 'inline-block' : 'none';
 
     // Afficher ou masquer les boutons en fonction de l'état du mode TURBO
-    const boutonsGroupes = document.querySelectorAll('#premierGroupe, #deuxiemeGroupe, #troisiemeGroupe, #modeAleatoire');
-    boutonsGroupes.forEach(bouton => {
-        bouton.style.display = modeTurboActif ? 'none' : 'inline-block';
-    });
-
+    cacherBoutonsModes(modeTurboActif);
+    
     // Générer une nouvelle phrase uniquement à partir des verbes TURBO lorsque le mode est activé
     genererPhrase(true);
+}
+
+// Activer le mode Extrême
+function activerModeExtreme() {
+    modeExtremeActif = !modeExtremeActif;
+    const modeExtremeButton = document.getElementById('modeExtreme');
+    modeExtremeButton.classList.toggle('active', modeExtremeActif);
+    modeExtremeButton.innerText = modeExtremeActif ? "Mode Extrême (Actif)" : "Mode Extrême (Inactif)";
+    document.body.classList.toggle('extreme-mode', modeExtremeActif); // Modifier les couleurs pour le mode extrême
+
+    // Afficher ou masquer les boutons en fonction de l'état du mode Extrême
+    cacherBoutonsModes(modeExtremeActif);
+
+    // Générer une nouvelle phrase uniquement à partir des verbes Extrêmes lorsque le mode est activé
+    genererPhrase(true);
+}
+
+// Cacher les boutons des modes
+function cacherBoutonsModes(isActive) {
+    const boutonsGroupes = document.querySelectorAll('#premierGroupe, #deuxiemeGroupe, #troisiemeGroupe, #modeAleatoire, #modeTurbo');
+    boutonsGroupes.forEach(bouton => {
+        bouton.style.display = isActive ? 'none' : 'inline-block';
+    });
 }
 
 // Activer le mode Aléatoire
@@ -129,7 +155,12 @@ function genererPhrase(forceGenerate = false) {
     let tempsChoisi;
     let pronomChoisi = null;
 
-    if (modeTurboActif) {
+    if (modeExtremeActif) {
+        // Utiliser uniquement les verbes EXTRÊMES lorsque le mode extrême est activé
+        verbesGroupe = verbesExtreme.EXTRÊME;
+        const tempsOptions = ["passé antérieur", "passé simple", "plus-que-parfait", "futur antérieur", "subjonctif passé", "subjonctif imparfait", "subjonctif plus-que-parfait", "conditionnel passé première forme"];
+        tempsChoisi = tempsOptions[Math.floor(Math.random() * tempsOptions.length)];
+    } else if (modeTurboActif) {
         // Utiliser uniquement les verbes TURBO lorsque le mode TURBO est activé
         verbesGroupe = verbesTurbo.TURBO;
         tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
@@ -187,13 +218,17 @@ function genererPhrase(forceGenerate = false) {
     document.getElementById('temps-container').innerText = `Temps : ${temps.charAt(0).toUpperCase() + temps.slice(1)}`;
 
     // Décrire le pronom
-    const sujetChoisi = modeTurboActif
-        ? "Écrire le pronom et le verbe conjugué" // Texte pour le mode TURBO
-        : descriptionPronoms[verbeActuel.pronomActuel]; // Pour le mode normal
+    const sujetChoisi = modeExtremeActif
+        ? descriptionPronoms[verbeActuel.pronomActuel] // pour la description
+        : modeTurboActif
+            ? "Écrire le pronom et le verbe conjugué" // texte pour le mode TURBO
+            : descriptionPronoms[verbeActuel.pronomActuel]; // Pour le mode normal
 
-    document.getElementById('phrase-container').innerText = modeTurboActif
-        ? sujetChoisi // texte pour le mode TURBO
-        : `${sujetChoisi} ___`; // texte pour le mode normal
+    document.getElementById('phrase-container').innerText = modeExtremeActif
+        ? `${sujetChoisi} ___ (ajoutez (e) si nécessaire)` // texte pour le mode extrême
+        : modeTurboActif
+            ? sujetChoisi // texte pour le mode TURBO
+            : `${sujetChoisi} ___`; // texte pour le mode normal
 }
 
 // Mettre à jour l'historique des réponses
@@ -227,11 +262,16 @@ function verifierReponse() {
     console.log(`Réponse utilisateur : "${reponseUtilisateur}"`);
     console.log(`Conjugaison correcte : "${conjugaisonCorrecte}"`);
 
-    if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte.toLowerCase()) {
+    // Pour le mode extrême, vérifier aussi l'ajout d'un "e" si nécessaire
+    const reponseCorrecteAvecAccord = (verbeActuel.genre === "féminin" && !reponseUtilisateur.endsWith('e')) 
+        ? conjugaisonCorrecte + 'e' 
+        : conjugaisonCorrecte;
+
+    if (reponseCorrecteAvecAccord !== "0" && reponseUtilisateur === reponseCorrecteAvecAccord.toLowerCase()) {
         alert("Bonne réponse !");
         // Calcul des points : points doublés en mode TURBO
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
-        score += modeTurboActif ? pointsGagnes * 2 : pointsGagnes;
+        score += modeTurboActif ? pointsGagnes * 2 : modeExtremeActif ? pointsGagnes * 3 : pointsGagnes;
         
         // **Mise à jour de l'élément HTML du score**
         document.getElementById('score').innerText = score;
@@ -343,6 +383,7 @@ window.onload = () => {
     document.getElementById('bouton-solution').addEventListener('click', toggleSolution);
     document.getElementById('nouvelle-partie').addEventListener('click', resetGame);
     document.getElementById('modeTurbo').addEventListener('click', activerModeTurbo);
+    document.getElementById('modeExtreme').addEventListener('click', activerModeExtreme); // Écouteur pour le mode Extrême
     document.getElementById('modeAleatoire').addEventListener('click', activerModeAleatoire);
     document.getElementById('premierGroupe').addEventListener('click', () => choisirGroupe('premierGroupe'));
     document.getElementById('deuxiemeGroupe').addEventListener('click', () => choisirGroupe('deuxiemeGroupe'));
