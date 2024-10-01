@@ -1,0 +1,394 @@
+{
+  "verbes": [
+    {
+      "infinitif": "être",
+      "conjugaisons": {
+        "passé antérieur": ["j'eus été", "tu eus été", "il/elle/on eut été", "nous eûmes été", "vous eûtes été", "ils/elles eurent été"],
+        "passé simple": ["je fus", "tu fus", "il/elle/on fut", "nous fûmes", "vous fûtes", "ils/elles furent"],
+        "plus-que-parfait": ["j'avais été", "tu avais été", "il/elle/on avait été", "nous avions été", "vous aviez été", "ils/elles avaient été"],
+        "futur antérieur": ["j'aurai été", "tu auras été", "il/elle/on aura été", "nous aurons été", "vous aurez été", "ils/elles auront été"],
+        "subjonctif passé": ["que j'aie été", "que tu aies été", "qu'il/elle/on ait été", "que nous ayons été", "que vous ayez été", "qu'ils/elles aient été"],
+        "subjonctif imparfait": ["que je fusse", "que tu fusses", "qu'il/elle/on fût", "que nous fussions", "que vous fussiez", "qu'ils/elles fussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse été", "que tu eusses été", "qu'il/elle/on eût été", "que nous eussions été", "que vous eussiez été", "qu'ils/elles eussent été"],
+        "conditionnel passé": ["j'aurais été", "tu aurais été", "il/elle/on aurait été", "nous aurions été", "vous auriez été", "ils/elles auraient été"]
+      }
+    },
+    {
+      "infinitif": "avoir",
+      "conjugaisons": {
+        "passé antérieur": ["j'eus eu", "tu eus eu", "il/elle/on eut eu", "nous eûmes eu", "vous eûtes eu", "ils/elles eurent eu"],
+        "passé simple": ["j'eus", "tu eus", "il/elle/on eut", "nous eûmes", "vous eûtes", "ils/elles eurent"],
+        "plus-que-parfait": ["j'avais eu", "tu avais eu", "il/elle/on avait eu", "nous avions eu", "vous aviez eu", "ils/elles avaient eu"],
+        "futur antérieur": ["j'aurai eu", "tu auras eu", "il/elle/on aura eu", "nous aurons eu", "vous aurez eu", "ils/elles auront eu"],
+        "subjonctif passé": ["que j'aie eu", "que tu aies eu", "qu'il/elle/on ait eu", "que nous ayons eu", "que vous ayez eu", "qu'ils/elles aient eu"],
+        "subjonctif imparfait": ["que j'eusse", "que tu eusses", "qu'il/elle/on eût", "que nous eussions", "que vous eussiez", "qu'ils/elles eussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse eu", "que tu eusses eu", "qu'il/elle/on eût eu", "que nous eussions eu", "que vous eussiez eu", "qu'ils/elles eussent eu"],
+        "conditionnel passé": ["j'aurais eu", "tu aurais eu", "il/elle/on aurait eu", "nous aurions eu", "vous auriez eu", "ils/elles auraient eu"]
+      }
+    },
+    {
+      "infinitif": "aller",
+      "conjugaisons": {
+        "passé antérieur": ["je fus allé(e)", "tu fus allé(e)", "il fut allé", "elle fut allée", "on fut allé(e)", "nous fûmes allé(e)s", "vous fûtes allé(e)(s)", "ils furent allés", "elles furent allées"],
+        "passé simple": ["j'allai", "tu allas", "il/elle/on alla", "nous allâmes", "vous allâtes", "ils/elles allèrent"],
+        "plus-que-parfait": ["j'étais allé(e)", "tu étais allé(e)", "il était allé", "elle était allée", "on était allé(e)", "nous étions allé(e)s", "vous étiez allé(e)(s)", "ils étaient allés", "elles étaient allées"],
+        "futur antérieur": ["je serai allé(e)", "tu seras allé(e)", "il sera allé", "elle sera allée", "on sera allé(e)", "nous serons allé(e)s", "vous serez allé(e)(s)", "ils seront allés", "elles seront allées"],
+        "subjonctif passé": ["que je sois allé(e)", "que tu sois allé(e)", "qu'il soit allé", "qu'elle soit allée", "qu'on soit allé(e)", "que nous soyons allé(e)s", "que vous soyez allé(e)(s)", "qu'ils soient allés", "qu'elles soient allées"],
+        "subjonctif imparfait": ["que j'allasse", "que tu allasses", "qu'il/elle/on allât", "que nous allassions", "que vous allassiez", "qu'ils/elles allassent"],
+        "subjonctif plus-que-parfait": ["que je fusse allé(e)", "que tu fusses allé(e)", "qu'il/elle/on fût allé", "que nous fussions allé(e)s", "que vous fussiez allé(e)(s)", "qu'ils/elles fussent allés"],
+        "conditionnel passé": ["je serais allé(e)", "tu serais allé(e)", "il/elle/on serait allé", "nous serions allé(e)s", "vous seriez allé(e)(s)", "ils/elles seraient allés"]
+      }
+    },
+    {
+      "infinitif": "faire",
+      "conjugaisons": {
+        "passé antérieur": ["je fus fait(e)", "tu fus fait(e)", "il fut fait", "elle fut faite", "on fut fait(e)", "nous fûmes fait(e)s", "vous fûtes fait(e)(s)", "ils furent faits", "elles furent faites"],
+        "passé simple": ["je fis", "tu fis", "il/elle/on fit", "nous fîmes", "vous fîtes", "ils/elles firent"],
+        "plus-que-parfait": ["j'avais fait", "tu avais fait", "il/elle/on avait fait", "nous avions fait", "vous aviez fait", "ils/elles avaient fait"],
+        "futur antérieur": ["j'aurai fait", "tu auras fait", "il/elle/on aura fait", "nous aurons fait", "vous aurez fait", "ils/elles auront fait"],
+        "subjonctif passé": ["que j'aie fait", "que tu aies fait", "qu'il/elle/on ait fait", "que nous ayons fait", "que vous ayez fait", "qu'ils/elles aient fait"],
+        "subjonctif imparfait": ["que je fisse", "que tu fisses", "qu'il/elle/on fît", "que nous fissions", "que vous fussiez", "qu'ils/elles fissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse fait", "que tu eusses fait", "qu'il/elle/on eût fait", "que nous eussions fait", "que vous eussiez fait", "qu'ils/elles eussent fait"],
+        "conditionnel passé": ["j'aurais fait", "tu aurais fait", "il/elle/on aurait fait", "nous aurions fait", "vous auriez fait", "ils/elles auraient fait"]
+      }
+    },
+    {
+      "infinitif": "dire",
+      "conjugaisons": {
+        "passé antérieur": ["je fus dit(e)", "tu fus dit(e)", "il fut dit", "elle fut dite", "on fut dit(e)", "nous fûmes dit(e)s", "vous fûtes dit(e)(s)", "ils furent dits", "elles furent dites"],
+        "passé simple": ["je dis", "tu dis", "il/elle/on dit", "nous dîmes", "vous dîtes", "ils/elles dirent"],
+        "plus-que-parfait": ["j'avais dit", "tu avais dit", "il/elle/on avait dit", "nous avions dit", "vous aviez dit", "ils/elles avaient dit"],
+        "futur antérieur": ["j'aurai dit", "tu auras dit", "il/elle/on aura dit", "nous aurons dit", "vous aurez dit", "ils/elles auront dit"],
+        "subjonctif passé": ["que j'aie dit", "que tu aies dit", "qu'il/elle/on ait dit", "que nous ayons dit", "que vous ayez dit", "qu'ils/elles aient dit"],
+        "subjonctif imparfait": ["que je disse", "que tu disses", "qu'il/elle/on dît", "que nous dissions", "que vous dissiez", "qu'ils/elles dissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse dit", "que tu eusses dit", "qu'il/elle/on eût dit", "que nous eussions dit", "que vous eussiez dit", "qu'ils/elles eussent dit"],
+        "conditionnel passé": ["j'aurais dit", "tu aurais dit", "il/elle/on aurait dit", "nous aurions dit", "vous auriez dit", "ils/elles auraient dit"]
+      }
+    },
+    {
+      "infinitif": "pouvoir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus pu", "tu fus pu", "il fut pu", "elle fut pu", "on fut pu", "nous fûmes pus", "vous fûtes pu", "ils furent pus", "elles furent pus"],
+        "passé simple": ["je pus", "tu pus", "il/elle/on put", "nous pûmes", "vous pûtes", "ils/elles purent"],
+        "plus-que-parfait": ["j'avais pu", "tu avais pu", "il/elle/on avait pu", "nous avions pu", "vous aviez pu", "ils/elles avaient pu"],
+        "futur antérieur": ["j'aurai pu", "tu auras pu", "il/elle/on aura pu", "nous aurons pu", "vous aurez pu", "ils/elles auront pu"],
+        "subjonctif passé": ["que j'aie pu", "que tu aies pu", "qu'il/elle/on ait pu", "que nous ayons pu", "que vous ayez pu", "qu'ils/elles aient pu"],
+        "subjonctif imparfait": ["que je pusse", "que tu pusses", "qu'il/elle/on pût", "que nous pussions", "que vous pussiez", "qu'ils/elles pussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse pu", "que tu eusses pu", "qu'il/elle/on eût pu", "que nous eussions pu", "que vous eussiez pu", "qu'ils/elles eussent pu"],
+        "conditionnel passé": ["j'aurais pu", "tu aurais pu", "il/elle/on aurait pu", "nous aurions pu", "vous auriez pu", "ils/elles auraient pu"]
+      }
+    },
+    {
+      "infinitif": "vouloir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus voulu", "tu fus voulu", "il fut voulu", "elle fut voulue", "on fut voulu(e)", "nous fûmes voulus", "vous fûtes voulu(e)(s)", "ils furent voulus", "elles furent voulues"],
+        "passé simple": ["je voulus", "tu voulus", "il/elle/on voulut", "nous voulûmes", "vous voulûtes", "ils/elles voulurent"],
+        "plus-que-parfait": ["j'avais voulu", "tu avais voulu", "il/elle/on avait voulu", "nous avions voulu", "vous aviez voulu", "ils/elles avaient voulu"],
+        "futur antérieur": ["j'aurai voulu", "tu auras voulu", "il/elle/on aura voulu", "nous aurons voulu", "vous aurez voulu", "ils/elles auront voulu"],
+        "subjonctif passé": ["que j'aie voulu", "que tu aies voulu", "qu'il/elle/on ait voulu", "que nous ayons voulu", "que vous ayez voulu", "qu'ils/elles aient voulu"],
+        "subjonctif imparfait": ["que je voulusse", "que tu voulusses", "qu'il/elle/on voulût", "que nous voulussions", "que vous voulussiez", "qu'ils/elles voulussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse voulu", "que tu eusses voulu", "qu'il/elle/on eût voulu", "que nous eussions voulu", "que vous eussiez voulu", "qu'ils/elles eussent voulu"],
+        "conditionnel passé": ["j'aurais voulu", "tu aurais voulu", "il/elle/on aurait voulu", "nous aurions voulu", "vous auriez voulu", "ils/elles auraient voulu"]
+      }
+    },
+    {
+      "infinitif": "savoir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus su", "tu fus su", "il fut su", "elle fut su", "on fut su", "nous fûmes sus", "vous fûtes su", "ils furent sus", "elles furent sus"],
+        "passé simple": ["je sus", "tu sus", "il/elle/on sut", "nous sûmes", "vous sûtes", "ils/elles surent"],
+        "plus-que-parfait": ["j'avais su", "tu avais su", "il/elle/on avait su", "nous avions su", "vous aviez su", "ils/elles avaient su"],
+        "futur antérieur": ["j'aurai su", "tu auras su", "il/elle/on aura su", "nous aurons su", "vous aurez su", "ils/elles auront su"],
+        "subjonctif passé": ["que j'aie su", "que tu aies su", "qu'il/elle/on ait su", "que nous ayons su", "que vous ayez su", "qu'ils/elles aient su"],
+        "subjonctif imparfait": ["que je susse", "que tu susses", "qu'il/elle/on fût", "que nous fussions", "que vous fussiez", "qu'ils/elles fussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse su", "que tu eusses su", "qu'il/elle/on eût su", "que nous eussions su", "que vous eussiez su", "qu'ils/elles eussent su"],
+        "conditionnel passé": ["j'aurais su", "tu aurais su", "il/elle/on aurait su", "nous aurions su", "vous auriez su", "ils/elles auraient su"]
+      }
+    },
+    {
+      "infinitif": "voir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus vu(e)", "tu fus vu(e)", "il fut vu", "elle fut vue", "on fut vu(e)", "nous fûmes vu(e)s", "vous fûtes vu(e)(s)", "ils furent vus", "elles furent vues"],
+        "passé simple": ["je vis", "tu vis", "il/elle/on vit", "nous vîmes", "vous vîtes", "ils/elles virent"],
+        "plus-que-parfait": ["j'avais vu", "tu avais vu", "il/elle/on avait vu", "nous avions vu", "vous aviez vu", "ils/elles avaient vu"],
+        "futur antérieur": ["j'aurai vu", "tu auras vu", "il/elle/on aura vu", "nous aurons vu", "vous aurez vu", "ils/elles auront vu"],
+        "subjonctif passé": ["que j'aie vu", "que tu aies vu", "qu'il/elle/on ait vu", "que nous ayons vu", "que vous ayez vu", "qu'ils/elles aient vu"],
+        "subjonctif imparfait": ["que je visse", "que tu visses", "qu'il/elle/on vît", "que nous vissions", "que vous vissiez", "qu'ils/elles vissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse vu", "que tu eusses vu", "qu'il/elle/on eût vu", "que nous eussions vu", "que vous eussiez vu", "qu'ils/elles eussent vu"],
+        "conditionnel passé": ["j'aurais vu", "tu aurais vu", "il/elle/on aurait vu", "nous aurions vu", "vous auriez vu", "ils/elles auraient vu"]
+      }
+    },
+    {
+      "infinitif": "venir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus venu(e)", "tu fus venu(e)", "il fut venu", "elle fut venue", "on fut venu(e)", "nous fûmes venu(e)s", "vous fûtes venu(e)(s)", "ils furent venus", "elles furent venues"],
+        "passé simple": ["je vins", "tu vins", "il/elle/on vint", "nous vînmes", "vous vîntes", "ils/elles vinrent"],
+        "plus-que-parfait": ["j'étais venu(e)", "tu étais venu(e)", "il était venu", "elle était venue", "on était venu(e)", "nous étions venu(e)s", "vous étiez venu(e)(s)", "ils étaient venus", "elles étaient venues"],
+        "futur antérieur": ["je serai venu(e)", "tu seras venu(e)", "il sera venu", "elle sera venue", "on sera venu(e)", "nous serons venu(e)s", "vous serez venu(e)(s)", "ils seront venus", "elles seront venues"],
+        "subjonctif passé": ["que je sois venu(e)", "que tu sois venu(e)", "qu'il soit venu", "qu'elle soit venue", "qu'on soit venu(e)", "que nous soyons venu(e)s", "que vous soyez venu(e)(s)", "qu'ils soient venus", "qu'elles soient venues"],
+        "subjonctif imparfait": ["que je vinsse", "que tu vinsses", "qu'il/elle/on vînt", "que nous vinssions", "que vous vinssiez", "qu'ils/elles vinssent"],
+        "subjonctif plus-que-parfait": ["que je fusse venu(e)", "que tu fusses venu(e)", "qu'il/elle/on fût venu", "que nous fussions venu(e)s", "que vous fussiez venu(e)(s)", "qu'ils/elles fussent venus"],
+        "conditionnel passé": ["j'aurais venu(e)", "tu aurais venu(e)", "il/elle/on aurait venu", "nous aurions venu(e)s", "vous auriez venu(e)(s)", "ils/elles auraient venus"]
+      }
+    },
+    {
+      "infinitif": "prendre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus pris(e)", "tu fus pris(e)", "il fut pris", "elle fut prise", "on fut pris(e)", "nous fûmes pris(e)s", "vous fûtes pris(e)(s)", "ils furent pris", "elles furent prises"],
+        "passé simple": ["je pris", "tu pris", "il/elle/on prit", "nous prîmes", "vous prîtes", "ils/elles prirent"],
+        "plus-que-parfait": ["j'avais pris", "tu avais pris", "il/elle/on avait pris", "nous avions pris", "vous aviez pris", "ils/elles avaient pris"],
+        "futur antérieur": ["j'aurai pris", "tu auras pris", "il/elle/on aura pris", "nous aurons pris", "vous aurez pris", "ils/elles auront pris"],
+        "subjonctif passé": ["que j'aie pris", "que tu aies pris", "qu'il/elle/on ait pris", "que nous ayons pris", "que vous ayez pris", "qu'ils/elles aient pris"],
+        "subjonctif imparfait": ["que je prisse", "que tu prisses", "qu'il/elle/on prît", "que nous prissions", "que vous prissiez", "qu'ils/elles prissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse pris", "que tu eusses pris", "qu'il/elle/on eût pris", "que nous eussions pris", "que vous eussiez pris", "qu'ils/elles eussent pris"],
+        "conditionnel passé": ["j'aurais pris", "tu aurais pris", "il/elle/on aurait pris", "nous aurions pris", "vous auriez pris", "ils/elles auraient pris"]
+      }
+    },
+    {
+      "infinitif": "mettre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus mis(e)", "tu fus mis(e)", "il fut mis", "elle fut mise", "on fut mis(e)", "nous fûmes mis(e)s", "vous fûtes mis(e)(s)", "ils furent mis", "elles furent mises"],
+        "passé simple": ["je mis", "tu mis", "il/elle/on mit", "nous mîmes", "vous mîtes", "ils/elles mirent"],
+        "plus-que-parfait": ["j'avais mis", "tu avais mis", "il/elle/on avait mis", "nous avions mis", "vous aviez mis", "ils/elles avaient mis"],
+        "futur antérieur": ["j'aurai mis", "tu auras mis", "il/elle/on aura mis", "nous aurons mis", "vous aurez mis", "ils/elles auront mis"],
+        "subjonctif passé": ["que j'aie mis", "que tu aies mis", "qu'il/elle/on ait mis", "que nous ayons mis", "que vous ayez mis", "qu'ils/elles aient mis"],
+        "subjonctif imparfait": ["que je miss", "que tu misses", "qu'il/elle/on mît", "que nous missiions", "que vous missiez", "qu'ils/elles missent"],
+        "subjonctif plus-que-parfait": ["que j'eusse mis", "que tu eusses mis", "qu'il/elle/on eût mis", "que nous eussions mis", "que vous eussiez mis", "qu'ils/elles eussent mis"],
+        "conditionnel passé": ["j'aurais mis", "tu aurais mis", "il/elle/on aurait mis", "nous aurions mis", "vous auriez mis", "ils/elles auraient mis"]
+      }
+    },
+    {
+      "infinitif": "devoir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus dû(e)", "tu fus dû(e)", "il fut dû", "elle fut due", "on fut dû(e)", "nous fûmes dus", "vous fûtes dû(e)(s)", "ils furent dus", "elles furent dues"],
+        "passé simple": ["je dus", "tu dus", "il/elle/on dut", "nous dûmes", "vous dûtes", "ils/elles durent"],
+        "plus-que-parfait": ["j'avais dû", "tu avais dû", "il/elle/on avait dû", "nous avions dû", "vous aviez dû", "ils/elles avaient dû"],
+        "futur antérieur": ["j'aurai dû", "tu auras dû", "il/elle/on aura dû", "nous aurons dû", "vous aurez dû", "ils/elles auront dû"],
+        "subjonctif passé": ["que j'aie dû", "que tu aies dû", "qu'il/elle/on ait dû", "que nous ayons dû", "que vous ayez dû", "qu'ils/elles aient dû"],
+        "subjonctif imparfait": ["que je dusse", "que tu dusses", "qu'il/elle/on dût", "que nous dussions", "que vous dussiez", "qu'ils/elles dussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse dû", "que tu eusses dû", "qu'il/elle/on eût dû", "que nous eussions dû", "que vous eussiez dû", "qu'ils/elles eussent dû"],
+        "conditionnel passé": ["j'aurais dû", "tu aurais dû", "il/elle/on aurait dû", "nous aurions dû", "vous auriez dû", "ils/elles auraient dû"]
+      }
+    },
+    {
+      "infinitif": "donner",
+      "conjugaisons": {
+        "passé antérieur": ["je fus donné(e)", "tu fus donné(e)", "il fut donné", "elle fut donnée", "on fut donné(e)", "nous fûmes donné(e)s", "vous fûtes donné(e)(s)", "ils furent donnés", "elles furent données"],
+        "passé simple": ["je donnai", "tu donnas", "il/elle/on donna", "nous donnâmes", "vous donnâtes", "ils/elles donnèrent"],
+        "plus-que-parfait": ["j'avais donné", "tu avais donné", "il/elle/on avait donné", "nous avions donné", "vous aviez donné", "ils/elles avaient donné"],
+        "futur antérieur": ["j'aurai donné", "tu auras donné", "il/elle/on aura donné", "nous aurons donné", "vous aurez donné", "ils/elles auront donné"],
+        "subjonctif passé": ["que j'aie donné", "que tu aies donné", "qu'il/elle/on ait donné", "que nous ayons donné", "que vous ayez donné", "qu'ils/elles aient donné"],
+        "subjonctif imparfait": ["que je donnasse", "que tu donnasses", "qu'il/elle/on donnât", "que nous donnassions", "que vous donnassiez", "qu'ils/elles donnassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse donné", "que tu eusses donné", "qu'il/elle/on eût donné", "que nous eussions donné", "que vous eussiez donné", "qu'ils/elles eussent donné"],
+        "conditionnel passé": ["j'aurais donné", "tu aurais donné", "il/elle/on aurait donné", "nous aurions donné", "vous auriez donné", "ils/elles auraient donné"]
+      }
+    },
+    {
+      "infinitif": "parler",
+      "conjugaisons": {
+        "passé antérieur": ["je fus parlé(e)", "tu fus parlé(e)", "il fut parlé", "elle fut parlée", "on fut parlé(e)", "nous fûmes parlé(e)s", "vous fûtes parlé(e)(s)", "ils furent parlés", "elles furent parlées"],
+        "passé simple": ["je parlai", "tu parlas", "il/elle/on parla", "nous parlâmes", "vous parlâtes", "ils/elles parlèrent"],
+        "plus-que-parfait": ["j'avais parlé", "tu avais parlé", "il/elle/on avait parlé", "nous avions parlé", "vous aviez parlé", "ils/elles avaient parlé"],
+        "futur antérieur": ["j'aurai parlé", "tu auras parlé", "il/elle/on aura parlé", "nous aurons parlé", "vous aurez parlé", "ils/elles auront parlé"],
+        "subjonctif passé": ["que j'aie parlé", "que tu aies parlé", "qu'il/elle/on ait parlé", "que nous ayons parlé", "que vous ayez parlé", "qu'ils/elles aient parlé"],
+        "subjonctif imparfait": ["que je parlasse", "que tu parlasses", "qu'il/elle/on parlât", "que nous parlassions", "que vous parlassiez", "qu'ils/elles parlassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse parlé", "que tu eusses parlé", "qu'il/elle/on eût parlé", "que nous eussions parlé", "que vous eussiez parlé", "qu'ils/elles eussent parlé"],
+        "conditionnel passé": ["j'aurais parlé", "tu aurais parlé", "il/elle/on aurait parlé", "nous aurions parlé", "vous auriez parlé", "ils/elles auraient parlé"]
+      }
+    },
+    {
+      "infinitif": "trouver",
+      "conjugaisons": {
+        "passé antérieur": ["je fus trouvé(e)", "tu fus trouvé(e)", "il fut trouvé", "elle fut trouvée", "on fut trouvé(e)", "nous fûmes trouvé(e)s", "vous fûtes trouvé(e)(s)", "ils furent trouvés", "elles furent trouvées"],
+        "passé simple": ["je trouvai", "tu trouvas", "il/elle/on trouva", "nous trouvâmes", "vous trouvâtes", "ils/elles trouvèrent"],
+        "plus-que-parfait": ["j'avais trouvé", "tu avais trouvé", "il/elle/on avait trouvé", "nous avions trouvé", "vous aviez trouvé", "ils/elles avaient trouvé"],
+        "futur antérieur": ["j'aurai trouvé", "tu auras trouvé", "il/elle/on aura trouvé", "nous aurons trouvé", "vous aurez trouvé", "ils/elles auront trouvé"],
+        "subjonctif passé": ["que j'aie trouvé", "que tu aies trouvé", "qu'il/elle/on ait trouvé", "que nous ayons trouvé", "que vous ayez trouvé", "qu'ils/elles aient trouvé"],
+        "subjonctif imparfait": ["que je trouvasse", "que tu trouvasses", "qu'il/elle/on trouvât", "que nous trouvassions", "que vous trouvassiez", "qu'ils/elles trouvassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse trouvé", "que tu eusses trouvé", "qu'il/elle/on eût trouvé", "que nous eussions trouvé", "que vous eussiez trouvé", "qu'ils/elles eussent trouvé"],
+        "conditionnel passé": ["j'aurais trouvé", "tu aurais trouvé", "il/elle/on aurait trouvé", "nous aurions trouvé", "vous auriez trouvé", "ils/elles auraient trouvé"]
+      }
+    },
+    {
+      "infinitif": "comprendre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus compris(e)", "tu fus compris(e)", "il fut compris", "elle fut comprise", "on fut compris(e)", "nous fûmes compris(e)s", "vous fûtes compris(e)(s)", "ils furent compris", "elles furent comprises"],
+        "passé simple": ["je compris", "tu compris", "il/elle/on comprit", "nous comprîmes", "vous comprîtes", "ils/elles comprirent"],
+        "plus-que-parfait": ["j'avais compris", "tu avais compris", "il/elle/on avait compris", "nous avions compris", "vous aviez compris", "ils/elles avaient compris"],
+        "futur antérieur": ["j'aurai compris", "tu auras compris", "il/elle/on aura compris", "nous aurons compris", "vous aurez compris", "ils/elles auront compris"],
+        "subjonctif passé": ["que j'aie compris", "que tu aies compris", "qu'il/elle/on ait compris", "que nous ayons compris", "que vous ayez compris", "qu'ils/elles aient compris"],
+        "subjonctif imparfait": ["que je comprisse", "que tu comprisses", "qu'il/elle/on comprît", "que nous comprissions", "que vous comprissiez", "qu'ils/elles comprissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse compris", "que tu eusses compris", "qu'il/elle/on eût compris", "que nous eussions compris", "que vous eussiez compris", "qu'ils/elles eussent compris"],
+        "conditionnel passé": ["j'aurais compris", "tu aurais compris", "il/elle/on aurait compris", "nous aurions compris", "vous auriez compris", "ils/elles auraient compris"]
+      }
+    },
+    {
+      "infinitif": "rendre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus rendu(e)", "tu fus rendu(e)", "il fut rendu", "elle fut rendue", "on fut rendu(e)", "nous fûmes rendu(e)s", "vous fûtes rendu(e)(s)", "ils furent rendus", "elles furent rendues"],
+        "passé simple": ["je rendis", "tu rendis", "il/elle/on rendit", "nous rendîmes", "vous rendîtes", "ils/elles rendirent"],
+        "plus-que-parfait": ["j'avais rendu", "tu avais rendu", "il/elle/on avait rendu", "nous avions rendu", "vous aviez rendu", "ils/elles avaient rendu"],
+        "futur antérieur": ["j'aurai rendu", "tu auras rendu", "il/elle/on aura rendu", "nous aurons rendu", "vous aurez rendu", "ils/elles auront rendu"],
+        "subjonctif passé": ["que j'aie rendu", "que tu aies rendu", "qu'il/elle/on ait rendu", "que nous ayons rendu", "que vous ayez rendu", "qu'ils/elles aient rendu"],
+        "subjonctif imparfait": ["que je rendisse", "que tu rendisses", "qu'il/elle/on rendît", "que nous rendissions", "que vous rendissiez", "qu'ils/elles rendissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse rendu", "que tu eusses rendu", "qu'il/elle/on eût rendu", "que nous eussions rendu", "que vous eussiez rendu", "qu'ils/elles eussent rendu"],
+        "conditionnel passé": ["j'aurais rendu", "tu aurais rendu", "il/elle/on aurait rendu", "nous aurions rendu", "vous auriez rendu", "ils/elles auraient rendu"]
+      }
+    },
+    {
+      "infinitif": "sentir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus senti(e)", "tu fus senti(e)", "il fut senti", "elle fut sentie", "on fut senti(e)", "nous fûmes senti(e)s", "vous fûtes senti(e)(s)", "ils furent sentis", "elles furent senties"],
+        "passé simple": ["je sentis", "tu sentis", "il/elle/on sentit", "nous sentîmes", "vous sentîtes", "ils/elles sentirent"],
+        "plus-que-parfait": ["j'avais senti", "tu avais senti", "il/elle/on avait senti", "nous avions senti", "vous aviez senti", "ils/elles avaient senti"],
+        "futur antérieur": ["j'aurai senti", "tu auras senti", "il/elle/on aura senti", "nous aurons senti", "vous aurez senti", "ils/elles auront senti"],
+        "subjonctif passé": ["que j'aie senti", "que tu aies senti", "qu'il/elle/on ait senti", "que nous ayons senti", "que vous ayez senti", "qu'ils/elles aient senti"],
+        "subjonctif imparfait": ["que je sentisse", "que tu sentisses", "qu'il/elle/on sentît", "que nous sentissions", "que vous sentissiez", "qu'ils/elles sentissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse senti", "que tu eusses senti", "qu'il/elle/on eût senti", "que nous eussions senti", "que vous eussiez senti", "qu'ils/elles eussent senti"],
+        "conditionnel passé": ["j'aurais senti", "tu aurais senti", "il/elle/on aurait senti", "nous aurions senti", "vous auriez senti", "ils/elles auraient senti"]
+      }
+    },
+    {
+      "infinitif": "vivre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus vécu(e)", "tu fus vécu(e)", "il fut vécu", "elle fut vécue", "on fut vécu(e)", "nous fûmes vécu(e)s", "vous fûtes vécu(e)(s)", "ils furent vécus", "elles furent vécues"],
+        "passé simple": ["je vécus", "tu vécus", "il/elle/on vécut", "nous vécûmes", "vous vécûtes", "ils/elles vécurent"],
+        "plus-que-parfait": ["j'avais vécu", "tu avais vécu", "il/elle/on avait vécu", "nous avions vécu", "vous aviez vécu", "ils/elles avaient vécu"],
+        "futur antérieur": ["j'aurai vécu", "tu auras vécu", "il/elle/on aura vécu", "nous aurons vécu", "vous aurez vécu", "ils/elles auront vécu"],
+        "subjonctif passé": ["que j'aie vécu", "que tu aies vécu", "qu'il/elle/on ait vécu", "que nous ayons vécu", "que vous ayez vécu", "qu'ils/elles aient vécu"],
+        "subjonctif imparfait": ["que je vécusse", "que tu vécusses", "qu'il/elle/on vécût", "que nous vécussions", "que vous vécussiez", "qu'ils/elles vécussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse vécu", "que tu eusses vécu", "qu'il/elle/on eût vécu", "que nous eussions vécu", "que vous eussiez vécu", "qu'ils/elles eussent vécu"],
+        "conditionnel passé": ["j'aurais vécu", "tu aurais vécu", "il/elle/on aurait vécu", "nous aurions vécu", "vous auriez vécu", "ils/elles auraient vécu"]
+      }
+    },
+    {
+      "infinitif": "demander",
+      "conjugaisons": {
+        "passé antérieur": ["je fus demandé(e)", "tu fus demandé(e)", "il fut demandé", "elle fut demandée", "on fut demandé(e)", "nous fûmes demandé(e)s", "vous fûtes demandé(e)(s)", "ils furent demandés", "elles furent demandées"],
+        "passé simple": ["je demandai", "tu demandas", "il/elle/on demanda", "nous demandâmes", "vous demandâtes", "ils/elles demandèrent"],
+        "plus-que-parfait": ["j'avais demandé", "tu avais demandé", "il/elle/on avait demandé", "nous avions demandé", "vous aviez demandé", "ils/elles avaient demandé"],
+        "futur antérieur": ["j'aurai demandé", "tu auras demandé", "il/elle/on aura demandé", "nous aurons demandé", "vous aurez demandé", "ils/elles auront demandé"],
+        "subjonctif passé": ["que j'aie demandé", "que tu aies demandé", "qu'il/elle/on ait demandé", "que nous ayons demandé", "que vous ayez demandé", "qu'ils/elles aient demandé"],
+        "subjonctif imparfait": ["que je demandasse", "que tu demandasses", "qu'il/elle/on demandât", "que nous demandassions", "que vous demandassiez", "qu'ils/elles demandassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse demandé", "que tu eusses demandé", "qu'il/elle/on eût demandé", "que nous eussions demandé", "que vous eussiez demandé", "qu'ils/elles eussent demandé"],
+        "conditionnel passé": ["j'aurais demandé", "tu aurais demandé", "il/elle/on aurait demandé", "nous aurions demandé", "vous auriez demandé", "ils/elles auraient demandé"]
+      }
+    },
+    {
+      "infinitif": "répondre",
+      "conjugaisons": {
+        "passé antérieur": ["je fus répondu(e)", "tu fus répondu(e)", "il fut répondu", "elle fut répondue", "on fut répondu(e)", "nous fûmes répondu(e)s", "vous fûtes répondu(e)(s)", "ils furent répondus", "elles furent répondues"],
+        "passé simple": ["je répondis", "tu répondis", "il/elle/on répondit", "nous répondîmes", "vous répondîtes", "ils/elles répondirent"],
+        "plus-que-parfait": ["j'avais répondu", "tu avais répondu", "il/elle/on avait répondu", "nous avions répondu", "vous aviez répondu", "ils/elles avaient répondu"],
+        "futur antérieur": ["j'aurai répondu", "tu auras répondu", "il/elle/on aura répondu", "nous aurons répondu", "vous aurez répondu", "ils/elles auront répondu"],
+        "subjonctif passé": ["que j'aie répondu", "que tu aies répondu", "qu'il/elle/on ait répondu", "que nous ayons répondu", "que vous ayez répondu", "qu'ils/elles aient répondu"],
+        "subjonctif imparfait": ["que je répondisse", "que tu répondisses", "qu'il/elle/on répondît", "que nous répondissions", "que vous répondissiez", "qu'ils/elles répondissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse répondu", "que tu eusses répondu", "qu'il/elle/on eût répondu", "que nous eussions répondu", "que vous eussiez répondu", "qu'ils/elles eussent répondu"],
+        "conditionnel passé": ["j'aurais répondu", "tu aurais répondu", "il/elle/on aurait répondu", "nous aurions répondu", "vous auriez répondu", "ils/elles auraient répondu"]
+      }
+    },
+    {
+      "infinitif": "écrire",
+      "conjugaisons": {
+        "passé antérieur": ["je fus écrit(e)", "tu fus écrit(e)", "il fut écrit", "elle fut écrite", "on fut écrit(e)", "nous fûmes écrit(e)s", "vous fûtes écrit(e)(s)", "ils furent écrits", "elles furent écrites"],
+        "passé simple": ["j'écrivis", "tu écrivis", "il/elle/on écrivit", "nous écrivîmes", "vous écrivîtes", "ils/elles écrivirent"],
+        "plus-que-parfait": ["j'avais écrit", "tu avais écrit", "il/elle/on avait écrit", "nous avions écrit", "vous aviez écrit", "ils/elles avaient écrit"],
+        "futur antérieur": ["j'aurai écrit", "tu auras écrit", "il/elle/on aura écrit", "nous aurons écrit", "vous aurez écrit", "ils/elles auront écrit"],
+        "subjonctif passé": ["que j'aie écrit", "que tu aies écrit", "qu'il/elle/on ait écrit", "que nous ayons écrit", "que vous ayez écrit", "qu'ils/elles aient écrit"],
+        "subjonctif imparfait": ["que j'écrivisse", "que tu écrivisses", "qu'il/elle/on écrivît", "que nous écrivissions", "que vous écrivissiez", "qu'ils/elles écrivissent"],
+        "subjonctif plus-que-parfait": ["que j'eusse écrit", "que tu eusses écrit", "qu'il/elle/on eût écrit", "que nous eussions écrit", "que vous eussiez écrit", "qu'ils/elles eussent écrit"],
+        "conditionnel passé": ["j'aurais écrit", "tu aurais écrit", "il/elle/on aurait écrit", "nous aurions écrit", "vous auriez écrit", "ils/elles auraient écrit"]
+      }
+    },
+    {
+      "infinitif": "lire",
+      "conjugaisons": {
+        "passé antérieur": ["je fus lu(e)", "tu fus lu(e)", "il fut lu", "elle fut lue", "on fut lu(e)", "nous fûmes lu(e)s", "vous fûtes lu(e)(s)", "ils furent lus", "elles furent lues"],
+        "passé simple": ["je lus", "tu lus", "il/elle/on lut", "nous lûmes", "vous lûtes", "ils/elles lurent"],
+        "plus-que-parfait": ["j'avais lu", "tu avais lu", "il/elle/on avait lu", "nous avions lu", "vous aviez lu", "ils/elles avaient lu"],
+        "futur antérieur": ["j'aurai lu", "tu auras lu", "il/elle/on aura lu", "nous aurons lu", "vous aurez lu", "ils/elles auront lu"],
+        "subjonctif passé": ["que j'aie lu", "que tu aies lu", "qu'il/elle/on ait lu", "que nous ayons lu", "que vous ayez lu", "qu'ils/elles aient lu"],
+        "subjonctif imparfait": ["que je lusse", "que tu lusses", "qu'il/elle/on lût", "que nous lussions", "que vous lussiez", "qu'ils/elles lussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse lu", "que tu eusses lu", "qu'il/elle/on eût lu", "que nous eussions lu", "que vous eussiez lu", "qu'ils/elles eussent lu"],
+        "conditionnel passé": ["j'aurais lu", "tu aurais lu", "il/elle/on aurait lu", "nous aurions lu", "vous auriez lu", "ils/elles auraient lu"]
+      }
+    },
+    {
+      "infinitif": "sortir",
+      "conjugaisons": {
+        "passé antérieur": ["je fus sorti(e)", "tu fus sorti(e)", "il fut sorti", "elle fut sortie", "on fut sorti(e)", "nous fûmes sorti(e)s", "vous fûtes sorti(e)(s)", "ils furent sortis", "elles furent sorties"],
+        "passé simple": ["je sortis", "tu sortis", "il/elle/on sortit", "nous sortîmes", "vous sortîtes", "ils/elles sortirent"],
+        "plus-que-parfait": ["j'étais sorti(e)", "tu étais sorti(e)", "il était sorti", "elle était sortie", "on était sorti(e)", "nous étions sorti(e)s", "vous étiez sorti(e)(s)", "ils étaient sortis", "elles étaient sorties"],
+        "futur antérieur": ["je serai sorti(e)", "tu seras sorti(e)", "il sera sorti", "elle sera sortie", "on sera sorti(e)", "nous serons sorti(e)s", "vous serez sorti(e)(s)", "ils seront sortis", "elles seront sorties"],
+        "subjonctif passé": ["que je sois sorti(e)", "que tu sois sorti(e)", "qu'il soit sorti", "qu'elle soit sortie", "qu'on soit sorti(e)", "que nous soyons sorti(e)s", "que vous soyez sorti(e)(s)", "qu'ils soient sortis", "qu'elles soient sorties"],
+        "subjonctif imparfait": ["que je sortisse", "que tu sortisses", "qu'il/elle/on sortît", "que nous sortissions", "que vous sortissiez", "qu'ils/elles sortissent"],
+        "subjonctif plus-que-parfait": ["que je fusse sorti(e)", "que tu fusses sorti(e)", "qu'il/elle/on fût sorti", "que nous fussions sorti(e)s", "que vous fussiez sorti(e)(s)", "qu'ils/elles fussent sortis"],
+        "conditionnel passé": ["j'aurais sorti(e)", "tu aurais sorti(e)", "il/elle/on aurait sorti", "nous aurions sorti(e)s", "vous auriez sorti(e)(s)", "ils/elles auraient sortis"]
+      }
+    },
+    {
+      "infinitif": "manger",
+      "conjugaisons": {
+        "passé antérieur": ["je fus mangé(e)", "tu fus mangé(e)", "il fut mangé", "elle fut mangée", "on fut mangé(e)", "nous fûmes mangé(e)s", "vous fûtes mangé(e)(s)", "ils furent mangés", "elles furent mangées"],
+        "passé simple": ["je mangeai", "tu mangeas", "il/elle/on mangea", "nous mangeâmes", "vous mangeâtes", "ils/elles mangèrent"],
+        "plus-que-parfait": ["j'avais mangé", "tu avais mangé", "il/elle/on avait mangé", "nous avions mangé", "vous aviez mangé", "ils/elles avaient mangé"],
+        "futur antérieur": ["j'aurai mangé", "tu auras mangé", "il/elle/on aura mangé", "nous aurons mangé", "vous aurez mangé", "ils/elles auront mangé"],
+        "subjonctif passé": ["que j'aie mangé", "que tu aies mangé", "qu'il/elle/on ait mangé", "que nous ayons mangé", "que vous ayez mangé", "qu'ils/elles aient mangé"],
+        "subjonctif imparfait": ["que je mangeasse", "que tu mangeasses", "qu'il/elle/on mangeât", "que nous mangeassions", "que vous mangeassiez", "qu'ils/elles mangeassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse mangé", "que tu eusses mangé", "qu'il/elle/on eût mangé", "que nous eussions mangé", "que vous eussiez mangé", "qu'ils/elles eussent mangé"],
+        "conditionnel passé": ["j'aurais mangé", "tu aurais mangé", "il/elle/on aurait mangé", "nous aurions mangé", "vous auriez mangé", "ils/elles auraient mangé"]
+      }
+    },
+    {
+      "infinitif": "boire",
+      "conjugaisons": {
+        "passé antérieur": ["je fus bu(e)", "tu fus bu(e)", "il fut bu", "elle fut bue", "on fut bu(e)", "nous fûmes bu(e)s", "vous fûtes bu(e)(s)", "ils furent bus", "elles furent bues"],
+        "passé simple": ["je bus", "tu bus", "il/elle/on but", "nous bûmes", "vous bûtes", "ils/elles burent"],
+        "plus-que-parfait": ["j'avais bu", "tu avais bu", "il/elle/on avait bu", "nous avions bu", "vous aviez bu", "ils/elles avaient bu"],
+        "futur antérieur": ["j'aurai bu", "tu auras bu", "il/elle/on aura bu", "nous aurons bu", "vous aurez bu", "ils/elles auront bu"],
+        "subjonctif passé": ["que j'aie bu", "que tu aies bu", "qu'il/elle/on ait bu", "que nous ayons bu", "que vous ayez bu", "qu'ils/elles aient bu"],
+        "subjonctif imparfait": ["que je busse", "que tu busses", "qu'il/elle/on bût", "que nous bussions", "que vous bussiez", "qu'ils/elles bussent"],
+        "subjonctif plus-que-parfait": ["que j'eusse bu", "que tu eusses bu", "qu'il/elle/on eût bu", "que nous eussions bu", "que vous eussiez bu", "qu'ils/elles eussent bu"],
+        "conditionnel passé": ["j'aurais bu", "tu aurais bu", "il/elle/on aurait bu", "nous aurions bu", "vous auriez bu", "ils/elles auraient bu"]
+      }
+    },
+    {
+      "infinitif": "arriver",
+      "conjugaisons": {
+        "passé antérieur": ["je fus arrivé(e)", "tu fus arrivé(e)", "il fut arrivé", "elle fut arrivée", "on fut arrivé(e)", "nous fûmes arrivé(e)s", "vous fûtes arrivé(e)(s)", "ils furent arrivés", "elles furent arrivées"],
+        "passé simple": ["j'arrivai", "tu arrivas", "il/elle/on arriva", "nous arrivâmes", "vous arrivâtes", "ils/elles arrivèrent"],
+        "plus-que-parfait": ["j'étais arrivé(e)", "tu étais arrivé(e)", "il était arrivé", "elle était arrivée", "on était arrivé(e)", "nous étions arrivé(e)s", "vous étiez arrivé(e)(s)", "ils étaient arrivés", "elles étaient arrivées"],
+        "futur antérieur": ["je serai arrivé(e)", "tu seras arrivé(e)", "il sera arrivé", "elle sera arrivée", "on sera arrivé(e)", "nous serons arrivé(e)s", "vous serez arrivé(e)(s)", "ils seront arrivés", "elles seront arrivées"],
+        "subjonctif passé": ["que je sois arrivé(e)", "que tu sois arrivé(e)", "qu'il soit arrivé", "qu'elle soit arrivée", "qu'on soit arrivé(e)", "que nous soyons arrivé(e)s", "que vous soyez arrivé(e)(s)", "qu'ils soient arrivés", "qu'elles soient arrivées"],
+        "subjonctif imparfait": ["que j'arrivasse", "que tu arrivasses", "qu'il/elle/on arrivât", "que nous arrivassions", "que vous arrivassiez", "qu'ils/elles arrivassent"],
+        "subjonctif plus-que-parfait": ["que je fusse arrivé(e)", "que tu fusses arrivé(e)", "qu'il/elle/on fût arrivé", "que nous fussions arrivé(e)s", "que vous fussiez arrivé(e)(s)", "qu'ils/elles fussent arrivés"],
+        "conditionnel passé": ["j'aurais arrivé(e)", "tu aurais arrivé(e)", "il/elle/on aurait arrivé", "nous aurions arrivé(e)s", "vous auriez arrivé(e)(s)", "ils/elles auraient arrivés"]
+      }
+    },
+    {
+      "infinitif": "passer",
+      "conjugaisons": {
+        "passé antérieur": ["je fus passé(e)", "tu fus passé(e)", "il fut passé", "elle fut passée", "on fut passé(e)", "nous fûmes passé(e)s", "vous fûtes passé(e)(s)", "ils furent passés", "elles furent passées"],
+        "passé simple": ["je passai", "tu passas", "il/elle/on passa", "nous passâmes", "vous passâtes", "ils/elles passèrent"],
+        "plus-que-parfait": ["j'étais passé(e)", "tu étais passé(e)", "il était passé", "elle était passée", "on était passé(e)", "nous étions passé(e)s", "vous étiez passé(e)(s)", "ils étaient passés", "elles étaient passées"],
+        "futur antérieur": ["je serai passé(e)", "tu seras passé(e)", "il sera passé", "elle sera passée", "on sera passé(e)", "nous serons passé(e)s", "vous serez passé(e)(s)", "ils seront passés", "elles seront passées"],
+        "subjonctif passé": ["que je sois passé(e)", "que tu sois passé(e)", "qu'il soit passé", "qu'elle soit passée", "qu'on soit passé(e)", "que nous soyons passé(e)s", "que vous soyez passé(e)(s)", "qu'ils soient passés", "qu'elles soient passées"],
+        "subjonctif imparfait": ["que je passasse", "que tu passasses", "qu'il/elle/on passât", "que nous passassions", "que vous passassiez", "qu'ils/elles passassent"],
+        "subjonctif plus-que-parfait": ["que je fusse passé(e)", "que tu fusses passé(e)", "qu'il/elle/on fût passé", "que nous fussions passé(e)s", "que vous fussiez passé(e)(s)", "qu'ils/elles fussent passés"],
+        "conditionnel passé": ["j'aurais passé(e)", "tu aurais passé(e)", "il/elle/on aurait passé", "nous aurions passé(e)s", "vous auriez passé(e)(s)", "ils/elles auraient passés"]
+      }
+    },
+    {
+      "infinitif": "travailler",
+      "conjugaisons": {
+        "passé antérieur": ["je fus travaillé(e)", "tu fus travaillé(e)", "il fut travaillé", "elle fut travaillée", "on fut travaillé(e)", "nous fûmes travaillé(e)s", "vous fûtes travaillé(e)(s)", "ils furent travaillés", "elles furent travaillées"],
+        "passé simple": ["je travaillai", "tu travaillas", "il/elle/on travailla", "nous travaillâmes", "vous travaillâtes", "ils/elles travaillèrent"],
+        "plus-que-parfait": ["j'avais travaillé", "tu avais travaillé", "il/elle/on avait travaillé", "nous avions travaillé", "vous aviez travaillé", "ils/elles avaient travaillé"],
+        "futur antérieur": ["j'aurai travaillé", "tu auras travaillé", "il/elle/on aura travaillé", "nous aurons travaillé", "vous aurez travaillé", "ils/elles auront travaillé"],
+        "subjonctif passé": ["que j'aie travaillé", "que tu aies travaillé", "qu'il/elle/on ait travaillé", "que nous ayons travaillé", "que vous ayez travaillé", "qu'ils/elles aient travaillé"],
+        "subjonctif imparfait": ["que je travaillasse", "que tu travaillasses", "qu'il/elle/on travaillât", "que nous travaillassions", "que vous travaillassiez", "qu'ils/elles travaillassent"],
+        "subjonctif plus-que-parfait": ["que j'eusse travaillé", "que tu eusses travaillé", "qu'il/elle/on eût travaillé", "que nous eussions travaillé", "que vous eussiez travaillé", "qu'ils/elles eussent travaillé"],
+        "conditionnel passé": ["j'aurais travaillé", "tu aurais travaillé", "il/elle/on aurait travaillé", "nous aurions travaillé", "vous auriez travaillé", "ils/elles auraient travaillé"]
+      }
+    }
+  ]
+}
