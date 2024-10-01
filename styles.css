@@ -244,3 +244,49 @@ body.turbo-mode .center-panel {
     color: #FF69B4; /* Une couleur légèrement différente, vous pouvez ajuster cette couleur selon vos préférences */
     margin-top: 2px; /* Ajoutez un petit espace entre le verbe et le temps, si nécessaire */
 }
+/* Styles spécifiques au mode Extrême */
+body.extreme-mode {
+    background-color: #FFEFD5; /* Jaune pastel pour le contraste */
+}
+
+body.extreme-mode header {
+    background-color: #FF4500; /* Orange vif pour attirer l'attention */
+    color: #FFFFFF; /* Texte blanc pour une meilleure lisibilité */
+}
+
+body.extreme-mode .left-panel, 
+body.extreme-mode .right-panel, 
+body.extreme-mode .center-panel {
+    background-color: #FFD700; /* Jaune doré pour une apparence distincte */
+    border-color: #FFA07A; /* Saumon clair pour les bordures */
+}
+
+body.extreme-mode button {
+    background-color: #FF6347; /* Tomate pour les boutons */
+    color: #FFFFFF; /* Texte blanc pour les boutons */
+    border: 2px solid #FF4500; /* Bordure orange vif */
+}
+
+body.extreme-mode button:hover {
+    background-color: #FF7F50; /* Corail au survol */
+}
+
+body.extreme-mode input[type="text"] {
+    border-color: #FF6347; /* Bordure tomate */
+    background-color: #FFF0E1; /* Fond crème pour les inputs */
+}
+
+body.extreme-mode .score-container, 
+body.extreme-mode .score-grid {
+    color: #8B0000; /* Rouge sombre pour le texte du score */
+}
+
+body.extreme-mode .final-score {
+    background-color: #FF8C00; /* Orange foncé pour le score final */
+    color: #FFFFFF; /* Texte blanc */
+}
+
+body.extreme-mode .solution-bulle {
+    background-color: #FFE4B5; /* Jaune clair pour la bulle de solution */
+    border-color: #FF4500; /* Bordure orange vif pour la bulle de solution */
+}
