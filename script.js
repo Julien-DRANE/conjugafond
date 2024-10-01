@@ -85,18 +85,62 @@ function choisirGroupe(groupe) {
     genererPhrase(true);
 }
 
+// Fonction d'aide pour obtenir les conjugaisons disponibles
+function obtenirConjugaisonsDisponibles(verbe, temps) {
+    const conjugaisons = verbe.conjugaisons[temps];
+    if (!conjugaisons) return [];
+
+    return Object.keys(conjugaisons).filter(pronom => conjugaisons[pronom] !== "0");
+}
+
+// Fonction d'aide pour choisir un pronom disponible
+function choisirPronomDisponibles(verbe, temps) {
+    const pronomsDisponibles = obtenirConjugaisonsDisponibles(verbe, temps);
+    if (pronomsDisponibles.length === 0) return null;
+
+    return pronomsDisponibles[Math.floor(Math.random() * pronomsDisponibles.length)];
+}
+
 // Générer une phrase aléatoire
 function genererPhrase(forceGenerate = false) {
     // Si on ne doit pas générer de nouvelle phrase (après une mauvaise réponse), sortir
     if (!forceGenerate && currentQuestion > 0) return;
 
     let verbesGroupe;
+    let tempsChoisi;
+    let pronomChoisi;
 
-    // Choisir les verbes à utiliser en fonction du mode (Normal ou TURBO)
     if (modeTurboActif) {
         // Utiliser uniquement les verbes TURBO lorsque le mode TURBO est activé
         verbesGroupe = verbesTurbo.TURBO;
-        temps = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
+
+        // Tenter de trouver un verbe et un temps avec au moins un pronom disponible
+        let tentative = 0;
+        const maxTentatives = 10; // Pour éviter une boucle infinie
+        let verbeDisponible = null;
+        let tempsDisponible = null;
+
+        while (tentative < maxTentatives) {
+            tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
+            const verbeAleatoire = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
+
+            const pronomsDisponibles = obtenirConjugaisonsDisponibles(verbeAleatoire, tempsChoisi);
+
+            if (pronomsDisponibles.length > 0) {
+                verbeActuel = verbeAleatoire;
+                temps = tempsChoisi;
+                pronomChoisi = pronomsDisponibles[Math.floor(Math.random() * pronomsDisponibles.length)];
+                verbeActuel.pronomActuel = pronomChoisi;
+                break;
+            }
+
+            tentative++;
+        }
+
+        if (tentative === maxTentatives) {
+            console.error("Aucune conjugaison disponible trouvée en mode TURBO.");
+            return;
+        }
     } else {
         // Sélectionner les verbes en fonction du groupe actuel
         if (!verbes || !verbes[groupeActuel]) {
@@ -121,47 +165,56 @@ function genererPhrase(forceGenerate = false) {
 
         verbesGroupe = verbes[groupeActuel];
         const tempsOptions = ["présent", "futur", "imparfait", "passé composé"];
-        temps = tempsOptions[Math.floor(Math.random() * tempsOptions.length)];
-    }
+        tempsChoisi = tempsOptions[Math.floor(Math.random() * tempsOptions.length)];
+        temps = tempsChoisi;
 
-    // Sélectionner un verbe au hasard dans le groupe sélectionné
-    verbeActuel = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
-    if (!verbeActuel) {
-        console.error("Aucun verbe disponible pour le groupe sélectionné.");
-        return;
-    }
+        // Sélectionner un verbe au hasard dans le groupe sélectionné
+        verbeActuel = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
+        if (!verbeActuel) {
+            console.error("Aucun verbe disponible pour le groupe sélectionné.");
+            return;
+        }
 
-    // Choisir un sujet ou une description de pronom en fonction du mode TURBO
-    let sujetChoisi = modeTurboActif
-        ? descriptionPronoms[sujets[Math.floor(Math.random() * sujets.length)]]
-        : sujets[Math.floor(Math.random() * sujets.length)];
+        // Choisir un pronom aléatoire
+        pronomChoisi = sujets[Math.floor(Math.random() * sujets.length)];
+        verbeActuel.pronomActuel = pronomChoisi;
+    }
 
     // Mettre à jour l'interface utilisateur avec le verbe et le temps sélectionnés
     document.getElementById('verbe-container').innerText = `Verbe : ${verbeActuel.infinitif}`;
     document.getElementById('temps-container').innerText = `Temps : ${temps.charAt(0).toUpperCase() + temps.slice(1)}`;
-    document.getElementById('phrase-container').innerText = modeTurboActif ? `${sujetChoisi} ___` : `${sujetChoisi} _____ .`;
+
+    // Décrire le pronom
+    const sujetChoisi = modeTurboActif
+        ? descriptionPronoms[verbeActuel.pronomActuel]
+        : verbeActuel.pronomActuel;
+
+    document.getElementById('phrase-container').innerText = `${sujetChoisi} ___`;
 }
 
 // Mettre à jour l'historique des bonnes réponses uniquement
 function mettreAJourHistorique() {
     const historiqueContainer = document.getElementById('historique');
     const nouvelItem = document.createElement('li');
-    nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, Réponse : ${document.getElementById('reponse').value.trim()}`;
+    const pronom = verbeActuel.pronomActuel;
+    const conjugaison = verbeActuel.conjugaisons[temps][pronom];
+    nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaison}`;
     historiqueContainer.appendChild(nouvelItem);
 }
 
 // Vérifier la réponse de l'utilisateur
 function verifierReponse() {
     const reponseUtilisateur = document.getElementById('reponse').value.trim().toLowerCase(); // Convertir en minuscules
-    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps].map(conjugaison => conjugaison.toLowerCase()); // Convertir les conjugaisons en minuscules
+    const pronomActuel = verbeActuel.pronomActuel;
+    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][pronomActuel].toLowerCase();
 
-    if (conjugaisonsPossibles && conjugaisonsPossibles.includes(reponseUtilisateur)) {
+    if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte) {
         alert("Bonne réponse !");
         // Calcul des points : points doublés en mode TURBO
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
         score += modeTurboActif ? pointsGagnes * 2 : pointsGagnes;
         currentQuestion++;
-        
+
         // Mettre à jour l'historique uniquement si la réponse est correcte
         mettreAJourHistorique();
     } else {
@@ -171,10 +224,10 @@ function verifierReponse() {
 
     document.getElementById('score').innerText = score;
 
-    // Si la réponse est correcte, générer une nouvelle phrase
-    if (currentQuestion < totalQuestions && conjugaisonsPossibles.includes(reponseUtilisateur)) {
+    // Vérifier si le jeu est terminé
+    if (currentQuestion < totalQuestions) {
         genererPhrase(true);
-    } else if (currentQuestion >= totalQuestions) {
+    } else {
         afficherScoreFinal();
     }
 
@@ -212,20 +265,25 @@ function detecterEntree(event) {
 function toggleSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
     const solutionText = document.getElementById('solution-text');
-    const conjugaisonsPossibles = verbeActuel.conjugaisons[temps];
+    const pronomActuel = verbeActuel.pronomActuel;
+    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][pronomActuel];
 
     if (solutionBulle.style.display === 'block') {
         solutionBulle.style.display = 'none'; // Masquer la bulle si elle est visible
     } else {
-        if (conjugaisonsPossibles) {
-            solutionText.innerText = conjugaisonsPossibles.join(', ');
-            solutionBulle.style.display = 'block'; // Afficher la bulle
+        if (conjugaisonCorrecte && conjugaisonCorrecte !== "0") {
+            solutionText.innerText = conjugaisonCorrecte;
         } else {
             solutionText.innerText = "Pas de solution disponible.";
-            solutionBulle.style.display = 'block';
         }
+        solutionBulle.style.display = 'block'; // Afficher la bulle
     }
 }
 
 // Charger les verbes au démarrage du jeu
 window.onload = chargerVerbes;
+
+// Ajouter des écouteurs d'événements (si ce n'est pas déjà fait)
+document.getElementById('reponse').addEventListener('keypress', detecterEntree);
+document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
+document.getElementById('reset-button').addEventListener('click', resetGame);
