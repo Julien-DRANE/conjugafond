@@ -195,12 +195,16 @@ function genererPhrase(forceGenerate = false) {
 }
 
 // Mettre à jour l'historique des bonnes réponses uniquement
-function mettreAJourHistorique() {
+function mettreAJourHistorique(isCorrect, userResponse = "") {
     const historiqueContainer = document.getElementById('historique');
     const nouvelItem = document.createElement('li');
     const pronom = verbeActuel.pronomActuel;
     const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][verbeActuel.indicePronomActuel];
-    nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaisonCorrecte}`;
+    if (isCorrect) {
+        nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaisonCorrecte}`;
+    } else {
+        nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : Incorrecte (Réponse correcte : ${conjugaisonCorrecte})`;
+    }
     historiqueContainer.appendChild(nouvelItem);
     console.log(`Historique mis à jour: ${nouvelItem.textContent}`);
 }
@@ -230,7 +234,7 @@ function verifierReponse() {
         tentatives = 0; // Réinitialiser les tentatives
 
         // Mettre à jour l'historique uniquement si la réponse est correcte
-        mettreAJourHistorique();
+        mettreAJourHistorique(true, reponseUtilisateur);
 
         console.log(`Bonne réponse! Score actuel: ${score}. Question actuelle: ${currentQuestion}/${totalQuestions}.`);
 
@@ -242,21 +246,20 @@ function verifierReponse() {
         }
     } else {
         tentatives++;
-        alert(`Mauvaise réponse ! -1 point. Tentatives restantes: ${maxTentativesParQuestion - tentatives}`);
+        if (tentatives < maxTentativesParQuestion) {
+            alert(`Mauvaise réponse ! -1 point. Tentatives restantes: ${maxTentativesParQuestion - tentatives}`);
+        } else {
+            alert(`Mauvaise réponse ! -1 point.\nNombre maximum de tentatives atteint. La réponse correcte était: "${conjugaisonCorrecte}".`);
+        }
         score -= 1;
         document.getElementById('score').innerText = score;
         console.log(`Mauvaise réponse! Score actuel: ${score}. Tentatives: ${tentatives}/${maxTentativesParQuestion}.`);
 
         if (tentatives >= maxTentativesParQuestion) {
-            alert(`Nombre maximum de tentatives atteint. La réponse correcte était: "${conjugaisonCorrecte}".`);
+            // Enregistrer l'incorrect après le nombre maximal de tentatives
+            mettreAJourHistorique(false, reponseUtilisateur);
             tentatives = 0;
             currentQuestion++;
-            // Optionnel : enregistrer comme incorrect
-            const historiqueContainer = document.getElementById('historique');
-            const nouvelItem = document.createElement('li');
-            nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronomActuel]}, Réponse : Incorrecte (Réponse correcte : ${conjugaisonCorrecte})`;
-            historiqueContainer.appendChild(nouvelItem);
-            console.log(`Historique mis à jour avec une réponse incorrecte: ${nouvelItem.textContent}`);
 
             if (currentQuestion < totalQuestions) {
                 genererPhrase(true);
@@ -326,9 +329,10 @@ window.onload = () => {
     chargerVerbes();
 
     // Ajouter des écouteurs d'événements après le chargement des verbes
-    document.getElementById('reponse').addEventListener('keypress', detecterEntree);
+    document.getElementById('reponse').addEventListener('keydown', detecterEntree);
+    document.getElementById('verifier').addEventListener('click', verifierReponse);
     document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
-    document.getElementById('reset-button').addEventListener('click', resetGame);
+    document.getElementById('nouvelle-partie').addEventListener('click', resetGame);
     document.getElementById('modeTurbo').addEventListener('click', activerModeTurbo);
     document.getElementById('modeAleatoire').addEventListener('click', activerModeAleatoire);
     document.getElementById('premierGroupe').addEventListener('click', () => choisirGroupe('premierGroupe'));
