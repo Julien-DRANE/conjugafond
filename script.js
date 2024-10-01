@@ -194,7 +194,7 @@ function genererPhrase(forceGenerate = false) {
     document.getElementById('phrase-container').innerText = `${sujetChoisi} ___`;
 }
 
-// Mettre à jour l'historique des bonnes réponses uniquement
+// Mettre à jour l'historique des réponses
 function mettreAJourHistorique(isCorrect, userResponse = "") {
     const historiqueContainer = document.getElementById('historique');
     const nouvelItem = document.createElement('li');
@@ -331,7 +331,7 @@ window.onload = () => {
     // Ajouter des écouteurs d'événements après le chargement des verbes
     document.getElementById('reponse').addEventListener('keydown', detecterEntree);
     document.getElementById('verifier').addEventListener('click', verifierReponse);
-    document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
+    document.getElementById('bouton-solution').addEventListener('click', toggleSolution);
     document.getElementById('nouvelle-partie').addEventListener('click', resetGame);
     document.getElementById('modeTurbo').addEventListener('click', activerModeTurbo);
     document.getElementById('modeAleatoire').addEventListener('click', activerModeAleatoire);
