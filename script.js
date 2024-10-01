@@ -125,6 +125,14 @@ function activerModeExtreme() {
     genererPhrase(true);
 }
 
+// Activer le mode Aléatoire
+function activerModeAleatoire() {
+    modeAleatoireActif = !modeAleatoireActif;
+    const modeAleatoireButton = document.getElementById('modeAleatoire');
+    modeAleatoireButton.classList.toggle('active', modeAleatoireActif);
+    modeAleatoireButton.innerText = modeAleatoireActif ? "Mode Aléatoire (Actif)" : "Mode Aléatoire (Inactif)";
+}
+
 // Choisir un groupe de verbes
 function choisirGroupe(groupe) {
     groupeActuel = groupe;
