@@ -4,14 +4,17 @@ let verbesTurbo;
 let verbesExtreme; // Ajout pour le mode EXTREME
 let groupeActuel = "premierGroupe";
 
-const sujets = ["je", "tu", "il", "nous", "vous", "ils"];
+const sujets = ["je", "tu", "il", "elle", "on", "nous", "vous", "ils", "elles"];
 const descriptionPronoms = {
     je: "à la première personne du singulier",
     tu: "à la deuxième personne du singulier",
     il: "à la troisième personne du singulier",
+    elle: "à la troisième personne du singulier",
+    on: "à la troisième personne du singulier",
     nous: "à la première personne du pluriel",
     vous: "à la deuxième personne du pluriel",
-    ils: "à la troisième personne du pluriel"
+    ils: "à la troisième personne du pluriel",
+    elles: "à la troisième personne du pluriel"
 };
 
 const coefficients = {
