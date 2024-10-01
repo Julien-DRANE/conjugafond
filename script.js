@@ -231,12 +231,22 @@ function genererPhrase(forceGenerate = false) {
     document.getElementById('verbe-container').innerText = `Verbe : ${verbeActuel.infinitif}`;
     document.getElementById('temps-container').innerText = `Temps : ${temps.charAt(0).toUpperCase() + temps.slice(1)}`;
 
-    // Décrire le pronom
-    const sujetChoisi = modeTurboActif || modeExtremeActif // Vérification pour déterminer le bon mode
+    // Décrire le pronom et afficher le message
+    let messageContainer = document.getElementById('message-container');
+    const sujetChoisi = modeTurboActif || modeExtremeActif
         ? descriptionPronoms[verbeActuel.pronomActuel]
         : verbeActuel.pronomActuel;
 
     document.getElementById('phrase-container').innerText = `${sujetChoisi} ___`;
+
+    // Mettre à jour le message selon le mode actif
+    if (modeTurboActif) {
+        messageContainer.innerText = "Écris le pronom personnel et le verbe conjugué. (X2)";
+    } else if (modeExtremeActif) {
+        messageContainer.innerText = "Écris le pronom personnel du verbe conjugué et le cas échéant le genre en écrivant (e). (X3)";
+    } else {
+        messageContainer.innerText = ""; // Réinitialiser le message pour les autres modes
+    }
 }
 
 // Mettre à jour l'historique des réponses
@@ -272,7 +282,7 @@ function verifierReponse() {
 
     if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte.toLowerCase()) {
         alert("Bonne réponse !");
-        // Calcul des points : points doublés en mode TURBO
+        // Calcul des points : points doublés en mode TURBO et triplés en mode EXTREME
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
         score += modeTurboActif ? pointsGagnes * 2 : (modeExtremeActif ? pointsGagnes * 3 : pointsGagnes);
         
