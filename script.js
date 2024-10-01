@@ -1,4 +1,4 @@
-// Variables globales
+// Variables globales 
 let verbes;
 let verbesTurbo;
 let groupeActuel = "premierGroupe";
@@ -188,10 +188,12 @@ function genererPhrase(forceGenerate = false) {
 
     // Décrire le pronom
     const sujetChoisi = modeTurboActif
-        ? descriptionPronoms[verbeActuel.pronomActuel]
-        : verbeActuel.pronomActuel;
+        ? "Écrire le pronom et le verbe conjugué" // Texte pour le mode TURBO
+        : descriptionPronoms[verbeActuel.pronomActuel]; // Pour le mode normal
 
-    document.getElementById('phrase-container').innerText = `${sujetChoisi} ___`;
+    document.getElementById('phrase-container').innerText = modeTurboActif
+        ? sujetChoisi // texte pour le mode TURBO
+        : `${sujetChoisi} ___`; // texte pour le mode normal
 }
 
 // Mettre à jour l'historique des réponses
