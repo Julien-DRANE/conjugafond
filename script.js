@@ -220,6 +220,12 @@ function genererPhrase(forceGenerate = false) {
         return;
     }
 
+    // Vérifier si le pronom est défini
+    if (!pronomChoisi.pronom) {
+        console.error("Pronom est indéfini.");
+        return;
+    }
+
     // Stocker le temps et le pronom actuel pour la vérification
     temps = tempsChoisi;
     verbeActuel.pronomActuel = pronomChoisi.pronom;
