@@ -120,8 +120,6 @@ function genererPhrase(forceGenerate = false) {
         // Tenter de trouver un verbe et un temps avec au moins un pronom disponible
         let tentative = 0;
         const maxTentatives = 20; // Augmenté pour augmenter les chances de succès
-        let verbeDisponible = null;
-        let tempsDisponible = null;
 
         while (tentative < maxTentatives) {
             tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
@@ -231,18 +229,18 @@ function verifierReponse() {
 
         // Mettre à jour l'historique uniquement si la réponse est correcte
         mettreAJourHistorique();
+
+        // Vérifier si le jeu est terminé
+        if (currentQuestion < totalQuestions) {
+            genererPhrase(true);
+        } else {
+            afficherScoreFinal();
+        }
     } else {
         alert("Mauvaise réponse ! -1 point.");
         score -= 1;
-    }
-
-    document.getElementById('score').innerText = score;
-
-    // Vérifier si le jeu est terminé
-    if (currentQuestion < totalQuestions) {
-        genererPhrase(true);
-    } else {
-        afficherScoreFinal();
+        document.getElementById('score').innerText = score;
+        // Ne pas générer une nouvelle phrase, permettre à l'utilisateur de réessayer
     }
 
     // Réinitialiser le champ de réponse
