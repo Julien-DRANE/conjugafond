@@ -242,5 +242,5 @@ body.turbo-mode .center-panel {
 #temps-container {
     font-size: 2em; /* Assurez-vous que c'est la même taille que le verbe */
     color: #FF69B4; /* Une couleur légèrement différente, vous pouvez ajuster cette couleur selon vos préférences */
-    margin-top: 5px; /* Ajoutez un petit espace entre le verbe et le temps, si nécessaire */
+    margin-top: 2px; /* Ajoutez un petit espace entre le verbe et le temps, si nécessaire */
 }
