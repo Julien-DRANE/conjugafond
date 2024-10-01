@@ -169,3 +169,73 @@ input[type="text"]:focus {
         width: 90%;
     }
 }
+/* Styles généraux déjà définis */
+/* ... [Vos styles existants] ... */
+
+/* Styles spécifiques au mode TURBO */
+body.turbo-mode {
+    background-color: #FFE4E1; /* Rose saumon pastel pour un contraste doux */
+}
+
+body.turbo-mode header {
+    background-color: #FF6F61; /* Rose corail pastel pour attirer l'attention */
+    color: #FFFFFF; /* Texte blanc pour une meilleure lisibilité */
+}
+
+body.turbo-mode .left-panel, 
+body.turbo-mode .right-panel, 
+body.turbo-mode .center-panel {
+    background-color: #FFDAB9; /* Pêche pastel pour une apparence différente */
+    border-color: #FFB6C1; /* Rose clair pastel pour les bordures */
+}
+
+body.turbo-mode button {
+    background-color: #FF69B4; /* Rose vif pastel pour les boutons */
+    color: #FFFFFF; /* Texte blanc pour les boutons */
+    border: 2px solid #FF1493; /* Bordure rose profond pastel */
+}
+
+body.turbo-mode button:hover {
+    background-color: #FF1493; /* Rose profond pastel au survol */
+}
+
+body.turbo-mode input[type="text"] {
+    border-color: #FF69B4; /* Bordure rose vif pastel */
+    background-color: #FFE4E1; /* Rose saumon pâle pour le fond des inputs */
+}
+
+body.turbo-mode .score-container, 
+body.turbo-mode .score-grid {
+    color: #D2691E; /* Brun chaud pour le texte du score */
+}
+
+body.turbo-mode .final-score {
+    background-color: #FA8072; /* Saumon pour le score final */
+    color: #FFFFFF; /* Texte blanc */
+}
+
+body.turbo-mode .solution-bulle {
+    background-color: #FFB6C1; /* Rose clair pour la bulle de solution */
+    border-color: #FF69B4; /* Rose vif pastel pour la bordure */
+}
+
+/* Animation subtile pour attirer l'attention en mode TURBO */
+body.turbo-mode header, 
+body.turbo-mode .left-panel, 
+body.turbo-mode .right-panel, 
+body.turbo-mode .center-panel {
+    animation: pulse 2s infinite;
+}
+
+/* Définition de l'animation 'pulse' */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+    }
+}
