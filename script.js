@@ -230,6 +230,10 @@ function verifierReponse() {
         // Calcul des points : points doublés en mode TURBO
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
         score += modeTurboActif ? pointsGagnes * 2 : pointsGagnes;
+        
+        // **Mise à jour de l'élément HTML du score**
+        document.getElementById('score').innerText = score;
+        
         currentQuestion++;
         tentatives = 0; // Réinitialiser les tentatives
 
@@ -252,7 +256,10 @@ function verifierReponse() {
             alert(`Mauvaise réponse ! -1 point.\nNombre maximum de tentatives atteint. La réponse correcte était: "${conjugaisonCorrecte}".`);
         }
         score -= 1;
+        
+        // **Mise à jour de l'élément HTML du score**
         document.getElementById('score').innerText = score;
+        
         console.log(`Mauvaise réponse! Score actuel: ${score}. Tentatives: ${tentatives}/${maxTentativesParQuestion}.`);
 
         if (tentatives >= maxTentativesParQuestion) {
