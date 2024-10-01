@@ -22,15 +22,15 @@
             <div class="left-panel">
                 <div class="game-controls">
                     <label for="niveau">Mode :</label>
-                    <button id="modeAleatoire" class="active" onclick="activerModeAleatoire()">Mode Aléatoire (Actif)</button>
+                    <button id="modeAleatoire" class="active">Mode Aléatoire (Actif)</button>
                     
                     <!-- Bouton TURBO -->
-                    <button id="modeTurbo" onclick="activerModeTurbo()">Mode TURBO (Inactif)</button>
+                    <button id="modeTurbo">Mode TURBO (Inactif)</button>
 
                     <label for="niveau">Choisir le groupe de verbes :</label>
-                    <button id="premierGroupe" onclick="choisirGroupe('premierGroupe')">1er Groupe</button>
-                    <button id="deuxiemeGroupe" onclick="choisirGroupe('deuxiemeGroupe')">2ème Groupe</button>
-                    <button id="troisiemeGroupe" onclick="choisirGroupe('troisiemeGroupe')">3ème Groupe</button>
+                    <button id="premierGroupe">1er Groupe</button>
+                    <button id="deuxiemeGroupe">2ème Groupe</button>
+                    <button id="troisiemeGroupe">3ème Groupe</button>
                 </div>
             </div>
 
@@ -45,19 +45,18 @@
                     <!-- La phrase à compléter s'affichera ici -->
                 </div>
 
-                <input type="text" id="reponse" placeholder="Entrez le verbe conjugué" onkeydown="detecterEntree(event)">
-                <button onclick="verifierReponse()">Valider</button>
+                <input type="text" id="reponse" placeholder="Entrez le verbe conjugué">
+                <button id="verifier">Valider</button>
                 
                 <!-- Bouton Solution -->
-                <button id="bouton-solution" onclick="toggleSolution()">
-                Solution
+                <button id="bouton-solution">
+                    Solution
                 </button>
 
                 <!-- Bulle de solution -->
                 <div id="solution-bulle" class="solution-bulle" style="display: none;">
-                <span id="solution-text"></span>
+                    <span id="solution-text"></span>
                 </div>
-
 
                 <div class="score-container">
                     Score : <span id="score">0</span>
@@ -76,7 +75,7 @@
                     <ul id="historique"></ul>
                 </div>
                 <!-- Ajout du bouton "Nouvelle Partie" dans le panneau de droite -->
-                <button id="nouvelle-partie" onclick="resetGame()">Nouvelle Partie</button>
+                <button id="nouvelle-partie">Nouvelle Partie</button>
             </div>
         </div>
     </div>
