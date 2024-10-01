@@ -26,7 +26,18 @@ let historique = [];
 let modeAleatoireActif = true;
 let modeTurboActif = false; // Mode TURBO désactivé par défaut
 let groupesUtilises = new Set();
-const tempsTurbo = ["présent", "futur", "imparfait", "passé composé", "imparfait du subjonctif", "conditionnel présent", "subjonctif présent", "impératif", "passé simple", "participe présent"];
+const tempsTurbo = [
+    "présent",
+    "futur",
+    "imparfait",
+    "passé composé",
+    "imparfait du subjonctif",
+    "conditionnel présent",
+    "subjonctif présent",
+    "impératif",
+    "passé simple",
+    "participe présent"
+];
 let tentatives = 0;
 const maxTentativesParQuestion = 3;
 
@@ -121,33 +132,7 @@ function genererPhrase(forceGenerate = false) {
     if (modeTurboActif) {
         // Utiliser uniquement les verbes TURBO lorsque le mode TURBO est activé
         verbesGroupe = verbesTurbo.TURBO;
-
-        // Tenter de trouver un verbe et un temps avec au moins un pronom disponible
-        let tentative = 0;
-        const maxTentatives = 20; // Augmenté pour augmenter les chances de succès
-
-        while (tentative < maxTentatives) {
-            tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
-            const verbeAleatoire = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
-
-            pronomChoisi = choisirPronomDisponible(verbeAleatoire, tempsChoisi);
-
-            if (pronomChoisi !== null) {
-                verbeActuel = verbeAleatoire;
-                temps = tempsChoisi;
-                verbeActuel.pronomActuel = pronomChoisi.pronom;
-                verbeActuel.indicePronomActuel = pronomChoisi.indice;
-                console.log(`Phrase générée en mode TURBO: Verbe "${verbeActuel.infinitif}", Temps "${temps}", Pronom "${pronomChoisi.pronom}".`);
-                break;
-            }
-
-            tentative++;
-        }
-
-        if (tentative === maxTentatives) {
-            console.error("Aucune conjugaison disponible trouvée en mode TURBO.");
-            return;
-        }
+        tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
     } else {
         // Sélectionner les verbes en fonction du groupe actuel
         if (!verbes || !verbes[groupeActuel]) {
@@ -173,26 +158,29 @@ function genererPhrase(forceGenerate = false) {
         verbesGroupe = verbes[groupeActuel];
         const tempsOptions = ["présent", "futur", "imparfait", "passé composé"];
         tempsChoisi = tempsOptions[Math.floor(Math.random() * tempsOptions.length)];
-        temps = tempsChoisi;
-
-        verbeActuel = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
-        if (!verbeActuel) {
-            console.error("Aucun verbe disponible pour le groupe sélectionné.");
-            return;
-        }
-
-        pronomChoisi = choisirPronomDisponible(verbeActuel, tempsChoisi);
-        if (pronomChoisi === null) {
-            console.error(`Aucun pronom disponible pour le verbe "${verbeActuel.infinitif}" au temps "${tempsChoisi}".`);
-            genererPhrase(true); // Tenter de générer une nouvelle phrase
-            return;
-        }
-
-        verbeActuel.pronomActuel = pronomChoisi.pronom;
-        verbeActuel.indicePronomActuel = pronomChoisi.indice;
-
-        console.log(`Phrase générée en mode Normal: Verbe "${verbeActuel.infinitif}", Temps "${temps}", Pronom "${pronomChoisi.pronom}".`);
     }
+
+    // Sélectionner un verbe au hasard dans le groupe sélectionné
+    verbeActuel = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
+    if (!verbeActuel) {
+        console.error("Aucun verbe disponible pour le groupe sélectionné.");
+        return;
+    }
+
+    // Choisir un pronom disponible
+    pronomChoisi = choisirPronomDisponible(verbeActuel, tempsChoisi);
+    if (pronomChoisi === null) {
+        console.error(`Aucun pronom disponible pour le verbe "${verbeActuel.infinitif}" au temps "${tempsChoisi}".`);
+        genererPhrase(true); // Tenter de générer une nouvelle phrase
+        return;
+    }
+
+    // Stocker le temps et le pronom actuel pour la vérification
+    temps = tempsChoisi;
+    verbeActuel.pronomActuel = pronomChoisi.pronom;
+    verbeActuel.indicePronomActuel = pronomChoisi.indice;
+
+    console.log(`Phrase générée: Verbe "${verbeActuel.infinitif}", Temps "${temps}", Pronom "${pronomChoisi.pronom}".`);
 
     // Mettre à jour l'interface utilisateur avec le verbe et le temps sélectionnés
     document.getElementById('verbe-container').innerText = `Verbe : ${verbeActuel.infinitif}`;
@@ -211,8 +199,8 @@ function mettreAJourHistorique() {
     const historiqueContainer = document.getElementById('historique');
     const nouvelItem = document.createElement('li');
     const pronom = verbeActuel.pronomActuel;
-    const conjugaison = verbeActuel.conjugaisons[temps][verbeActuel.indicePronomActuel];
-    nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaison}`;
+    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][verbeActuel.indicePronomActuel];
+    nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaisonCorrecte}`;
     historiqueContainer.appendChild(nouvelItem);
     console.log(`Historique mis à jour: ${nouvelItem.textContent}`);
 }
@@ -263,7 +251,13 @@ function verifierReponse() {
             alert(`Nombre maximum de tentatives atteint. La réponse correcte était: "${conjugaisonCorrecte}".`);
             tentatives = 0;
             currentQuestion++;
-            mettreAJourHistorique(); // Optionnel : enregistrer comme incorrect
+            // Optionnel : enregistrer comme incorrect
+            const historiqueContainer = document.getElementById('historique');
+            const nouvelItem = document.createElement('li');
+            nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronomActuel]}, Réponse : Incorrecte (Réponse correcte : ${conjugaisonCorrecte})`;
+            historiqueContainer.appendChild(nouvelItem);
+            console.log(`Historique mis à jour avec une réponse incorrecte: ${nouvelItem.textContent}`);
+
             if (currentQuestion < totalQuestions) {
                 genererPhrase(true);
             } else {
@@ -327,11 +321,11 @@ function toggleSolution() {
     }
 }
 
-// Charger les verbes au démarrage du jeu
+// Charger les verbes au démarrage du jeu et ajouter les écouteurs d'événements une seule fois
 window.onload = () => {
     chargerVerbes();
 
-    // Ajouter des écouteurs d'événements après le chargement du DOM
+    // Ajouter des écouteurs d'événements après le chargement des verbes
     document.getElementById('reponse').addEventListener('keypress', detecterEntree);
     document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
     document.getElementById('reset-button').addEventListener('click', resetGame);
