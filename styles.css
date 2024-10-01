@@ -1,578 +1,171 @@
-/* Style général */
-body, html {
+/* Style général du corps de la page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFF8F0; /* Blanc cassé pastel */
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #f0f4c3, #e1bee7);
 }
 
-/* Container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* En-tête */
+/* Style de l'en-tête */
 header {
-    background-color: #ffcccb;
+    background-color: #AEC6CF; /* Bleu pastel */
+    color: #333333; /* Gris foncé pour le texte */
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h1.logo {
-    margin: 0;
-    font-size: 36px;
-    color: #333;
-}
-
-/* Instruction sous le titre */
-.instruction {
-    font-size: 18px;
-    color: #555;
-    margin: 10px 0;
-}
-
-/* Symbole x2 pour le mode TURBO */
-.turbo-x2 {
-    display: inline-block;
-    font-size: 36px;
-    font-weight: bold;
-    color: #ff1744;
-    margin-top: 10px;
-    animation: pulse 1s infinite;
-}
-
-/* Animation pour le symbole x2 */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
+/* Container principal */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
 }
 
 /* Zone de jeu */
 .game-area {
     display: flex;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Panneaux gauche, central et droit */
+.left-panel, .right-panel, .center-panel {
     padding: 20px;
-    flex-wrap: wrap; /* Permet aux panneaux de se réorganiser */
+    box-sizing: border-box;
 }
 
-/* Panneau de gauche */
-.left-panel {
-    width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.game-controls button {
-    padding: 10px 20px;
-    margin: 10px 0;
-    background-color: #8c9eff;
-    color: #fff;
-    border: none;
+/* Panneaux gauche et droit */
+.left-panel, .right-panel {
+    width: 25%;
+    background-color: #FFDFBA; /* Beige pastel */
+    border: 1px solid #FFD1DC; /* Rose pâle */
     border-radius: 10px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%; /* Boutons prennent toute la largeur */
-}
-
-.game-controls button:hover {
-    background-color: #536dfe;
-}
-
-.game-controls button.active {
-    background-color: #ba68c8; /* Couleur pour le bouton actif */
+    margin: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Panneau central */
 .center-panel {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Cible */
-.target {
-    background-color: #fff9c4;
-    padding: 20px;
-    margin-bottom: 20px;
+    width: 50%;
+    background-color: #FFEBEE; /* Rose très pâle */
+    border: 1px solid #FFE0B2; /* Orange clair pastel */
     border-radius: 10px;
+    margin: 0 10px;
     text-align: center;
-    width: 80%; /* Largeur adaptée */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.target h2 {
-    font-size: 24px;
-    margin: 0;
+/* Titres et textes dans les panneaux */
+.left-panel h3, .right-panel h3, .center-panel h2 {
+    color: #6B5B95; /* Violet pastel */
 }
 
-/* Temps */
-#temps-container {
-    font-size: 28px; /* Taille plus grande pour le temps */
-    font-weight: bold;
-}
-
-/* Phrase */
-.phrase {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-/* Input et bouton Valider */
-input#reponse, button {
-    padding: 10px;
-    font-size: 1em;
-    margin: 5px;
-}
-
-input#reponse {
-    width: 60%;
-    max-width: 300px;
-}
-
-/* Bouton Valider - mise à jour */
+/* Boutons */
 button {
-    background-color: #4CAF50; /* Couleur verte */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
     padding: 10px 20px;
-    transition: background-color 0.3s;
-    width: 100%; /* Largeur adaptée */
+    margin: 5px;
+    border: none;
+    border-radius: 20px;
+    background-color: #FFB6C1; /* Rose pastel */
+    color: #333333; /* Gris foncé pour le texte */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
 }
 
 button:hover {
-    background-color: #388E3C; /* Vert plus foncé lors du survol */
+    background-color: #FF69B4; /* Rose vif pastel */
 }
 
-/* Bouton Solution */
-#bouton-solution {
-    background-color: #ff7043;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 10px 20px;
-    transition: background-color 0.3s;
-    width: 100%; /* Largeur adaptée */
+button.active {
+    background-color: #FF1493; /* Rose profond pastel */
 }
 
-#bouton-solution:hover {
-    background-color: #ff5722;
+/* Champs de saisie */
+input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 2px solid #FFB6C1; /* Rose pastel */
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: #FFF0F5; /* Lavande pâle */
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #FF69B4; /* Rose vif pastel */
+    outline: none;
+}
+
+/* Conteneurs de score et grille de score */
+.score-container, .score-grid {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333333; /* Gris foncé */
+}
+
+/* Score final */
+.final-score {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #6B5B95; /* Violet pastel */
+    background-color: #FFF0F5; /* Lavande pâle */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Bulle de solution */
 .solution-bulle {
-    position: absolute;
-    background-color: #ffecb3;
-    color: #333;
-    border: 1px solid #f57f17;
+    margin-top: 10px;
     padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 100;
-    width: 300px;
-    max-width: 100%;
-    font-size: 16px;
-    text-align: center;
-}
-
-/* Bouton Nouvelle Partie */
-#nouvelle-partie {
-    padding: 15px 25px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-top: 20px;
-    display: inline-block;
-    width: 100%; /* Largeur du bouton */
-    text-align: center;
-}
-
-#nouvelle-partie:hover {
-    background-color: #45a049;
-}
-
-/* Mode TURBO */
-body.turbo-mode {
-    background: linear-gradient(to right, #ff8a80, #d500f9);
-}
-
-body.turbo-mode header {
-    background-color: #ff4081;
-}
-
-body.turbo-mode .target {
-    background-color: #ffecb3;
-    color: #d500f9;
-}
-
-body.turbo-mode button {
-    background-color: #4CAF50; /* Couleur verte maintenue en mode TURBO */
-    border: none;
-}
-
-body.turbo-mode button:hover {
-    background-color: #388E3C; /* Vert plus foncé lors du survol */
-}
-
-body.turbo-mode #modeTurbo {
-    background-color: #d500f9;
-    border: 2px solid #880e4f;
-}
-
-body.turbo-mode .final-score {
-    color: #ff1744;
-}
-
-/* Historique */
-#historique-container {
-    background-color: #e0f7fa;
-    border: 1px solid #f57f17;
+    background-color: #E0FFFF; /* Cyan pâle */
+    border: 1px solid #ADD8E6; /* Bleu clair pastel */
     border-radius: 10px;
-    padding: 10px;
+    color: #333333; /* Gris foncé */
+    display: none; /* Masqué par défaut */
+}
+
+/* Liste d'historique */
+#historique {
+    list-style-type: none;
+    padding: 0;
     max-height: 300px;
     overflow-y: auto;
-    width: 100%;
 }
 
-/* Enlever les puces sous l'historique */
-#historique {
-    list-style-type: none; /* Enlève les puces de la liste */
-    padding: 0;
-    margin: 0;
-}
-
-/* Appliquer des marges pour chaque élément de l'historique */
 #historique li {
-    margin: 5px 0; /* Espacement vertical entre les éléments */
+    background-color: #FFF0F5; /* Lavande pâle */
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #FFD1DC; /* Rose pâle */
+    font-size: 0.9em;
+    color: #333333; /* Gris foncé */
 }
 
-/* Affichage du score */
-.score-container {
-    margin-top: 20px;
-    font-size: 36px; /* Taille de police plus grande */
-    font-weight: bold;
-    color: #00468B; /* Couleur verte pour le score */
-    text-align: center;
-}
-
-/* Style spécifique pour l'élément du score */
-#score {
-    font-size: 48px; /* Taille de police plus grande pour le score */
-    font-weight: bold;
-    color: #00468B; /* Vert plus foncé pour le score */
-}
-
-/* Style pour le score final affiché à la fin de la partie */
-.final-score {
-    font-size: 48px; /* Taille plus grande pour le score final */
-    font-weight: bold;
-    color: #FF5722; /* Couleur rouge-orange pour le score final */
-    margin-top: 20px;
-    text-align: center;
-}
-
-/* Style spécifique pour le bouton Mode TURBO */
-#modeTurbo {
-    background-color: #1E88E5; /* Couleur de fond actuelle */
-    border: 3px solid #ff8a80; /* Contour rouge clair */
-    color: white;
-    border-radius: 8px; /* Bordures arrondies */
-    font-size: 18px;
-    cursor: pointer;
-    padding: 10px 20px;
-    margin-top: 10px;
-    transition: border 0.3s, background-color 0.3s;
-    width: 100%; /* Largeur du bouton */
-}
-
-/* Effet de survol pour le bouton Mode TURBO */
-#modeTurbo:hover {
-    background-color: #c2185b; /* Couleur de fond plus foncée au survol */
-    border: 3px solid #ff5252; /* Contour rouge clair plus foncé */
-}
-
-/* Styles Responsives */
+/* Adaptabilité pour les petits écrans */
 @media (max-width: 768px) {
-    .left-panel, .right-panel {
-        width: 100%; /* Les panneaux prennent toute la largeur sur mobile */
-        margin-bottom: 20px; /* Ajoute un espacement entre les panneaux */
-    }
-
-    .center-panel {
-        width: 100%; /* Le panneau central prend toute la largeur sur mobile */
-    }
-
     .game-area {
-        flex-direction: column; /* Empile les panneaux verticalement sur mobile */
-        padding: 10px; /* Réduit le padding */
+        flex-direction: column;
+        align-items: center;
     }
 
-    h1.logo {
-        font-size: 28px; /* Réduit la taille de la police du logo */
-    }
-
-    .instruction {
-        font-size: 16px; /* Réduit la taille de la police des instructions */
-    }
-
-    input#reponse {
-        width: 80%; /* Ajuste la largeur de l'input sur mobile */
+    .left-panel, .right-panel, .center-panel {
+        width: 90%;
+        margin: 10px 0;
     }
 
     button {
-        font-size: 16px; /* Réduit la taille des boutons */
-    }
-
-    .phrase {
-        font-size: 18px; /* Ajuste la taille de la phrase sur mobile */
-    }
-
-    .solution-bulle {
-        width: 80%; /* Ajuste la largeur de la bulle de solution */
-    }
-
-    .score-container, .final-score {
-        font-size: 24px; /* Ajuste la taille du texte du score */
-    }
-
-    #score, .final-score {
-        font-size: 36px; /* Ajuste la taille du score affiché */
-    }
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.game-area {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.left-panel, .right-panel, .center-panel {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.left-panel, .right-panel {
-    width: 25%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 10px;
-}
-
-.center-panel {
-    width: 50%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 10px;
-    text-align: center;
-}
-
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    border-radius: 3px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-button.active {
-    background-color: #388E3C;
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-}
-
-.score-container, .score-grid {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-.final-score {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.solution-bulle {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #eef;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    .game-area {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-panel, .right-panel, .center-panel {
-        width: 90%;
+        width: 100%;
         margin: 10px 0;
     }
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
 
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-}
-
-.game-area {
-    display: flex;
-    width: 100%;
-    max-width: 1200px;
-}
-
-.left-panel, .right-panel, .center-panel {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.left-panel, .right-panel {
-    width: 25%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 10px;
-}
-
-.center-panel {
-    width: 50%;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 10px;
-    text-align: center;
-}
-
-button {
-    padding: 10px 15px;
-    margin: 5px;
-    border: none;
-    border-radius: 3px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-button.active {
-    background-color: #388E3C;
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-}
-
-.score-container, .score-grid {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-.final-score {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #333;
-}
-
-.solution-bulle {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #eef;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    .game-area {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-panel, .right-panel, .center-panel {
+    input[type="text"] {
         width: 90%;
-        margin: 10px 0;
     }
 }
