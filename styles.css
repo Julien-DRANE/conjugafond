@@ -290,3 +290,8 @@ body.extreme-mode .solution-bulle {
     background-color: #FFE4B5; /* Jaune clair pour la bulle de solution */
     border-color: #FF4500; /* Bordure orange vif pour la bulle de solution */
 }
+.message {
+    font-size: 1.2em;
+    color: #FF4500; /* Couleur orange vif pour attirer l'attention */
+    margin: 10px 0;
+}
