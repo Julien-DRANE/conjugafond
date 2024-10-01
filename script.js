@@ -85,20 +85,23 @@ function choisirGroupe(groupe) {
     genererPhrase(true);
 }
 
-// Fonction d'aide pour obtenir les conjugaisons disponibles
-function obtenirConjugaisonsDisponibles(verbe, temps) {
+// Fonction d'aide pour obtenir les indices des pronoms disponibles
+function obtenirIndicesPronomsDisponibles(verbe, temps) {
     const conjugaisons = verbe.conjugaisons[temps];
     if (!conjugaisons) return [];
 
-    return Object.keys(conjugaisons).filter(pronom => conjugaisons[pronom] !== "0");
+    return conjugaisons
+        .map((conj, index) => conj !== "0" ? index : null)
+        .filter(index => index !== null);
 }
 
 // Fonction d'aide pour choisir un pronom disponible
-function choisirPronomDisponibles(verbe, temps) {
-    const pronomsDisponibles = obtenirConjugaisonsDisponibles(verbe, temps);
-    if (pronomsDisponibles.length === 0) return null;
+function choisirPronomDisponible(verbe, temps) {
+    const indicesDisponibles = obtenirIndicesPronomsDisponibles(verbe, temps);
+    if (indicesDisponibles.length === 0) return null;
 
-    return pronomsDisponibles[Math.floor(Math.random() * pronomsDisponibles.length)];
+    const indiceChoisi = indicesDisponibles[Math.floor(Math.random() * indicesDisponibles.length)];
+    return { pronom: sujets[indiceChoisi], indice: indiceChoisi };
 }
 
 // Générer une phrase aléatoire
@@ -108,7 +111,7 @@ function genererPhrase(forceGenerate = false) {
 
     let verbesGroupe;
     let tempsChoisi;
-    let pronomChoisi;
+    let pronomChoisi = null;
 
     if (modeTurboActif) {
         // Utiliser uniquement les verbes TURBO lorsque le mode TURBO est activé
@@ -116,7 +119,7 @@ function genererPhrase(forceGenerate = false) {
 
         // Tenter de trouver un verbe et un temps avec au moins un pronom disponible
         let tentative = 0;
-        const maxTentatives = 10; // Pour éviter une boucle infinie
+        const maxTentatives = 20; // Augmenté pour augmenter les chances de succès
         let verbeDisponible = null;
         let tempsDisponible = null;
 
@@ -124,13 +127,13 @@ function genererPhrase(forceGenerate = false) {
             tempsChoisi = tempsTurbo[Math.floor(Math.random() * tempsTurbo.length)];
             const verbeAleatoire = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
 
-            const pronomsDisponibles = obtenirConjugaisonsDisponibles(verbeAleatoire, tempsChoisi);
+            pronomChoisi = choisirPronomDisponible(verbeAleatoire, tempsChoisi);
 
-            if (pronomsDisponibles.length > 0) {
+            if (pronomChoisi !== null) {
                 verbeActuel = verbeAleatoire;
                 temps = tempsChoisi;
-                pronomChoisi = pronomsDisponibles[Math.floor(Math.random() * pronomsDisponibles.length)];
-                verbeActuel.pronomActuel = pronomChoisi;
+                verbeActuel.pronomActuel = pronomChoisi.pronom;
+                verbeActuel.indicePronomActuel = pronomChoisi.indice;
                 break;
             }
 
@@ -168,16 +171,21 @@ function genererPhrase(forceGenerate = false) {
         tempsChoisi = tempsOptions[Math.floor(Math.random() * tempsOptions.length)];
         temps = tempsChoisi;
 
-        // Sélectionner un verbe au hasard dans le groupe sélectionné
         verbeActuel = verbesGroupe[Math.floor(Math.random() * verbesGroupe.length)];
         if (!verbeActuel) {
             console.error("Aucun verbe disponible pour le groupe sélectionné.");
             return;
         }
 
-        // Choisir un pronom aléatoire
-        pronomChoisi = sujets[Math.floor(Math.random() * sujets.length)];
-        verbeActuel.pronomActuel = pronomChoisi;
+        pronomChoisi = choisirPronomDisponible(verbeActuel, tempsChoisi);
+        if (pronomChoisi === null) {
+            console.error(`Aucun pronom disponible pour le verbe "${verbeActuel.infinitif}" au temps "${tempsChoisi}".`);
+            genererPhrase(true); // Tenter de générer une nouvelle phrase
+            return;
+        }
+
+        verbeActuel.pronomActuel = pronomChoisi.pronom;
+        verbeActuel.indicePronomActuel = pronomChoisi.indice;
     }
 
     // Mettre à jour l'interface utilisateur avec le verbe et le temps sélectionnés
@@ -197,7 +205,7 @@ function mettreAJourHistorique() {
     const historiqueContainer = document.getElementById('historique');
     const nouvelItem = document.createElement('li');
     const pronom = verbeActuel.pronomActuel;
-    const conjugaison = verbeActuel.conjugaisons[temps][pronom];
+    const conjugaison = verbeActuel.conjugaisons[temps][verbeActuel.indicePronomActuel];
     nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaison}`;
     historiqueContainer.appendChild(nouvelItem);
 }
@@ -206,9 +214,15 @@ function mettreAJourHistorique() {
 function verifierReponse() {
     const reponseUtilisateur = document.getElementById('reponse').value.trim().toLowerCase(); // Convertir en minuscules
     const pronomActuel = verbeActuel.pronomActuel;
-    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][pronomActuel].toLowerCase();
+    const indicePronomActuel = verbeActuel.indicePronomActuel;
+    let conjugaisonCorrecte = "";
 
-    if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte) {
+    // Récupérer la conjugaison correcte en fonction de l'indice
+    if (verbeActuel.conjugaisons[temps]) {
+        conjugaisonCorrecte = verbeActuel.conjugaisons[temps][indicePronomActuel].toLowerCase();
+    }
+
+    if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte.toLowerCase()) {
         alert("Bonne réponse !");
         // Calcul des points : points doublés en mode TURBO
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
@@ -266,7 +280,8 @@ function toggleSolution() {
     const solutionBulle = document.getElementById('solution-bulle');
     const solutionText = document.getElementById('solution-text');
     const pronomActuel = verbeActuel.pronomActuel;
-    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][pronomActuel];
+    const indicePronomActuel = verbeActuel.indicePronomActuel;
+    const conjugaisonCorrecte = verbeActuel.conjugaisons[temps][indicePronomActuel];
 
     if (solutionBulle.style.display === 'block') {
         solutionBulle.style.display = 'none'; // Masquer la bulle si elle est visible
@@ -281,9 +296,16 @@ function toggleSolution() {
 }
 
 // Charger les verbes au démarrage du jeu
-window.onload = chargerVerbes;
+window.onload = () => {
+    chargerVerbes();
 
-// Ajouter des écouteurs d'événements (si ce n'est pas déjà fait)
-document.getElementById('reponse').addEventListener('keypress', detecterEntree);
-document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
-document.getElementById('reset-button').addEventListener('click', resetGame);
+    // Ajouter des écouteurs d'événements après le chargement du DOM
+    document.getElementById('reponse').addEventListener('keypress', detecterEntree);
+    document.getElementById('toggle-solution').addEventListener('click', toggleSolution);
+    document.getElementById('reset-button').addEventListener('click', resetGame);
+    document.getElementById('modeTurbo').addEventListener('click', activerModeTurbo);
+    document.getElementById('modeAleatoire').addEventListener('click', activerModeAleatoire);
+    document.getElementById('premierGroupe').addEventListener('click', () => choisirGroupe('premierGroupe'));
+    document.getElementById('deuxiemeGroupe').addEventListener('click', () => choisirGroupe('deuxiemeGroupe'));
+    document.getElementById('troisiemeGroupe').addEventListener('click', () => choisirGroupe('troisiemeGroupe'));
+};
