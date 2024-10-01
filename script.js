@@ -42,7 +42,7 @@ async function chargerVerbes() {
         console.log("Verbes TURBO chargés : ", verbesTurbo);
 
         // Générer la première phrase après le chargement des verbes
-        genererPhrase();
+        genererPhrase(true); // Générer une phrase initiale
     } catch (error) {
         console.error('Erreur : ', error);
     }
@@ -107,7 +107,10 @@ function choisirPronomDisponible(verbe, temps) {
 // Générer une phrase aléatoire
 function genererPhrase(forceGenerate = false) {
     // Si on ne doit pas générer de nouvelle phrase (après une mauvaise réponse), sortir
-    if (!forceGenerate && currentQuestion > 0) return;
+    if (!forceGenerate && currentQuestion > 0) {
+        console.log("Pas de génération de nouvelle phrase car forceGenerate est false et currentQuestion > 0.");
+        return;
+    }
 
     let verbesGroupe;
     let tempsChoisi;
@@ -132,6 +135,7 @@ function genererPhrase(forceGenerate = false) {
                 temps = tempsChoisi;
                 verbeActuel.pronomActuel = pronomChoisi.pronom;
                 verbeActuel.indicePronomActuel = pronomChoisi.indice;
+                console.log(`Phrase générée en mode TURBO: Verbe "${verbeActuel.infinitif}", Temps "${temps}", Pronom "${pronomChoisi.pronom}".`);
                 break;
             }
 
@@ -184,6 +188,8 @@ function genererPhrase(forceGenerate = false) {
 
         verbeActuel.pronomActuel = pronomChoisi.pronom;
         verbeActuel.indicePronomActuel = pronomChoisi.indice;
+
+        console.log(`Phrase générée en mode Normal: Verbe "${verbeActuel.infinitif}", Temps "${temps}", Pronom "${pronomChoisi.pronom}".`);
     }
 
     // Mettre à jour l'interface utilisateur avec le verbe et le temps sélectionnés
@@ -206,6 +212,7 @@ function mettreAJourHistorique() {
     const conjugaison = verbeActuel.conjugaisons[temps][verbeActuel.indicePronomActuel];
     nouvelItem.textContent = `Verbe : ${verbeActuel.infinitif}, Temps : ${temps}, ${descriptionPronoms[pronom]}, Réponse : ${conjugaison}`;
     historiqueContainer.appendChild(nouvelItem);
+    console.log(`Historique mis à jour: ${nouvelItem.textContent}`);
 }
 
 // Vérifier la réponse de l'utilisateur
@@ -220,6 +227,10 @@ function verifierReponse() {
         conjugaisonCorrecte = verbeActuel.conjugaisons[temps][indicePronomActuel].toLowerCase();
     }
 
+    console.log(`Vérification de la réponse pour le verbe "${verbeActuel.infinitif}", temps "${temps}", pronom "${pronomActuel}".`);
+    console.log(`Réponse utilisateur : "${reponseUtilisateur}"`);
+    console.log(`Conjugaison correcte : "${conjugaisonCorrecte}"`);
+
     if (conjugaisonCorrecte !== "0" && reponseUtilisateur === conjugaisonCorrecte.toLowerCase()) {
         alert("Bonne réponse !");
         // Calcul des points : points doublés en mode TURBO
@@ -230,16 +241,19 @@ function verifierReponse() {
         // Mettre à jour l'historique uniquement si la réponse est correcte
         mettreAJourHistorique();
 
+        console.log(`Bonne réponse! Score actuel: ${score}. Question actuelle: ${currentQuestion}/${totalQuestions}.`);
+
         // Vérifier si le jeu est terminé
         if (currentQuestion < totalQuestions) {
-            genererPhrase(true);
+            genererPhrase(true); // Générer une nouvelle phrase pour la prochaine question
         } else {
-            afficherScoreFinal();
+            afficherScoreFinal(); // Afficher le score final si le nombre total de questions est atteint
         }
     } else {
         alert("Mauvaise réponse ! -1 point.");
         score -= 1;
         document.getElementById('score').innerText = score;
+        console.log(`Mauvaise réponse! Score actuel: ${score}.`);
         // Ne pas générer une nouvelle phrase, permettre à l'utilisateur de réessayer
     }
 
@@ -251,6 +265,7 @@ function verifierReponse() {
 function afficherScoreFinal() {
     document.getElementById('final-score-value').innerText = score;
     document.getElementById('final-score').style.display = 'block';
+    console.log(`Score final affiché: ${score}.`);
 }
 
 // Réinitialiser le jeu
@@ -263,6 +278,7 @@ function resetGame() {
     historiqueContainer.innerHTML = ''; // Vider l'historique affiché
     document.getElementById('final-score').style.display = 'none';
     document.getElementById('score').innerText = score;
+    console.log("Jeu réinitialisé.");
     genererPhrase(true);
 }
 
@@ -286,8 +302,10 @@ function toggleSolution() {
     } else {
         if (conjugaisonCorrecte && conjugaisonCorrecte !== "0") {
             solutionText.innerText = conjugaisonCorrecte;
+            console.log(`Solution affichée: ${conjugaisonCorrecte}`);
         } else {
             solutionText.innerText = "Pas de solution disponible.";
+            console.log("Pas de solution disponible à afficher.");
         }
         solutionBulle.style.display = 'block'; // Afficher la bulle
     }
