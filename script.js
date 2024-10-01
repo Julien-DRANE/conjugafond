@@ -27,6 +27,8 @@ let modeAleatoireActif = true;
 let modeTurboActif = false; // Mode TURBO désactivé par défaut
 let groupesUtilises = new Set();
 const tempsTurbo = ["présent", "futur", "imparfait", "passé composé", "imparfait du subjonctif", "conditionnel présent", "subjonctif présent", "impératif", "passé simple", "participe présent"];
+let tentatives = 0;
+const maxTentativesParQuestion = 3;
 
 // Charger les verbes depuis les fichiers JSON
 async function chargerVerbes() {
@@ -237,6 +239,7 @@ function verifierReponse() {
         const pointsGagnes = coefficients[groupeActuel] * (tempsTurbo.includes(temps) ? 3 : 1);
         score += modeTurboActif ? pointsGagnes * 2 : pointsGagnes;
         currentQuestion++;
+        tentatives = 0; // Réinitialiser les tentatives
 
         // Mettre à jour l'historique uniquement si la réponse est correcte
         mettreAJourHistorique();
@@ -250,11 +253,23 @@ function verifierReponse() {
             afficherScoreFinal(); // Afficher le score final si le nombre total de questions est atteint
         }
     } else {
-        alert("Mauvaise réponse ! -1 point.");
+        tentatives++;
+        alert(`Mauvaise réponse ! -1 point. Tentatives restantes: ${maxTentativesParQuestion - tentatives}`);
         score -= 1;
         document.getElementById('score').innerText = score;
-        console.log(`Mauvaise réponse! Score actuel: ${score}.`);
-        // Ne pas générer une nouvelle phrase, permettre à l'utilisateur de réessayer
+        console.log(`Mauvaise réponse! Score actuel: ${score}. Tentatives: ${tentatives}/${maxTentativesParQuestion}.`);
+
+        if (tentatives >= maxTentativesParQuestion) {
+            alert(`Nombre maximum de tentatives atteint. La réponse correcte était: "${conjugaisonCorrecte}".`);
+            tentatives = 0;
+            currentQuestion++;
+            mettreAJourHistorique(); // Optionnel : enregistrer comme incorrect
+            if (currentQuestion < totalQuestions) {
+                genererPhrase(true);
+            } else {
+                afficherScoreFinal();
+            }
+        }
     }
 
     // Réinitialiser le champ de réponse
@@ -272,6 +287,7 @@ function afficherScoreFinal() {
 function resetGame() {
     score = 0;
     currentQuestion = 0;
+    tentatives = 0;
     groupesUtilises.clear();
     historique = []; // Réinitialiser l'historique
     const historiqueContainer = document.getElementById('historique');
