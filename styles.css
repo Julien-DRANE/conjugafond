@@ -1,297 +1,308 @@
-/* Style général du corps de la page */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #FFF8F0; /* Blanc cassé pastel */
+/* Style général */
+body, html {
     margin: 0;
     padding: 0;
-}
-
-/* Style de l'en-tête */
-header {
-    background-color: #AEC6CF; /* Bleu pastel */
-    color: #333333; /* Gris foncé pour le texte */
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #f0f4c3, #e1bee7);
+    width: 100%;
+    height: 100%;
 }
 
 /* Container principal */
-.container {
+#game-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slots de jeu */
+#slots {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux slots de se réorganiser */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/* Chaque slot */
+.slot {
+    background-color: #fff;
+    border: 2px solid #3f51b5;
+    border-radius: 10px;
+    width: 150px; /* Largeur du slot */
+    height: 100px; /* Hauteur du slot */
+    margin: 10px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
+    font-size: 24px; /* Taille du texte */
+    font-weight: bold;
+    color: #3f51b5;
+    transition: transform 0.3s ease;
 }
 
-/* Zone de jeu */
-.game-area {
+/* Effet de survol sur chaque slot */
+.slot:hover {
+    transform: scale(1.05);
+}
+
+/* Section pour la réponse */
+#answer-section {
     display: flex;
-    width: 100%;
-    max-width: 1200px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-/* Panneaux gauche, central et droit */
-.left-panel, .right-panel, .center-panel {
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Panneaux gauche et droit */
-.left-panel, .right-panel {
-    width: 25%;
-    background-color: #FFDFBA; /* Beige pastel */
-    border: 1px solid #FFD1DC; /* Rose pâle */
+#user-input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #3f51b5;
     border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 300px;
+    margin-bottom: 10px;
 }
 
-/* Panneau central */
-.center-panel {
-    width: 50%;
-    background-color: #FFEBEE; /* Rose très pâle */
-    border: 1px solid #FFE0B2; /* Orange clair pastel */
+/* Bouton vérifier */
+#submit-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    background-color: #3f51b5;
+    color: #fff;
     border-radius: 10px;
-    margin: 0 10px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-/* Titres et textes dans les panneaux */
-.left-panel h3, .right-panel h3, .center-panel h2 {
-    color: #6B5B95; /* Violet pastel */
+#submit-btn:hover {
+    background-color: #283593;
+    transform: scale(1.05);
 }
 
-/* Boutons */
+/* Boutons de jeu */
 button {
     padding: 10px 20px;
-    margin: 5px;
+    font-size: 16px;
+    margin: 10px;
     border: none;
-    border-radius: 20px;
-    background-color: #FFB6C1; /* Rose pastel */
-    color: #333333; /* Gris foncé pour le texte */
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #FF69B4; /* Rose vif pastel */
+    background-color: #388e3c;
+    transform: scale(1.05);
 }
 
-button.active {
-    background-color: #FF1493; /* Rose profond pastel */
+#toggle-mode-btn {
+    background-color: #ff5722;
 }
 
-/* Champs de saisie */
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-    border: 2px solid #FFB6C1; /* Rose pastel */
-    border-radius: 20px;
-    font-size: 1em;
-    background-color: #FFF0F5; /* Lavande pâle */
-    transition: border-color 0.3s ease;
+#toggle-mode-btn:hover {
+    background-color: #e64a19;
 }
 
-input[type="text"]:focus {
-    border-color: #FF69B4; /* Rose vif pastel */
-    outline: none;
+/* Points */
+#points-display {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3f51b5;
+    margin: 20px;
 }
 
-/* Conteneurs de score et grille de score */
-.score-container, .score-grid {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #333333; /* Gris foncé */
-}
-
-/* Score final */
-.final-score {
-    margin-top: 20px;
-    font-size: 1.5em;
-    color: #6B5B95; /* Violet pastel */
-    background-color: #FFF0F5; /* Lavande pâle */
-    padding: 15px;
+/* Message d'indication */
+.message {
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid #3f51b5;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: none;
+    margin-bottom: 20px;
 }
 
-/* Bulle de solution */
-.solution-bulle {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #E0FFFF; /* Cyan pâle */
-    border: 1px solid #ADD8E6; /* Bleu clair pastel */
-    border-radius: 10px;
-    color: #333333; /* Gris foncé */
-    display: none; /* Masqué par défaut */
+.success {
+    background-color: #c8e6c9;
+    color: #388e3c;
 }
 
-/* Liste d'historique */
-#historique {
-    list-style-type: none;
-    padding: 0;
-    max-height: 300px;
-    overflow-y: auto;
+.error {
+    background-color: #ffcdd2;
+    color: #d32f2f;
 }
 
-#historique li {
-    background-color: #FFF0F5; /* Lavande pâle */
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #FFD1DC; /* Rose pâle */
-    font-size: 0.9em;
-    color: #333333; /* Gris foncé */
+/* Image de bonne réponse */
+#good-answer-img-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none; /* Cacher l'image par défaut */
+    z-index: 1000;
 }
 
-/* Adaptabilité pour les petits écrans */
-@media (max-width: 768px) {
-    .game-area {
-        flex-direction: column;
-        align-items: center;
-    }
+#good-answer-img {
+    width: 200px;
+    height: auto;
+    transition: transform 1s ease; /* Animation de zoom */
+}
 
-    .left-panel, .right-panel, .center-panel {
-        width: 90%;
-        margin: 10px 0;
-    }
+/* Mode Extrême */
+body.extreme-mode {
+    background: linear-gradient(to right, #ff9800, #ff5722);
+}
 
-    button {
+body.extreme-mode #game-container {
+    border: 4px solid #d32f2f;
+}
+
+body.extreme-mode .slot {
+    background-color: #ffccbc;
+    color: #d32f2f;
+}
+
+/* Adaptation pour les appareils mobiles */
+@media only screen and (max-width: 768px) {
+    #game-container {
+        padding: 10px;
         width: 100%;
-        margin: 10px 0;
+        height: auto;
     }
 
-    input[type="text"] {
+    #slots {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #verb-slot, #tense-slot {
+        width: 45%;
+    }
+
+    #pronoun-slot {
         width: 90%;
     }
-}
-/* Styles généraux déjà définis */
-/* ... [Vos styles existants] ... */
 
-/* Styles spécifiques au mode TURBO */
-body.turbo-mode {
-    background-color: #FFE4E1; /* Rose saumon pastel pour un contraste doux */
-}
+    .slot {
+        width: 45%;
+        height: 80px;
+        font-size: 20px;
+    }
 
-body.turbo-mode header {
-    background-color: #FF6F61; /* Rose corail pastel pour attirer l'attention */
-    color: #FFFFFF; /* Texte blanc pour une meilleure lisibilité */
-}
+    #user-input {
+        width: 100%;
+    }
 
-body.turbo-mode .left-panel, 
-body.turbo-mode .right-panel, 
-body.turbo-mode .center-panel {
-    background-color: #FFDAB9; /* Pêche pastel pour une apparence différente */
-    border-color: #FFB6C1; /* Rose clair pastel pour les bordures */
-}
+    #submit-btn, button {
+        width: 100%;
+        margin: 5px 0;
+    }
 
-body.turbo-mode button {
-    background-color: #FF69B4; /* Rose vif pastel pour les boutons */
-    color: #FFFFFF; /* Texte blanc pour les boutons */
-    border: 2px solid #FF1493; /* Bordure rose profond pastel */
-}
+    #points-display {
+        font-size: 20px;
+    }
 
-body.turbo-mode button:hover {
-    background-color: #FF1493; /* Rose profond pastel au survol */
+    #good-answer-img {
+        width: 150px;
+    }
 }
-
-body.turbo-mode input[type="text"] {
-    border-color: #FF69B4; /* Bordure rose vif pastel */
-    background-color: #FFE4E1; /* Rose saumon pâle pour le fond des inputs */
+/* Style général pour centrer le contenu des slots */
+.slot {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;     /* Centrer verticalement */
+    text-align: center;
+    font-size: 24px; /* Ajuste cette valeur pour changer la taille du texte */
+    height: 80px; /* Ajuste la hauteur si nécessaire */
+    width: 100%; /* Assure que les slots occupent toute la largeur */
+    margin: 10px auto; /* Centre les slots dans leur conteneur */
 }
-
-body.turbo-mode .score-container, 
-body.turbo-mode .score-grid {
-    color: #D2691E; /* Brun chaud pour le texte du score */
-}
-
-body.turbo-mode .final-score {
-    background-color: #FA8072; /* Saumon pour le score final */
-    color: #FFFFFF; /* Texte blanc */
+/* Conteneur de l'image de bonne réponse */
+#good-answer-img-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; /* S'assurer que l'image soit au-dessus des autres éléments */
 }
 
-body.turbo-mode .solution-bulle {
-    background-color: #FFB6C1; /* Rose clair pour la bulle de solution */
-    border-color: #FF69B4; /* Rose vif pastel pour la bordure */
+/* Style de l'image de bonne réponse */
+#good-answer-img {
+    max-width: 300px;
+    display: none; /* Cacher l'image par défaut */
+    transform: scale(1); /* Taille initiale */
+    transition: transform 1.3s ease-in-out; /* Transition pour l'animation */
+}
+#good-answer-img {
+    position: fixed; /* Fixe l'image par rapport à la fenêtre */
+    top: 50%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%) scale(1); /* Ajuste le positionnement et la mise à l'échelle */
+    z-index: 1000; /* S'assurer que l'image est au-dessus de tout */
+    max-width: 300px; /* Limite la taille de l'image */
+    max-height: 300px; /* Limite la hauteur */
+    width: auto; /* Conserve les proportions */
+    height: auto; /* Conserve les proportions */
+    opacity: 0; /* Par défaut, l'image est transparente */
+    display: none; /* Par défaut, l'image n'est pas visible */
+    transition: transform 1.3s ease-in-out, opacity 0.3s ease-in-out; /* Animation de transition */
+}
+/* Bulle de bonne réponse */
+.answer-bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00c853; /* Couleur verte pour signaler une bonne réponse */
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: none; /* Masquer la bulle par défaut */
+    z-index: 1000; /* Assurez-vous que la bulle est au-dessus des autres éléments */
+    animation: bubble-zoom 1.3s ease-out;
 }
 
-/* Animation subtile pour attirer l'attention en mode TURBO */
-body.turbo-mode header, 
-body.turbo-mode .left-panel, 
-body.turbo-mode .right-panel, 
-body.turbo-mode .center-panel {
-    animation: pulse 2s infinite;
-}
-
-/* Définition de l'animation 'pulse' */
-@keyframes pulse {
+/* Animation pour agrandir la bulle */
+@keyframes bubble-zoom {
     0% {
-        box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+        transform: translate(-50%, -50%) scale(0);
     }
     50% {
-        box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+        transform: translate(-50%, -50%) scale(1.2);
     }
     100% {
-        box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+        transform: translate(-50%, -50%) scale(1);
     }
 }
-#temps-container {
-    font-size: 1.3em; /* Assurez-vous que c'est la même taille que le verbe */
-    color: #FF69B4; /* Une couleur légèrement différente, vous pouvez ajuster cette couleur selon vos préférences */
-    margin-top: 2px; /* Ajoutez un petit espace entre le verbe et le temps, si nécessaire */
+/* Style du titre "Conjugafond" */
+#game-title {
+    font-family: 'Pacifico', cursive; /* Appliquer la police Pacifico */
+    text-align: center; /* Centrer le titre */
+    font-size: 48px; /* Taille de police plus grande */
+    margin: 20px 0; /* Marges autour du titre */
+    color: #f57f17; /* Couleur du texte */
+    text-shadow: 2px 2px 4px #ffa726; /* Ajouter une ombre pour le rendre plus visible */
+    padding: 10px;
 }
-/* Styles spécifiques au mode Extrême */
-body.extreme-mode {
-    background-color: #FFEFD5; /* Jaune pastel pour le contraste */
-}
-
-body.extreme-mode header {
-    background-color: #FF4500; /* Orange vif pour attirer l'attention */
-    color: #FFFFFF; /* Texte blanc pour une meilleure lisibilité */
-}
-
-body.extreme-mode .left-panel, 
-body.extreme-mode .right-panel, 
-body.extreme-mode .center-panel {
-    background-color: #FFD700; /* Jaune doré pour une apparence distincte */
-    border-color: #FFA07A; /* Saumon clair pour les bordures */
+/* Styles pour le mode Duo */
+body.duo-mode {
+    background-color: #f3e5f5; /* Couleur violette douce */
 }
 
-body.extreme-mode button {
-    background-color: #FF6347; /* Tomate pour les boutons */
-    color: #FFFFFF; /* Texte blanc pour les boutons */
-    border: 2px solid #FF4500; /* Bordure orange vif */
+body.duo-mode #game-title {
+    color: #7b1fa2; /* Couleur plus sombre pour le titre */
+}
+/* Style pour le mode Duo */
+body.duo-mode {
+    background: linear-gradient(135deg, #ffcc80, #80d8ff); /* Deux couleurs (orange et bleu clair) */
 }
 
-body.extreme-mode button:hover {
-    background-color: #FF7F50; /* Corail au survol */
-}
-
-body.extreme-mode input[type="text"] {
-    border-color: #FF6347; /* Bordure tomate */
-    background-color: #FFF0E1; /* Fond crème pour les inputs */
-}
-
-body.extreme-mode .score-container, 
-body.extreme-mode .score-grid {
-    color: #8B0000; /* Rouge sombre pour le texte du score */
-}
-
-body.extreme-mode .final-score {
-    background-color: #FF8C00; /* Orange foncé pour le score final */
-    color: #FFFFFF; /* Texte blanc */
-}
-
-body.extreme-mode .solution-bulle {
-    background-color: #FFE4B5; /* Jaune clair pour la bulle de solution */
-    border-color: #FF4500; /* Bordure orange vif pour la bulle de solution */
-}
-.message {
-    font-size: 1.2em;
-    color: #FF4500; /* Couleur orange vif pour attirer l'attention */
-    margin: 10px 0;
+body.duo-mode #game-title {
+    color: #3f51b5; /* Changer la couleur du titre en mode Duo */
 }
