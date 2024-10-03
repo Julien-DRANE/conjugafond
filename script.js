@@ -3,6 +3,7 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
+    "passé simple",
     "futur simple"
 ];
 
@@ -10,7 +11,6 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "passé simple",
     "plus-que-parfait",
     "passé antérieur",
     "futur antérieur",
@@ -34,8 +34,8 @@ let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révél�
 let gameActive = true;
 
 // Variables pour les sons
-let successSound = new Audio("sounds/success.mp3");
-let wrongSound = new Audio("sounds/wrong.mp3");
+let successSound = document.getElementById("success-sound");
+let wrongSound = document.getElementById("wrong-sound");
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
@@ -73,7 +73,7 @@ function toggleDuoMode() {
     document.body.classList.remove("extreme-mode"); // Retirer la classe extreme-mode
     document.getElementById("toggle-duo-btn").textContent = duoMode ? "Désactiver Mode Duo" : "Mode Duo";
     document.getElementById("toggle-mode-btn").textContent = "Mode Extrême";
-    spin(); // Recharger un verbe avec les temps duo
+    spin(); // Recharger un verbe avec les temps du mode duo
 }
 
 // Fonction pour faire tourner les slots
@@ -127,8 +127,6 @@ function checkAnswer() {
     let userInput = document.getElementById("user-input").value.trim().toLowerCase();
     let expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun].toLowerCase();
 
-    console.log(`Réponse attendue : ${expectedAnswer}, Réponse donnée : ${userInput}`);
-
     if (userInput === expectedAnswer) {
         if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
             points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
@@ -148,9 +146,6 @@ function checkAnswer() {
             goodAnswerImg.style.display = "none";
         }, 1500);
 
-        // Afficher la bulle "Bonne Réponse !"
-        showGoodAnswerBubble();
-
         // Vérifier la fin de partie (atteinte de 33 points)
         if (points >= 33) {
             showWinningMessage();
@@ -161,7 +156,6 @@ function checkAnswer() {
         points -= 1; // Retirer 1 point dans tous les modes en cas de mauvaise réponse
         attemptsLeft -= 1;
         document.getElementById("points").textContent = `${points} / 33`;
-        console.log(`Mauvaise réponse. Tentatives restantes : ${attemptsLeft}`);
 
         if (attemptsLeft > 0) {
             document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
@@ -169,11 +163,8 @@ function checkAnswer() {
             document.getElementById("message").textContent = `Mauvaise réponse. La bonne réponse était : ${expectedAnswer}`;
             attemptsLeft = 3;
 
-            // Afficher le bouton "Afficher la réponse" après deux erreurs (soit au troisième essai)
+            // Afficher le bouton "Afficher la réponse" après deux erreurs
             document.getElementById("show-answer-btn").style.display = "block";
-            console.log("Bouton 'Afficher la réponse' affiché.");
-
-            spin(); // Recharger un nouveau verbe après affichage de la bonne réponse
         }
         document.getElementById("message").classList.remove("success");
         document.getElementById("message").classList.add("error");
