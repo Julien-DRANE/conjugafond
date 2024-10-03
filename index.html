@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conjugafond</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <header>
-        <h1 id="game-title">Conjugafond</h1>
-        <p id="game-rules">Saisissez la conjugaison correcte du verbe affiché selon le temps et le pronom personnel indiqués. Chaque bonne réponse vaut <strong>1 pt</strong>, en <strong>mode extrême</strong> les points sont <strong>multipliés par 3 (x3)</strong>, et en <strong>mode duo</strong>, les points sont <strong>doublés (x2)</strong>, mais une mauvaise réponse vous fait perdre <strong>1 pt (-1)</strong>. Atteignez <strong>33 points</strong> pour gagner la partie !</p>
-    </header>
-
-    <!-- Bulle de score permanente -->
-    <div id="score-bubble">
-        Score : <span id="points">0</span> / 33
-    </div>
+    <h1 id="game-title">Conjugafond</h1>
+    
+    <!-- Règles du jeu en mode normal -->
+    <p id="game-rules">Saisissez la conjugaison correcte du verbe affiché selon le temps et le pronom personnel indiqués. Chaque bonne réponse vaut <strong>1 pt</strong>, en <strong>mode extrême</strong> les points sont <strong>multipliés par 3 (x3)</strong>, et en <strong>mode duo</strong>, les points sont <strong>doublés (x2)</strong>, mais une mauvaise réponse vous fait perdre <strong>1 pt (-1)</strong>. Atteignez <strong>33 points</strong> pour gagner la partie !</p>
 
     <div id="game-container">
         <!-- Slots de jeu -->
@@ -37,11 +29,19 @@
             <button id="submit-btn">Vérifier</button>
         </div>
 
+        <!-- Bulle de score permanente -->
+        <div id="score-bubble">
+            Score : <span id="points">0</span> / 33
+        </div>
+
+        <!-- Tentatives restantes -->
+        <div id="attempts-display">Tentatives restantes : <span id="attempts">3</span></div>
+
         <!-- Messages -->
         <div id="message" class="message"></div>
 
         <!-- Boutons de jeu -->
-        <div id="buttons-section">
+        <div id="buttons-container">
             <button id="spin-btn">Nouvelle question</button>
             <button id="toggle-mode-btn">Mode Extrême</button>
             <button id="toggle-duo-btn">Mode Duo</button>
@@ -49,16 +49,13 @@
         </div>
     </div>
 
-    <!-- Bulle "Bonne Réponse !" -->
-    <div id="good-answer-bubble" class="answer-bubble">Bonne Réponse !</div>
-
-    <!-- Bulle "Gagné !" -->
-    <div id="winning-bubble" class="winning-bubble">Gagné !</div>
-
     <!-- Image de bonne réponse -->
     <div id="good-answer-img-container">
         <img id="good-answer-img" src="images/bonne_reponse.png" alt="Bonne Réponse !" style="display:none;">
     </div>
+
+    <!-- Bulle "Gagné !" -->
+    <div id="winning-bubble" class="winning-bubble">Gagné !</div>
 
     <!-- Sons du jeu -->
     <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
