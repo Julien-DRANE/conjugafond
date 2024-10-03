@@ -4,8 +4,11 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #f0f4c3, #e1bee7);
+    position: relative;
+    height: 100vh;
 }
 
+/* Titre du jeu */
 #game-title {
     font-family: 'Pacifico', cursive;
     text-align: center;
@@ -14,6 +17,7 @@ body, html {
     color: #3e2723;
 }
 
+/* Règles du jeu (visible uniquement en mode normal) */
 #game-rules {
     text-align: center;
     margin: 0;
@@ -28,20 +32,22 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Bulle de score */
+/* Bulle de score permanente */
 #score-bubble {
-    text-align: center;
-    font-size: 36px; /* Taille de la police augmentée */
-    color: #4169E1; /* Bleu majorelle */
-    background-color: #fff;
-    border: 4px solid #4169E1; /* Contour bleu majorelle */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 32px; /* Taille de la police augmentée */
+    color: #1a237e; /* Bleu majorelle */
+    background-color: #e3f2fd;
+    border: 3px solid #1a237e;
     border-radius: 50px;
-    padding: 20px;
-    margin: 20px auto;
-    width: fit-content;
+    padding: 15px 30px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
 }
 
+/* Conteneur principal du jeu */
 #game-container {
     display: flex;
     flex-direction: column;
@@ -78,6 +84,8 @@ body, html {
 /* Section de réponse */
 #answer-section {
     margin: 20px 0;
+    display: flex;
+    align-items: center;
 }
 
 #display-pronoun {
@@ -90,6 +98,8 @@ body, html {
     padding: 10px;
     font-size: 18px;
     width: 200px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
 }
 
 #submit-btn {
@@ -107,10 +117,24 @@ body, html {
     background-color: #536dfe;
 }
 
-/* Affichage des points et tentatives */
-#points-display, #attempts-display {
-    font-size: 18px;
-    margin: 10px 0;
+/* Section des boutons */
+#buttons-section {
+    margin: 20px 0;
+}
+
+#buttons-section button {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    background-color: #8c9eff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#buttons-section button:hover {
+    background-color: #536dfe;
 }
 
 /* Messages */
@@ -124,42 +148,9 @@ body, html {
     color: #d32f2f;
 }
 
-/* Boutons de jeu */
-button {
-    padding: 10px 20px;
-    margin: 10px 5px;
-    background-color: #8c9eff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #536dfe;
-}
-
-/* Image de bonne réponse */
-#good-answer-img-container {
-    margin-top: 20px;
-}
-
-#good-answer-img {
-    width: 200px;
-}
-
-/* Styles spécifiques aux modes */
-.extreme-mode #game-container {
-    background: linear-gradient(to right, #ff6f61, #ffcccb);
-}
-
-.duo-mode #game-container {
-    background: linear-gradient(to right, #ffcc80, #ffab40);
-}
-/* Style pour la bulle de bonne réponse */
+/* Bulle "Bonne Réponse !" */
 .answer-bubble {
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -171,18 +162,102 @@ button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     text-align: center;
     display: none; /* Cacher par défaut */
-    z-index: 9999; /* Toujours au-dessus */
+    z-index: 1001; /* Toujours au-dessus du score bubble */
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-/* Style lors de l'affichage de la bulle */
 .show-answer-bubble {
     display: block;
     transform: translate(-50%, -50%) scale(1.3); /* Grossissement de la bulle */
     opacity: 1;
 }
 
-/* Style de disparition de la bulle */
 .hide-answer-bubble {
     opacity: 0; /* Disparaît progressivement */
+}
+
+/* Bulle "Gagné !" */
+.winning-bubble {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px 60px;
+    font-size: 32px;
+    background-color: rgba(255, 215, 0, 0.95); /* Jaune doré */
+    color: #000;
+    border-radius: 25px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    display: none; /* Cacher par défaut */
+    z-index: 1002; /* Toujours au-dessus des autres éléments */
+    animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Styles spécifiques aux modes */
+.extreme-mode #game-container {
+    background: linear-gradient(to right, #ff6f61, #ffcccb);
+}
+
+.duo-mode #game-container {
+    background: linear-gradient(to right, #ffcc80, #ffab40);
+}
+
+/* Image de bonne réponse */
+#good-answer-img-container {
+    margin-top: 20px;
+}
+
+#good-answer-img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* Media Queries pour responsive */
+@media (max-width: 600px) {
+    #game-title {
+        font-size: 32px;
+    }
+
+    #game-rules {
+        font-size: 14px;
+    }
+
+    #score-bubble {
+        font-size: 24px;
+        padding: 10px 20px;
+    }
+
+    .slot {
+        width: 120px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    #user-input {
+        width: 150px;
+        font-size: 16px;
+    }
+
+    #submit-btn, #buttons-section button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .answer-bubble {
+        font-size: 20px;
+        padding: 15px 30px;
+    }
+
+    .winning-bubble {
+        font-size: 24px;
+        padding: 20px 40px;
+    }
 }
