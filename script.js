@@ -3,7 +3,6 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
-    "passé simple",
     "futur simple"
 ];
 
@@ -12,6 +11,7 @@ const extremeTenses = [
     "subjonctif passé",
     "conditionnel présent",
     "plus-que-parfait",
+    "passé simple",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
