@@ -3,6 +3,7 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
+    "passé simple",
     "futur simple"
 ];
 
@@ -11,7 +12,6 @@ const extremeTenses = [
     "subjonctif passé",
     "conditionnel présent",
     "plus-que-parfait",
-    "passé simple",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
@@ -73,7 +73,7 @@ function toggleDuoMode() {
     document.body.classList.remove("extreme-mode"); // Retirer la classe extreme-mode
     document.getElementById("toggle-duo-btn").textContent = duoMode ? "Désactiver Mode Duo" : "Mode Duo";
     document.getElementById("toggle-mode-btn").textContent = "Mode Extrême";
-    spin(); // Recharger un verbe avec les temps du mode duo
+    spin(); // Recharger un verbe avec les temps duo
 }
 
 // Fonction pour faire tourner les slots
@@ -113,8 +113,10 @@ function spin() {
     document.getElementById("user-input").value = "";
     document.getElementById("message").style.display = "none";
 
-    // Masquer le bouton "Afficher la réponse" jusqu'à ce que le joueur échoue deux fois
-    document.getElementById("show-answer-btn").style.display = "none";
+    // Réinitialiser les tentatives et le bouton "Afficher la réponse"
+    attemptsLeft = 3;
+    document.getElementById("attempts").textContent = attemptsLeft;
+    document.getElementById("show-answer-btn").style.display = "block";
     revealAnswerUsed = false;
 
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
@@ -163,8 +165,7 @@ function checkAnswer() {
             document.getElementById("message").textContent = `Mauvaise réponse. La bonne réponse était : ${expectedAnswer}`;
             attemptsLeft = 3;
 
-            // Afficher le bouton "Afficher la réponse" après deux erreurs
-            document.getElementById("show-answer-btn").style.display = "block";
+            // Le bouton "Afficher la réponse" reste toujours visible
         }
         document.getElementById("message").classList.remove("success");
         document.getElementById("message").classList.add("error");
@@ -233,7 +234,6 @@ document.getElementById("show-answer-btn").addEventListener("click", () => {
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
     revealAnswerUsed = true; // Marquer que la réponse a été révélée
-    gameActive = false; // Désactiver le jeu si la réponse est affichée
 });
 
 // Validation par la touche Entrée
