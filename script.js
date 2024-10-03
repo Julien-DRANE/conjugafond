@@ -3,13 +3,13 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
-    "passé simple",
     "futur simple"
 ];
 
 const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
+    "passé simple",
     "conditionnel présent",
     "plus-que-parfait",
     "passé antérieur",
@@ -127,7 +127,12 @@ function checkAnswer() {
     if (!gameActive) return;
 
     let userInput = document.getElementById("user-input").value.trim().toLowerCase();
-    let expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun].toLowerCase();
+    let verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
+    if (!verbEntry) {
+        console.error(`Verbe ${currentVerb} non trouvé dans le JSON.`);
+        return;
+    }
+    let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun].toLowerCase();
 
     if (userInput === expectedAnswer) {
         if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
@@ -141,12 +146,8 @@ function checkAnswer() {
         document.getElementById("message").style.display = "block";
         successSound.play();
 
-        // Afficher l'image "Bonne Réponse !" pendant 1,5 seconde
-        const goodAnswerImg = document.getElementById("good-answer-img");
-        goodAnswerImg.style.display = "block";
-        setTimeout(() => {
-            goodAnswerImg.style.display = "none";
-        }, 1500);
+        // Afficher la bulle "Bonne Réponse !" pendant 1,5 seconde
+        showGoodAnswerBubble();
 
         // Vérifier la fin de partie (atteinte de 33 points)
         if (points >= 33) {
@@ -173,7 +174,7 @@ function checkAnswer() {
             attemptsLeft = 3;
             document.getElementById("attempts").textContent = attemptsLeft;
 
-            // Afficher un nouveau verbe
+            // Charger un nouveau verbe
             spin();
         } else {
             // Moins de trois échecs
@@ -190,20 +191,16 @@ function checkAnswer() {
 
 // Fonction pour afficher la bulle "Bonne Réponse !"
 function showGoodAnswerBubble() {
-    const bubble = document.getElementById("good-answer-bubble");
+    const bubble = document.getElementById("answer-bubble");
     bubble.style.display = "block"; // Afficher la bulle
-    bubble.classList.add("show-answer-bubble"); // Ajouter la classe d'animation
+    bubble.style.opacity = "1"; // Rendre visible
 
-    // Cacher la bulle après 1,3 seconde
+    // Cacher la bulle après 1,5 seconde
     setTimeout(() => {
-        bubble.classList.remove("show-answer-bubble");
-        bubble.classList.add("hide-answer-bubble");
-    }, 1300);
-
-    // Cacher définitivement après 1,5 seconde
-    setTimeout(() => {
-        bubble.classList.remove("hide-answer-bubble");
-        bubble.style.display = "none";
+        bubble.style.opacity = "0"; // Rendre invisible
+        setTimeout(() => {
+            bubble.style.display = "none"; // Cacher complètement
+        }, 500); // Temps de transition
     }, 1500);
 }
 
@@ -240,7 +237,12 @@ document.getElementById("submit-btn").addEventListener("click", checkAnswer);
 document.getElementById("toggle-mode-btn").addEventListener("click", toggleExtremeMode);
 document.getElementById("toggle-duo-btn").addEventListener("click", toggleDuoMode);
 document.getElementById("show-answer-btn").addEventListener("click", () => {
-    const expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun];
+    const verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
+    if (!verbEntry) {
+        console.error(`Verbe ${currentVerb} non trouvé dans le JSON.`);
+        return;
+    }
+    const expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun];
     document.getElementById("message").textContent = `Réponse : ${expectedAnswer}`;
     document.getElementById("message").classList.remove("error");
     document.getElementById("message").classList.add("success");
