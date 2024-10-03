@@ -153,8 +153,8 @@ function checkAnswer() {
         // Jouer le son d'erreur
         wrongSound.play();
 
-        // Afficher le bouton "Afficher la réponse" après le 3ème essai
-        if (attemptsLeft === 0) {
+        // Afficher le bouton "Afficher la réponse" **après deux erreurs**
+        if (attemptsLeft === 1) { // C'est après deux mauvaises réponses (3 tentatives - 2 erreurs = 1 tentative restante)
             document.getElementById("show-answer-btn").style.display = "block";
         }
     }
