@@ -116,7 +116,7 @@ function spin() {
     // Réinitialiser les tentatives et le bouton "Afficher la réponse"
     attemptsLeft = 3;
     document.getElementById("attempts").textContent = attemptsLeft;
-    document.getElementById("show-answer-btn").style.display = "block";
+    // Le bouton "Afficher la réponse" reste toujours visible
     revealAnswerUsed = false;
 
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
@@ -155,26 +155,37 @@ function checkAnswer() {
             spin(); // Recharger un nouveau verbe
         }
     } else {
-        points -= 1; // Retirer 1 point dans tous les modes en cas de mauvaise réponse
+        // Incrémenter le nombre d'échecs
         attemptsLeft -= 1;
-        document.getElementById("points").textContent = `${points} / 33`;
+        document.getElementById("attempts").textContent = attemptsLeft;
 
-        if (attemptsLeft > 0) {
-            document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
-        } else {
+        if (attemptsLeft === 0) {
+            // Après trois échecs
+            points -= 1; // Retirer 1 point
+            document.getElementById("points").textContent = `${points} / 33`;
             document.getElementById("message").textContent = `Mauvaise réponse. La bonne réponse était : ${expectedAnswer}`;
-            attemptsLeft = 3;
+            document.getElementById("message").classList.remove("success");
+            document.getElementById("message").classList.add("error");
+            document.getElementById("message").style.display = "block";
+            wrongSound.play();
 
-            // Le bouton "Afficher la réponse" reste toujours visible
+            // Réinitialiser les tentatives
+            attemptsLeft = 3;
+            document.getElementById("attempts").textContent = attemptsLeft;
+
+            // Afficher un nouveau verbe
+            spin();
+        } else {
+            // Moins de trois échecs
+            document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
+            document.getElementById("message").classList.remove("success");
+            document.getElementById("message").classList.add("error");
+            document.getElementById("message").style.display = "block";
+            wrongSound.play();
         }
-        document.getElementById("message").classList.remove("success");
-        document.getElementById("message").classList.add("error");
-        document.getElementById("message").style.display = "block";
-        wrongSound.play();
     }
 
     document.getElementById("user-input").value = "";
-    document.getElementById("attempts").textContent = attemptsLeft;
 }
 
 // Fonction pour afficher la bulle "Bonne Réponse !"
@@ -229,7 +240,8 @@ document.getElementById("submit-btn").addEventListener("click", checkAnswer);
 document.getElementById("toggle-mode-btn").addEventListener("click", toggleExtremeMode);
 document.getElementById("toggle-duo-btn").addEventListener("click", toggleDuoMode);
 document.getElementById("show-answer-btn").addEventListener("click", () => {
-    document.getElementById("message").textContent = `Réponse : ${verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun]}`;
+    const expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun];
+    document.getElementById("message").textContent = `Réponse : ${expectedAnswer}`;
     document.getElementById("message").classList.remove("error");
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
