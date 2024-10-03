@@ -3,6 +3,7 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
+    "passé simple",
     "futur simple"
 ];
 
@@ -10,7 +11,6 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "passé simple",
     "plus-que-parfait",
     "passé antérieur",
     "futur antérieur",
@@ -30,6 +30,7 @@ let attemptsLeft = 3;
 let points = 0;
 let extremeMode = false;
 let duoMode = false;
+let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 
 // Variables pour les sons
 let successSound = new Audio("sounds/success.mp3");
@@ -103,6 +104,8 @@ function spin() {
 
     document.getElementById("user-input").value = "";
     document.getElementById("message").style.display = "none";
+    document.getElementById("show-answer-btn").style.display = "none"; // Cacher le bouton "Afficher la réponse"
+    revealAnswerUsed = false; // Réinitialiser la variable de révélation de réponse
 }
 
 // Fonction pour vérifier la réponse
@@ -111,7 +114,9 @@ function checkAnswer() {
     let expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun].toLowerCase();
 
     if (userInput === expectedAnswer) {
-        points += extremeMode ? 3 : 1;
+        if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
+            points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
+        }
         attemptsLeft = 3;
         document.getElementById("points").textContent = points;
         document.getElementById("message").textContent = "Bonne réponse !";
@@ -125,8 +130,14 @@ function checkAnswer() {
         // Afficher la bulle "Bonne Réponse !"
         showGoodAnswerBubble();
 
-        spin(); // Recharger un nouveau verbe
+        // Vérifier si le score atteint 33 dans n'importe quel mode
+        if (points >= 33) {
+            showWinningMessage();
+        } else {
+            spin(); // Recharger un nouveau verbe
+        }
     } else {
+        points -= 1; // Retirer 1 point dans tous les modes en cas de mauvaise réponse
         attemptsLeft -= 1;
         if (attemptsLeft > 0) {
             document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
@@ -141,10 +152,16 @@ function checkAnswer() {
 
         // Jouer le son d'erreur
         wrongSound.play();
+
+        // Afficher le bouton "Afficher la réponse" après le 3ème essai
+        if (attemptsLeft === 0) {
+            document.getElementById("show-answer-btn").style.display = "block";
+        }
     }
 
     document.getElementById("user-input").value = "";
     document.getElementById("attempts").textContent = attemptsLeft;
+    document.getElementById("points").textContent = points;
 }
 
 // Fonction pour afficher la bulle "Bonne Réponse !"
@@ -158,6 +175,25 @@ function showGoodAnswerBubble() {
     }, 1300);
 }
 
+// Fonction pour afficher le message de victoire
+function showWinningMessage() {
+    const winningMessage = document.getElementById("winning-message");
+    winningMessage.style.display = "block";
+    setTimeout(() => {
+        winningMessage.style.display = "none";
+        resetGame(); // Réinitialiser le jeu après avoir affiché le message de victoire
+    }, 2000);
+}
+
+// Réinitialisation du jeu
+function resetGame() {
+    points = 0;
+    attemptsLeft = 3;
+    document.getElementById("points").textContent = points;
+    document.getElementById("attempts").textContent = attemptsLeft;
+    spin();
+}
+
 // Écouteurs d'événements
 document.getElementById("spin-btn").addEventListener("click", spin);
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);
@@ -168,6 +204,7 @@ document.getElementById("show-answer-btn").addEventListener("click", () => {
     document.getElementById("message").classList.remove("error");
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
+    revealAnswerUsed = true; // Marquer que la réponse a été révélée
 });
 
 // Validation par la touche Entrée
