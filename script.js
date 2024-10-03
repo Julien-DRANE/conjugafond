@@ -30,12 +30,17 @@ let attemptsLeft = 3;
 let points = 0;
 let extremeMode = false;
 let duoMode = false;
-let gameActive = true;
+let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
+let gameActive = true; // Variable pour vérifier si le jeu est actif
+
+// Variables pour les sons
+const successSound = document.getElementById("success-sound");
+const wrongSound = document.getElementById("wrong-sound");
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
 
-// Charger le JSON depuis un fichier local
+// Charger le JSON depuis un fichier local (assurez-vous que 'verbs.json' est bien à la racine de votre projet)
 fetch('verbs.json')
     .then(response => response.json())
     .then(data => {
@@ -50,10 +55,19 @@ function toggleExtremeMode() {
     if (!gameActive) return;
 
     extremeMode = !extremeMode;
-    duoMode = false; // Désactive le mode duo
+    duoMode = false; // Désactiver le mode duo si le mode extrême est activé
     document.body.classList.toggle("extreme-mode", extremeMode);
+    document.body.classList.remove("duo-mode"); // Retirer la classe duo-mode
+
+    // Mettre à jour les règles si nécessaire
+    if (extremeMode) {
+        document.getElementById("game-rules").style.display = "none";
+    } else if (!duoMode) {
+        document.getElementById("game-rules").style.display = "block";
+    }
+
     document.getElementById("toggle-mode-btn").textContent = extremeMode ? "Désactiver Mode Extrême" : "Mode Extrême";
-    document.getElementById("toggle-duo-btn").textContent = "Mode Duo"; // Réinitialiser le bouton duo
+    document.getElementById("toggle-duo-btn").textContent = "Mode Duo";
 
     spin(); // Recharger un verbe avec les temps extrêmes
 }
@@ -63,10 +77,19 @@ function toggleDuoMode() {
     if (!gameActive) return;
 
     duoMode = !duoMode;
-    extremeMode = false; // Désactive le mode extrême
+    extremeMode = false; // Désactiver le mode extrême si le mode duo est activé
     document.body.classList.toggle("duo-mode", duoMode);
+    document.body.classList.remove("extreme-mode"); // Retirer la classe extreme-mode
+
+    // Mettre à jour les règles si nécessaire
+    if (duoMode) {
+        document.getElementById("game-rules").style.display = "none";
+    } else if (!extremeMode) {
+        document.getElementById("game-rules").style.display = "block";
+    }
+
     document.getElementById("toggle-duo-btn").textContent = duoMode ? "Désactiver Mode Duo" : "Mode Duo";
-    document.getElementById("toggle-mode-btn").textContent = "Mode Extrême"; // Réinitialiser le bouton extrême
+    document.getElementById("toggle-mode-btn").textContent = "Mode Extrême";
 
     spin(); // Recharger un verbe avec les temps duo
 }
@@ -86,11 +109,13 @@ function spin() {
     currentVerb = randomVerb.infinitive;
 
     // Déterminer les temps en fonction du mode
-    let tenses = normalTenses;
+    let tenses;
     if (extremeMode) {
         tenses = extremeTenses;
     } else if (duoMode) {
         tenses = duoTenses;
+    } else {
+        tenses = normalTenses;
     }
     currentTense = tenses[Math.floor(Math.random() * tenses.length)];
 
@@ -111,6 +136,8 @@ function spin() {
     // Masquer le bouton "Afficher la réponse" jusqu'à ce que le joueur échoue deux fois
     document.getElementById("show-answer-btn").style.display = "none";
 
+    revealAnswerUsed = false; // Réinitialiser la variable de révélation de réponse
+
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
 }
 
@@ -119,71 +146,136 @@ function checkAnswer() {
     if (!gameActive) return;
 
     let userInput = document.getElementById("user-input").value.trim().toLowerCase();
-    let expectedAnswer = verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun].toLowerCase();
+    let verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
+    if (!verbEntry) {
+        console.error("Verbe non trouvé dans les données.");
+        return;
+    }
+    let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun].toLowerCase();
 
-    if (userInput === expectedAnswer) {
-        points += extremeMode ? 3 : (duoMode ? 2 : 1);
+    if (userInput === expectedAnswer && !revealAnswerUsed) {
+        // Gagner des points uniquement si la réponse n'a pas été révélée
+        points += (extremeMode ? 3 : (duoMode ? 2 : 1));
         attemptsLeft = 3;
-        document.getElementById("points").textContent = points;
+        document.getElementById("points").textContent = points + " / 33";
         document.getElementById("message").textContent = "Bonne réponse !";
         document.getElementById("message").classList.remove("error");
         document.getElementById("message").classList.add("success");
         document.getElementById("message").style.display = "block";
-        document.getElementById("success-sound").play();
+        successSound.play();
 
-        // Afficher l'image "Bonne Réponse !" pendant 1,5 seconde
-        const goodAnswerImg = document.getElementById("good-answer-img");
-        goodAnswerImg.style.display = "block";
-        setTimeout(() => {
-            goodAnswerImg.style.display = "none";
-        }, 1500);
+        // Afficher la bulle "Bonne Réponse !"
+        showGoodAnswerBubble();
 
         // Vérifier la fin de partie (atteinte de 33 points)
         if (points >= 33) {
-            document.getElementById("message").textContent = "Gagné ! Vous avez atteint 33 points.";
-            gameActive = false; // Désactiver le jeu
-            return;
+            showWinningMessage();
+        } else {
+            spin(); // Recharger un nouveau verbe
         }
-
-        spin(); // Recharger un nouveau verbe
     } else {
+        // Mauvaise réponse
+        points -= 1; // Retirer 1 point dans tous les modes
         attemptsLeft -= 1;
+        document.getElementById("points").textContent = points + " / 33";
+
         if (attemptsLeft > 0) {
             document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
         } else {
             document.getElementById("message").textContent = `Mauvaise réponse. La bonne réponse était : ${expectedAnswer}`;
             attemptsLeft = 3;
-
-            // Afficher le bouton "Afficher la réponse"
-            document.getElementById("show-answer-btn").style.display = "block";
-
-            spin(); // Recharger un nouveau verbe après affichage de la bonne réponse
+            spin();
         }
+
         document.getElementById("message").classList.remove("success");
         document.getElementById("message").classList.add("error");
         document.getElementById("message").style.display = "block";
-        document.getElementById("wrong-sound").play();
+        wrongSound.play();
+
+        // Afficher le bouton "Afficher la réponse" après deux erreurs (au troisième essai)
+        if (attemptsLeft === 3) { // Cela signifie que deux erreurs ont été faites
+            document.getElementById("show-answer-btn").style.display = "inline-block";
+        }
     }
 
+    // Réinitialiser l'input
     document.getElementById("user-input").value = "";
     document.getElementById("attempts").textContent = attemptsLeft;
 }
 
-// Écouteurs d'événements
+// Fonction pour afficher la bulle "Bonne Réponse !"
+function showGoodAnswerBubble() {
+    const bubble = document.getElementById("good-answer-bubble");
+    bubble.style.display = "block"; // Afficher la bulle
+    bubble.classList.add("show-answer-bubble"); // Ajouter la classe d'animation
+
+    // Cacher la bulle après 1,3 seconde
+    setTimeout(() => {
+        bubble.classList.remove("show-answer-bubble");
+        bubble.classList.add("hide-answer-bubble");
+    }, 1300);
+
+    setTimeout(() => {
+        bubble.style.display = "none"; // Cacher complètement
+        bubble.classList.remove("hide-answer-bubble");
+    }, 1500);
+}
+
+// Fonction pour afficher le message de victoire
+function showWinningMessage() {
+    const winningBubble = document.getElementById("winning-bubble");
+    winningBubble.style.display = "block";
+
+    // Cacher la bulle après l'animation
+    setTimeout(() => {
+        winningBubble.style.display = "none";
+        resetGame(); // Réinitialiser le jeu après avoir affiché le message de victoire
+    }, 2000);
+}
+
+// Réinitialisation du jeu
+function resetGame() {
+    points = 0;
+    attemptsLeft = 3;
+    document.getElementById("points").textContent = points + " / 33";
+    document.getElementById("attempts").textContent = attemptsLeft;
+    gameActive = true;
+    spin();
+    document.getElementById("message").textContent = "";
+    document.getElementById("message").style.display = "none";
+    document.getElementById("show-answer-btn").style.display = "none";
+}
+
+// Fonction pour afficher la réponse
+document.getElementById("show-answer-btn").addEventListener("click", () => {
+    let verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
+    if (!verbEntry) {
+        console.error("Verbe non trouvé dans les données.");
+        return;
+    }
+    let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun];
+
+    document.getElementById("message").textContent = `Réponse : ${expectedAnswer}`;
+    document.getElementById("message").classList.remove("error");
+    document.getElementById("message").classList.add("success");
+    document.getElementById("message").style.display = "block";
+
+    revealAnswerUsed = true; // Marquer que la réponse a été révélée
+
+    // Réinitialiser les tentatives et masquer le bouton
+    attemptsLeft = 3;
+    document.getElementById("attempts").textContent = attemptsLeft;
+    document.getElementById("show-answer-btn").style.display = "none";
+});
+
+// Écouteurs d'événements pour les boutons
 document.getElementById("spin-btn").addEventListener("click", spin);
 document.getElementById("submit-btn").addEventListener("click", checkAnswer);
 document.getElementById("toggle-mode-btn").addEventListener("click", toggleExtremeMode);
 document.getElementById("toggle-duo-btn").addEventListener("click", toggleDuoMode);
-document.getElementById("show-answer-btn").addEventListener("click", () => {
-    document.getElementById("message").textContent = `Réponse : ${verbData.verbs.find(v => v.infinitive === currentVerb).conjugations[currentTense][currentPronoun]}`;
-    document.getElementById("message").classList.remove("error");
-    document.getElementById("message").classList.add("success");
-    document.getElementById("message").style.display = "block";
-    gameActive = false; // Désactiver le jeu si la réponse est affichée
-});
 
 // Validation par la touche Entrée
-document.getElementById("user-input").addEventListener("keydown", function (event) {
+document.getElementById("user-input").addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         checkAnswer();
     }
