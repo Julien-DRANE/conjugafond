@@ -9,8 +9,8 @@ const normalTenses = [
 const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
-    "passé simple",
     "conditionnel présent",
+    "passé simple",
     "plus-que-parfait",
     "passé antérieur",
     "futur antérieur",
@@ -101,6 +101,10 @@ function spin() {
 
     // Sélectionner un pronom aléatoire parmi les pronoms disponibles pour le temps choisi
     let pronouns = Object.keys(randomVerb.conjugations[currentTense]);
+    if (!pronouns || pronouns.length === 0) {
+        console.error(`Aucun pronom trouvé pour le temps ${currentTense} du verbe ${currentVerb}`);
+        return;
+    }
     currentPronoun = pronouns[Math.floor(Math.random() * pronouns.length)];
 
     // Mettre à jour les slots de l'interface
@@ -113,10 +117,11 @@ function spin() {
     document.getElementById("user-input").value = "";
     document.getElementById("message").style.display = "none";
 
-    // Réinitialiser les tentatives et le bouton "Afficher la réponse"
+    // Réinitialiser les tentatives
     attemptsLeft = 3;
     document.getElementById("attempts").textContent = attemptsLeft;
-    // Le bouton "Afficher la réponse" reste toujours visible
+
+    // Réinitialiser la révélation de la réponse
     revealAnswerUsed = false;
 
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
@@ -138,7 +143,6 @@ function checkAnswer() {
         if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
             points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
         }
-        attemptsLeft = 3;
         document.getElementById("points").textContent = `${points} / 33`;
         document.getElementById("message").textContent = "Bonne réponse !";
         document.getElementById("message").classList.remove("error");
@@ -153,7 +157,8 @@ function checkAnswer() {
         if (points >= 33) {
             showWinningMessage();
         } else {
-            spin(); // Recharger un nouveau verbe
+            // Charger un nouveau verbe après un délai pour permettre à la bulle d'être visible
+            setTimeout(spin, 2000); // 2 secondes
         }
     } else {
         // Incrémenter le nombre d'échecs
@@ -175,7 +180,7 @@ function checkAnswer() {
             document.getElementById("attempts").textContent = attemptsLeft;
 
             // Charger un nouveau verbe
-            spin();
+            setTimeout(spin, 2000); // 2 secondes
         } else {
             // Moins de trois échecs
             document.getElementById("message").textContent = "Mauvaise réponse. Réessayez.";
