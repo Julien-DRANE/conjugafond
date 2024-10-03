@@ -13,7 +13,7 @@
     
     <!-- Règles du jeu en mode normal -->
     <p id="game-rules">
-        Saisissez la conjugaison correcte du verbe affiché selon le temps et le pronom personnel indiqués. Chaque bonne réponse vaut <strong>1 pt</strong>, en <strong>mode extrême</strong> les points sont <strong>multipliés par 3 (x3)</strong>, et en <strong>mode duo</strong>, les points sont <strong>doublés (x2)</strong>, mais une mauvaise réponse vous fait perdre <strong>1 pt (-1)</strong>. Atteignez <strong>33 points</strong> pour gagner la partie !
+        Saisissez la conjugaison correcte du verbe affiché selon le temps et le pronom personnel indiqués. Chaque bonne réponse vaut <strong>1 pt</strong>, en <strong>mode extrême</strong> les points sont <strong>multipliés par 3 (x3)</strong>, et en <strong>mode duo</strong>, les points sont <strong>doublés (x2)</strong>, mais une mauvaise réponse vous fait perdre <strong>1 pt (-1)</strong> après trois échecs consécutifs. Atteignez <strong>33 points</strong> pour gagner la partie !
     </p>
 
     <div id="game-container">
@@ -33,7 +33,7 @@
 
         <!-- Bulle de score permanente -->
         <div id="score-bubble">
-            Score : <span id="points">0</span> / 33
+            Points : <span id="points">0</span> / 33
         </div>
 
         <!-- Tentatives restantes -->
@@ -47,7 +47,7 @@
             <button id="spin-btn">Nouvelle question</button>
             <button id="toggle-mode-btn">Mode Extrême</button>
             <button id="toggle-duo-btn">Mode Duo</button>
-            <button id="show-answer-btn">Afficher la réponse</button> <!-- Bouton toujours visible -->
+            <button id="show-answer-btn">Afficher la réponse</button>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
     </div>
 
     <!-- Bulle "Gagné !" -->
-    <div id="winning-bubble" class="winning-bubble">Gagné !</div>
+    <div id="winning-bubble" class="winning-bubble">Gagné ! Votre score : 33 / 33</div>
 
     <!-- Sons du jeu -->
     <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
