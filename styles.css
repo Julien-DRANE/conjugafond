@@ -4,305 +4,142 @@ body, html {
     padding: 0;
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to right, #f0f4c3, #e1bee7);
-    width: 100%;
-    height: 100%;
 }
 
-/* Container principal */
+#game-title {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    font-size: 48px;
+    margin-top: 20px;
+    color: #3e2723;
+}
+
+#game-rules {
+    text-align: center;
+    margin: 0;
+    font-size: 16px;
+    color: #4e342e;
+    padding: 10px 20px;
+    max-width: 800px;
+    margin: 10px auto 20px auto;
+    background: #fffde7;
+    border: 1px solid #ffcc80;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 #game-container {
-    width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
 }
 
-/* Slots de jeu */
+/* Style des slots */
 #slots {
     display: flex;
-    flex-wrap: wrap; /* Permet aux slots de se réorganiser */
     justify-content: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
-/* Chaque slot */
 .slot {
-    background-color: #fff;
-    border: 2px solid #3f51b5;
+    width: 150px;
+    height: 60px;
+    background-color: #fff9c4;
+    border: 2px solid #f57f17;
     border-radius: 10px;
-    width: 150px; /* Largeur du slot */
-    height: 100px; /* Hauteur du slot */
-    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px; /* Taille du texte */
+    font-size: 24px;
     font-weight: bold;
-    color: #3f51b5;
-    transition: transform 0.3s ease;
+    margin: 0 5px;
 }
 
-/* Effet de survol sur chaque slot */
-.slot:hover {
-    transform: scale(1.05);
-}
-
-/* Section pour la réponse */
+/* Section de réponse */
 #answer-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
+    margin: 20px 0;
+}
+
+#display-pronoun {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 #user-input {
     padding: 10px;
     font-size: 18px;
-    border: 2px solid #3f51b5;
-    border-radius: 10px;
-    width: 300px;
-    margin-bottom: 10px;
+    width: 200px;
 }
 
-/* Bouton vérifier */
 #submit-btn {
     padding: 10px 20px;
-    font-size: 18px;
-    border: none;
-    background-color: #3f51b5;
+    margin-left: 10px;
+    background-color: #8c9eff;
     color: #fff;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 #submit-btn:hover {
-    background-color: #283593;
-    transform: scale(1.05);
+    background-color: #536dfe;
+}
+
+/* Affichage des points et tentatives */
+#points-display, #attempts-display {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Messages */
+.message {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #388e3c;
+}
+
+.message.error {
+    color: #d32f2f;
 }
 
 /* Boutons de jeu */
 button {
     padding: 10px 20px;
-    font-size: 16px;
-    margin: 10px;
-    border: none;
-    background-color: #4caf50;
+    margin: 10px 5px;
+    background-color: #8c9eff;
     color: #fff;
-    border-radius: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #388e3c;
-    transform: scale(1.05);
-}
-
-#toggle-mode-btn {
-    background-color: #ff5722;
-}
-
-#toggle-mode-btn:hover {
-    background-color: #e64a19;
-}
-
-/* Points */
-#points-display {
-    font-size: 24px;
-    font-weight: bold;
-    color: #3f51b5;
-    margin: 20px;
-}
-
-/* Message d'indication */
-.message {
-    font-size: 20px;
-    padding: 10px 20px;
-    border: 2px solid #3f51b5;
-    border-radius: 10px;
-    display: none;
-    margin-bottom: 20px;
-}
-
-.success {
-    background-color: #c8e6c9;
-    color: #388e3c;
-}
-
-.error {
-    background-color: #ffcdd2;
-    color: #d32f2f;
+    background-color: #536dfe;
 }
 
 /* Image de bonne réponse */
 #good-answer-img-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: none; /* Cacher l'image par défaut */
-    z-index: 1000;
+    margin-top: 20px;
 }
 
 #good-answer-img {
     width: 200px;
-    height: auto;
-    transition: transform 1s ease; /* Animation de zoom */
 }
 
-/* Mode Extrême */
-body.extreme-mode {
-    background: linear-gradient(to right, #ff9800, #ff5722);
+/* Styles spécifiques aux modes */
+.extreme-mode #game-container {
+    background: linear-gradient(to right, #ff6f61, #ffcccb);
 }
 
-body.extreme-mode #game-container {
-    border: 4px solid #d32f2f;
-}
-
-body.extreme-mode .slot {
-    background-color: #ffccbc;
-    color: #d32f2f;
-}
-
-/* Adaptation pour les appareils mobiles */
-@media only screen and (max-width: 768px) {
-    #game-container {
-        padding: 10px;
-        width: 100%;
-        height: auto;
-    }
-
-    #slots {
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    #verb-slot, #tense-slot {
-        width: 45%;
-    }
-
-    #pronoun-slot {
-        width: 90%;
-    }
-
-    .slot {
-        width: 45%;
-        height: 80px;
-        font-size: 20px;
-    }
-
-    #user-input {
-        width: 100%;
-    }
-
-    #submit-btn, button {
-        width: 100%;
-        margin: 5px 0;
-    }
-
-    #points-display {
-        font-size: 20px;
-    }
-
-    #good-answer-img {
-        width: 150px;
-    }
-}
-/* Style général pour centrer le contenu des slots */
-.slot {
-    display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center;     /* Centrer verticalement */
-    text-align: center;
-    font-size: 24px; /* Ajuste cette valeur pour changer la taille du texte */
-    height: 80px; /* Ajuste la hauteur si nécessaire */
-    width: 100%; /* Assure que les slots occupent toute la largeur */
-    margin: 10px auto; /* Centre les slots dans leur conteneur */
-}
-/* Conteneur de l'image de bonne réponse */
-#good-answer-img-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100; /* S'assurer que l'image soit au-dessus des autres éléments */
-}
-
-/* Style de l'image de bonne réponse */
-#good-answer-img {
-    max-width: 300px;
-    display: none; /* Cacher l'image par défaut */
-    transform: scale(1); /* Taille initiale */
-    transition: transform 1.3s ease-in-out; /* Transition pour l'animation */
-}
-#good-answer-img {
-    position: fixed; /* Fixe l'image par rapport à la fenêtre */
-    top: 50%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%) scale(1); /* Ajuste le positionnement et la mise à l'échelle */
-    z-index: 1000; /* S'assurer que l'image est au-dessus de tout */
-    max-width: 300px; /* Limite la taille de l'image */
-    max-height: 300px; /* Limite la hauteur */
-    width: auto; /* Conserve les proportions */
-    height: auto; /* Conserve les proportions */
-    opacity: 0; /* Par défaut, l'image est transparente */
-    display: none; /* Par défaut, l'image n'est pas visible */
-    transition: transform 1.3s ease-in-out, opacity 0.3s ease-in-out; /* Animation de transition */
-}
-/* Bulle de bonne réponse */
-.answer-bubble {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #00c853; /* Couleur verte pour signaler une bonne réponse */
-    color: white;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 24px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: none; /* Masquer la bulle par défaut */
-    z-index: 1000; /* Assurez-vous que la bulle est au-dessus des autres éléments */
-    animation: bubble-zoom 1.3s ease-out;
-}
-
-/* Animation pour agrandir la bulle */
-@keyframes bubble-zoom {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-    }
-}
-/* Style du titre "Conjugafond" */
-#game-title {
-    font-family: 'Pacifico', cursive; /* Appliquer la police Pacifico */
-    text-align: center; /* Centrer le titre */
-    font-size: 48px; /* Taille de police plus grande */
-    margin: 20px 0; /* Marges autour du titre */
-    color: #f57f17; /* Couleur du texte */
-    text-shadow: 2px 2px 4px #ffa726; /* Ajouter une ombre pour le rendre plus visible */
-    padding: 10px;
-}
-/* Styles pour le mode Duo */
-body.duo-mode {
-    background-color: #f3e5f5; /* Couleur violette douce */
-}
-
-body.duo-mode #game-title {
-    color: #7b1fa2; /* Couleur plus sombre pour le titre */
-}
-/* Style pour le mode Duo */
-body.duo-mode {
-    background: linear-gradient(135deg, #ffcc80, #80d8ff); /* Deux couleurs (orange et bleu clair) */
-}
-
-body.duo-mode #game-title {
-    color: #3f51b5; /* Changer la couleur du titre en mode Duo */
+.duo-mode #game-container {
+    background: linear-gradient(to right, #ffcc80, #ffab40);
 }
