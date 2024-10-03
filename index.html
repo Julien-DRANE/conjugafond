@@ -1,88 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONJUGAFOND</title>
+    <title>Jeu de Conjugaison</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-    <header>
-        <h1 class="logo">CONJUGAFOND</h1>
-        <p class="instruction">Conjugue 5 verbes correctement pour atteindre le score maximum ! Attention aux pièges !</p>
-        <div class="score-grid">
-            <p>Présent: 1pt | Futur: 2pts | Passé: 3pts | Imparfait: 4pts</p>
-            <div id="turbo-x2" class="turbo-x2" style="display: none;">x2</div> <!-- Symbole x2 pour mode TURBO -->
+    <h1 id="game-title">Conjugafond</h1>
+    <div id="game-container">
+        <!-- Slots de jeu -->
+        <div id="slots">
+            <div id="verb-slot" class="slot">Verbe</div>
+            <div id="tense-slot" class="slot">Temps</div>
+            <div id="pronoun-slot" class="slot">Pronom</div>
         </div>
-    </header>
 
-    <div class="container">
-        <div class="game-area">
-            <!-- Panneau de gauche -->
-            <div class="left-panel">
-                <div class="game-controls">
-                    <label for="niveau">Mode :</label>
-                    <button id="modeAleatoire" class="active">Mode Aléatoire (Actif)</button>
-                    
-                    <!-- Bouton TURBO -->
-                    <button id="modeTurbo">Mode TURBO (Inactif)</button>
-<button id="modeExtreme">Mode Extrême (Inactif)</button>
-                    
-                    <label for="niveau">Choisir le groupe de verbes :</label>
-                    <button id="premierGroupe">1er Groupe</button>
-                    <button id="deuxiemeGroupe">2ème Groupe</button>
-                    <button id="troisiemeGroupe">3ème Groupe</button>
-                </div>
-            </div>
-
-            <!-- Panneau central -->
-            <div class="center-panel">
-                <div class="target">
-                    <h2 id="verbe-container">Verbe : </h2>
-                    <div id="temps-container">Temps : </div>
-                </div>
-<div id="message-container" class="message"></div>
-                <div id="phrase-container" class="phrase">
-                    <!-- La phrase à compléter s'affichera ici -->
-                </div>
-
-                <input type="text" id="reponse" placeholder="Entrez le verbe conjugué">
-                <button id="verifier">Valider</button>
-                
-                <!-- Bouton Solution -->
-                <button id="bouton-solution">
-                    Solution
-                </button>
-
-                <!-- Bulle de solution -->
-                <div id="solution-bulle" class="solution-bulle" style="display: none;">
-                    <span id="solution-text"></span>
-                </div>
-
-
-                <div class="score-container">
-                    Score : <span id="score">0</span>
-                </div>
-
-                <!-- Section pour afficher le score final -->
-                <div id="final-score" class="final-score" style="display:none;">
-                    Votre score final est : <span id="final-score-value">0</span>
-                </div>
-            </div>
-
-            <!-- Panneau de droite -->
-            <div class="right-panel">
-                <h3>Historique</h3>
-                <div id="historique-container">
-                    <ul id="historique"></ul>
-                </div>
-                <!-- Ajout du bouton "Nouvelle Partie" dans le panneau de droite -->
-                <button id="nouvelle-partie">Nouvelle Partie</button>
-            </div>
+        <!-- Section pour entrer la réponse -->
+        <div id="answer-section">
+            <span id="display-pronoun">je</span>
+            <input type="text" id="user-input" placeholder="Entrez le verbe conjugué">
+            <button id="submit-btn">Vérifier</button>
         </div>
+
+        <!-- Points -->
+        <div id="points-display">Points : <span id="points">0</span></div>
+        <div id="attempts-display">Tentatives restantes : <span id="attempts">3</span></div>
+
+        <!-- Messages -->
+        <div id="message" class="message"></div>
+
+        <!-- Boutons de jeu -->
+        <button id="spin-btn">Nouvelle question</button>
+        <button id="toggle-mode-btn">Mode Extrême</button>
+        <button id="toggle-duo-btn">Mode Duo</button>
+        <button id="show-answer-btn">Afficher la réponse</button>
     </div>
 
-    <!-- Inclusion du script JavaScript -->
+    <!-- Image de bonne réponse -->
+    <div id="good-answer-img-container">
+        <img id="good-answer-img" src="images/bonne_reponse.png" alt="Bonne Réponse !" style="display:none;">
+    </div>
+
+    <!-- Sons du jeu -->
+    <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
+
+    <!-- Script JS -->
     <script src="script.js"></script>
 </body>
 </html>
+<div id="good-answer-bubble" class="answer-bubble">Bonne Réponse !</div>
