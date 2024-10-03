@@ -13,6 +13,11 @@
     <h1 id="game-title">Conjugafond</h1>
     <p id="game-rules">Saisissez la conjugaison correcte du verbe affiché selon le temps et le pronom personnel indiqués. Chaque bonne réponse vaut <strong>1 pt</strong>, en <strong>mode extrême</strong> les points sont <strong>multipliés par 3 (x3)</strong>, et en <strong>mode duo</strong>, les points sont <strong>doublés (x2)</strong>, mais une mauvaise réponse vous fait perdre <strong>1 pt (-1)</strong>. Atteignez <strong>33 points</strong> pour gagner la partie !</p>
 
+    <!-- Ajout de la bulle de score permanente -->
+    <div id="score-bubble">
+        Score : <span id="points">0</span>
+    </div>
+
     <div id="game-container">
         <!-- Slots de jeu -->
         <div id="slots">
@@ -27,10 +32,6 @@
             <input type="text" id="user-input" placeholder="Entrez le verbe conjugué">
             <button id="submit-btn">Vérifier</button>
         </div>
-
-        <!-- Points -->
-        <div id="points-display">Points : <span id="points">0</span></div>
-        <div id="attempts-display">Tentatives restantes : <span id="attempts">3</span></div>
 
         <!-- Messages -->
         <div id="message" class="message"></div>
