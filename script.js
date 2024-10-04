@@ -33,13 +33,13 @@ let duoMode = false;
 let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 let gameActive = true;
 
-let comboCount = 0; // Compteur de Combo
+let comboCount = 0; // Ajouter une variable pour le Combo
 const maxCombo = 4; // Nombre de bonnes réponses consécutives pour le Combo
 
 // Variables pour les sons
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
-let comboSound = document.getElementById("combo-sound"); // Référence au son Combo
+let comboSound = document.getElementById("combo-sound"); // Ajouter la référence au son Combo
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
@@ -147,23 +147,10 @@ function checkAnswer() {
     let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun].toLowerCase();
 
     if (userInput === expectedAnswer) {
-        if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
+        if (!revealAnswerUsed) { // Incrémenter le Combo seulement si la réponse n'a pas été révélée
             points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
-            comboCount += 1; // Incrémenter le Combo uniquement si la réponse n'a pas été révélée
+            comboCount += 1; // Incrémenter le Combo
             updateComboGauge();
-
-            // Vérifier si le Combo est atteint
-            if (comboCount === maxCombo) {
-                points += 5; // Bonus de points pour le Combo
-                document.getElementById("points").textContent = `${points} / 33`;
-                document.getElementById("message").textContent = "Bonne réponse ! Combo ! +5 points !";
-                comboSound.play(); // Jouer le son Combo
-                // Réinitialiser le Combo
-                comboCount = 0;
-                updateComboGauge();
-            } else {
-                document.getElementById("message").textContent = "Bonne réponse !";
-            }
         } else {
             // Si la réponse a été révélée, ne pas incrémenter le Combo
             document.getElementById("message").textContent = "Bonne réponse ! (Réponse révélée)";
@@ -175,6 +162,17 @@ function checkAnswer() {
         document.getElementById("message").classList.add("success");
         document.getElementById("message").style.display = "block";
         successSound.play();
+
+        // Vérifier si le Combo est atteint
+        if (comboCount === maxCombo) {
+            points += 5; // Bonus de points pour le Combo
+            document.getElementById("points").textContent = `${points} / 33`;
+            document.getElementById("message").textContent += " Combo ! +5 points !";
+            comboSound.play(); // Jouer le son Combo
+            // Réinitialiser le Combo
+            comboCount = 0;
+            updateComboGauge();
+        }
 
         // Afficher la bulle "Bonne Réponse !" pendant 1,5 seconde
         showGoodAnswerBubble();
@@ -267,11 +265,18 @@ function resetGame() {
     gameActive = true;
 }
 
-// Fonction pour mettre à jour la jauge Combo
+// Fonction pour mettre à jour la jauge Combo avec un gradient dynamique
 function updateComboGauge() {
     const comboGauge = document.getElementById("combo-gauge");
     const percentage = (comboCount / maxCombo) * 100;
     comboGauge.style.width = `${percentage}%`;
+
+    // Changer le gradient en fonction de la progression
+    if (percentage <= 50) {
+        comboGauge.style.background = `linear-gradient(to right, orange, yellow ${percentage}%)`;
+    } else {
+        comboGauge.style.background = `linear-gradient(to right, orange, yellow 50%, green ${percentage}%)`;
+    }
 }
 
 // Écouteurs d'événements
