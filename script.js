@@ -33,6 +33,11 @@ let duoMode = false;
 let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 let gameActive = true;
 
+// Variables pour le Combo
+let comboCount = 0;
+const COMBO_THRESHOLD = 4; // Nombre de bonnes réponses consécutives pour un Combo
+let maxCombo = 10; // Pour définir la jauge à 100%
+
 // Variables pour les sons
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
@@ -127,6 +132,73 @@ function spin() {
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
 }
 
+// Fonction pour mettre à jour la jauge de Combo
+function updateComboGauge() {
+    const comboFill = document.getElementById("combo-fill");
+    const comboPercentage = (comboCount / COMBO_THRESHOLD) * 100;
+    // Limiter la jauge à 100%
+    const cappedPercentage = comboPercentage > 100 ? 100 : comboPercentage;
+    comboFill.style.width = `${cappedPercentage}%`;
+}
+
+// Fonction pour réinitialiser la jauge de Combo
+function resetCombo() {
+    comboCount = 0;
+    updateComboGauge();
+    document.getElementById("combo-count").textContent = comboCount;
+}
+
+// Fonction pour augmenter le Combo
+function increaseCombo() {
+    comboCount += 1;
+    if (comboCount > COMBO_THRESHOLD) {
+        comboCount = COMBO_THRESHOLD; // Limiter à la jauge max
+    }
+    document.getElementById("combo-count").textContent = comboCount;
+    updateComboGauge();
+
+    // Vérifier si un Combo est atteint
+    if (comboCount === COMBO_THRESHOLD) {
+        // Ajouter un bonus de points, par exemple +5 points
+        points += 5;
+        document.getElementById("points").textContent = `${points} / 33`;
+        document.getElementById("message").textContent = "Combo! +5 points bonus!";
+        document.getElementById("message").classList.remove("error");
+        document.getElementById("message").classList.add("success");
+        document.getElementById("message").style.display = "block";
+        successSound.play();
+
+        // Afficher la bulle "Combo !"
+        showComboBubble();
+
+        // Réinitialiser le Combo après le bonus
+        resetCombo();
+    }
+}
+
+// Fonction pour afficher la bulle "Combo !"
+function showComboBubble() {
+    const bubble = document.createElement("div");
+    bubble.classList.add("combo-bubble");
+    bubble.textContent = "Combo! +5 points!";
+    document.body.appendChild(bubble);
+
+    // Afficher la bulle
+    bubble.style.display = "block";
+    setTimeout(() => {
+        bubble.style.opacity = "1";
+    }, 10); // Légère pause pour déclencher la transition
+
+    // Cacher la bulle après 1,5 seconde
+    setTimeout(() => {
+        bubble.style.opacity = "0"; // Rendre invisible
+        setTimeout(() => {
+            bubble.style.display = "none"; // Cacher complètement
+            bubble.remove();
+        }, 500); // Temps de transition
+    }, 1500);
+}
+
 // Fonction pour vérifier la réponse
 function checkAnswer() {
     if (!gameActive) return;
@@ -152,6 +224,9 @@ function checkAnswer() {
 
         // Afficher la bulle "Bonne Réponse !" pendant 1,5 seconde
         showGoodAnswerBubble();
+
+        // Augmenter le Combo
+        increaseCombo();
 
         // Vérifier la fin de partie (atteinte de 33 points)
         if (points >= 33) {
@@ -179,7 +254,10 @@ function checkAnswer() {
             attemptsLeft = 3;
             document.getElementById("attempts").textContent = attemptsLeft;
 
-            // Charger un nouveau verbe
+            // Réinitialiser le Combo
+            resetCombo();
+
+            // Charger un nouveau verbe après un délai
             setTimeout(spin, 2000); // 2 secondes
         } else {
             // Moins de trois échecs
@@ -188,6 +266,9 @@ function checkAnswer() {
             document.getElementById("message").classList.add("error");
             document.getElementById("message").style.display = "block";
             wrongSound.play();
+
+            // Réinitialiser le Combo car une erreur a été faite
+            resetCombo();
         }
     }
 
@@ -232,6 +313,7 @@ function resetGame() {
     attemptsLeft = 3;
     document.getElementById("points").textContent = `${points} / 33`;
     document.getElementById("attempts").textContent = attemptsLeft;
+    resetCombo(); // Réinitialiser le Combo
     spin();
     gameActive = true;
 }
@@ -253,6 +335,9 @@ document.getElementById("show-answer-btn").addEventListener("click", () => {
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
     revealAnswerUsed = true; // Marquer que la réponse a été révélée
+
+    // Réinitialiser le Combo car la réponse a été révélée
+    resetCombo();
 });
 
 // Validation par la touche Entrée
