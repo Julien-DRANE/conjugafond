@@ -1426,7 +1426,7 @@
           "ils/elles": "donnent"
         },
         "passé composé": {
-          "je": "ai donné",
+          "j'": "ai donné",
           "tu": "as donné",
           "il/elle": "a donné",
           "nous": "avons donné",
@@ -1466,7 +1466,7 @@
           "qu’ils/elles": "donnassent"
         },
         "subjonctif passé": {
-          "que je": "aie donné",
+          "que j'": "aie donné",
           "que tu": "aies donné",
           "qu’il/elle": "ait donné",
           "que nous": "ayons donné",
@@ -1482,7 +1482,7 @@
           "ils/elles": "donneraient"
         },
         "plus-que-parfait": {
-          "je": "avais donné",
+          "j'": "avais donné",
           "tu": "avais donné",
           "il/elle": "avait donné",
           "nous": "avions donné",
@@ -1490,7 +1490,7 @@
           "ils/elles": "avaient donné"
         },
         "passé antérieur": {
-          "je": "eus donné",
+          "j'": "eus donné",
           "tu": "eus donné",
           "il/elle": "eut donné",
           "nous": "eûmes donné",
@@ -1498,7 +1498,7 @@
           "ils/elles": "eurent donné"
         },
         "futur antérieur": {
-          "je": "aurai donné",
+          "j'": "aurai donné",
           "tu": "auras donné",
           "il/elle": "aura donné",
           "nous": "aurons donné",
@@ -1506,7 +1506,7 @@
           "ils/elles": "auront donné"
         },
         "conditionnel passé première forme": {
-          "je": "aurais donné",
+          "j'": "aurais donné",
           "tu": "aurais donné",
           "il/elle": "aurait donné",
           "nous": "aurions donné",
