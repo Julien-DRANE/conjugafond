@@ -10,8 +10,8 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "passé simple",
     "plus-que-parfait",
+    "passé simple",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
@@ -40,6 +40,7 @@ const maxCombo = 4; // Nombre de bonnes réponses consécutives pour le Combo
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
 let comboSound = document.getElementById("combo-sound"); // Ajouter la référence au son Combo
+let applauseSound = document.getElementById("applause-sound"); // Ajouter la référence au son d'applaudissements
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
@@ -147,21 +148,20 @@ function checkAnswer() {
     let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun].toLowerCase();
 
     if (userInput === expectedAnswer) {
-        if (!revealAnswerUsed) { // Incrémenter le Combo seulement si la réponse n'a pas été révélée
+        if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
             points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
-            comboCount += 1; // Incrémenter le Combo
-            updateComboGauge();
-        } else {
-            // Si la réponse a été révélée, ne pas incrémenter le Combo
-            document.getElementById("message").textContent = "Bonne réponse ! (Réponse révélée)";
         }
-
         points = Math.max(points, 0); // Assurez-vous que les points ne descendent pas en dessous de 0
         document.getElementById("points").textContent = `${points} / 33`;
+        document.getElementById("message").textContent = "Bonne réponse !";
         document.getElementById("message").classList.remove("error");
         document.getElementById("message").classList.add("success");
         document.getElementById("message").style.display = "block";
         successSound.play();
+
+        // Incrémenter le Combo
+        comboCount += 1;
+        updateComboGauge();
 
         // Vérifier si le Combo est atteint
         if (comboCount === maxCombo) {
@@ -236,21 +236,27 @@ function showGoodAnswerBubble() {
     }, 1500);
 }
 
-// Fonction pour afficher le message de victoire
+// Fonction pour afficher le message de victoire avec confettis et applaudissements
 function showWinningMessage() {
     const winningMessage = document.getElementById("winning-bubble");
     winningMessage.style.display = "block";
     winningMessage.textContent = `Gagné ! Votre score : ${points} / 33`;
 
-    // Jouer un son de victoire si disponible
-    // let victorySound = new Audio("sounds/victory.mp3");
-    // victorySound.play();
+    // Jouer le son d'applaudissements
+    applauseSound.play();
 
-    // Réinitialiser le jeu après 2 secondes
+    // Lancer l'animation de confettis
+    confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+
+    // Réinitialiser le jeu après 5 secondes pour laisser le temps à l'animation de s'afficher
     setTimeout(() => {
         winningMessage.style.display = "none";
         resetGame(); // Réinitialiser le jeu après avoir affiché le message de victoire
-    }, 2000);
+    }, 5000); // 5 secondes
 }
 
 // Réinitialisation du jeu
@@ -265,17 +271,19 @@ function resetGame() {
     gameActive = true;
 }
 
-// Fonction pour mettre à jour la jauge Combo avec un gradient dynamique
+// Fonction pour mettre à jour la jauge Combo
 function updateComboGauge() {
     const comboGauge = document.getElementById("combo-gauge");
     const percentage = (comboCount / maxCombo) * 100;
     comboGauge.style.width = `${percentage}%`;
 
-    // Changer le gradient en fonction de la progression
-    if (percentage <= 50) {
-        comboGauge.style.background = `linear-gradient(to right, orange, yellow ${percentage}%)`;
+    // Changer la couleur de la jauge en fonction du pourcentage
+    if (percentage < 50) {
+        comboGauge.style.background = "#ff9800"; // Orange
+    } else if (percentage < 100) {
+        comboGauge.style.background = "#ffeb3b"; // Jaune
     } else {
-        comboGauge.style.background = `linear-gradient(to right, orange, yellow 50%, green ${percentage}%)`;
+        comboGauge.style.background = "#4caf50"; // Vert
     }
 }
 
@@ -296,6 +304,10 @@ document.getElementById("show-answer-btn").addEventListener("click", () => {
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
     revealAnswerUsed = true; // Marquer que la réponse a été révélée
+
+    // Ne pas incrémenter le Combo si la réponse a été révélée
+    comboCount = 0;
+    updateComboGauge();
 });
 
 // Validation par la touche Entrée
