@@ -1616,6 +1616,511 @@
         }
       }
     },
+	{
+      "infinitive": "atteindre",
+      "conjugations": {
+        "présent": {
+          "je": "atteins",
+          "tu": "atteins",
+          "il/elle": "atteint",
+          "nous": "atteignons",
+          "vous": "atteignez",
+          "ils/elles": "atteignent"
+        },
+        "passé composé": {
+          "j'": "ai atteint",
+          "tu": "as atteint",
+          "il/elle": "a atteint",
+          "nous": "avons atteint",
+          "vous": "avez atteint",
+          "ils/elles": "ont atteint"
+        },
+        "imparfait": {
+          "je": "atteignais",
+          "tu": "atteignais",
+          "il/elle": "atteignait",
+          "nous": "atteignions",
+          "vous": "atteigniez",
+          "ils/elles": "atteignaient"
+        },
+        "passé simple": {
+          "je": "atteignis",
+          "tu": "atteignis",
+          "il/elle": "atteignit",
+          "nous": "atteignîmes",
+          "vous": "atteignîtes",
+          "ils/elles": "atteignirent"
+        },
+        "futur simple": {
+          "je": "atteindrai",
+          "tu": "atteindras",
+          "il/elle": "atteindra",
+          "nous": "atteindrons",
+          "vous": "atteindrez",
+          "ils/elles": "atteindront"
+        },
+        "imparfait du subjonctif": {
+          "que je": "atteignisse",
+          "que tu": "atteignisses",
+          "qu'il/elle": "atteignît",
+          "que nous": "atteignissions",
+          "que vous": "atteignissiez",
+          "qu'ils/elles": "atteignissent"
+        },
+        "subjonctif passé": {
+          "que je": "aie atteint",
+          "que tu": "aies atteint",
+          "qu'il/elle": "ait atteint",
+          "que nous": "ayons atteint",
+          "que vous": "ayez atteint",
+          "qu'ils/elles": "aient atteint"
+        },
+        "conditionnel présent": {
+          "je": "atteindrais",
+          "tu": "atteindrais",
+          "il/elle": "atteindrait",
+          "nous": "atteindrions",
+          "vous": "atteindriez",
+          "ils/elles": "atteindraient"
+        },
+        "plus-que-parfait": {
+          "j'": "avais atteint",
+          "tu": "avais atteint",
+          "il/elle": "avait atteint",
+          "nous": "avions atteint",
+          "vous": "aviez atteint",
+          "ils/elles": "avaient atteint"
+        },
+        "passé antérieur": {
+          "j'": "eus atteint",
+          "tu": "eus atteint",
+          "il/elle": "eut atteint",
+          "nous": "eûmes atteint",
+          "vous": "eûtes atteint",
+          "ils/elles": "eurent atteint"
+        },
+        "futur antérieur": {
+          "je": "aurai atteint",
+          "tu": "auras atteint",
+          "il/elle": "aura atteint",
+          "nous": "aurons atteint",
+          "vous": "aurez atteint",
+          "ils/elles": "auront atteint"
+        },
+        "conditionnel passé première forme": {
+          "je": "aurais atteint",
+          "tu": "aurais atteint",
+          "il/elle": "aurait atteint",
+          "nous": "aurions atteint",
+          "vous": "auriez atteint",
+          "ils/elles": "auraient atteint"
+        }
+      }
+    },
+	{
+      "infinitive": "chercher",
+      "conjugations": {
+        "présent": {
+          "je": "cherche",
+          "tu": "cherches",
+          "il/elle": "cherche",
+          "nous": "cherchons",
+          "vous": "cherchez",
+          "ils/elles": "cherchent"
+        },
+        "passé composé": {
+          "j'": "ai cherché",
+          "tu": "as cherché",
+          "il/elle": "a cherché",
+          "nous": "avons cherché",
+          "vous": "avez cherché",
+          "ils/elles": "ont cherché"
+        },
+        "imparfait": {
+          "je": "cherchais",
+          "tu": "cherchais",
+          "il/elle": "cherchait",
+          "nous": "cherchions",
+          "vous": "cherchiez",
+          "ils/elles": "cherchaient"
+        },
+        "passé simple": {
+          "je": "cherchai",
+          "tu": "cherchas",
+          "il/elle": "chercha",
+          "nous": "cherchâmes",
+          "vous": "cherchâtes",
+          "ils/elles": "cherchèrent"
+        },
+        "futur simple": {
+          "je": "chercherai",
+          "tu": "chercheras",
+          "il/elle": "cherchera",
+          "nous": "chercherons",
+          "vous": "chercherez",
+          "ils/elles": "chercheront"
+        },
+        "imparfait du subjonctif": {
+          "que je": "cherchasse",
+          "que tu": "cherchasses",
+          "qu'il/elle": "cherchât",
+          "que nous": "cherchassions",
+          "que vous": "cherchassiez",
+          "qu'ils/elles": "cherchassent"
+        },
+        "subjonctif passé": {
+          "que je": "aie cherché",
+          "que tu": "aies cherché",
+          "qu'il/elle": "ait cherché",
+          "que nous": "ayons cherché",
+          "que vous": "ayez cherché",
+          "qu'ils/elles": "aient cherché"
+        },
+        "conditionnel présent": {
+          "je": "chercherais",
+          "tu": "chercherais",
+          "il/elle": "chercherait",
+          "nous": "chercherions",
+          "vous": "chercheriez",
+          "ils/elles": "chercheraient"
+        },
+        "plus-que-parfait": {
+          "j'": "avais cherché",
+          "tu": "avais cherché",
+          "il/elle": "avait cherché",
+          "nous": "avions cherché",
+          "vous": "aviez cherché",
+          "ils/elles": "avaient cherché"
+        },
+        "passé antérieur": {
+          "j'": "eus cherché",
+          "tu": "eus cherché",
+          "il/elle": "eut cherché",
+          "nous": "eûmes cherché",
+          "vous": "eûtes cherché",
+          "ils/elles": "eurent cherché"
+        },
+        "futur antérieur": {
+          "je": "aurai cherché",
+          "tu": "auras cherché",
+          "il/elle": "aura cherché",
+          "nous": "aurons cherché",
+          "vous": "aurez cherché",
+          "ils/elles": "auront cherché"
+        },
+        "conditionnel passé première forme": {
+          "je": "aurais cherché",
+          "tu": "aurais cherché",
+          "il/elle": "aurait cherché",
+          "nous": "aurions cherché",
+          "vous": "auriez cherché",
+          "ils/elles": "auraient cherché"
+        }
+      }
+    },
+    {
+      "infinitive": "cueillir",
+      "conjugations": {
+        "présent": {
+          "je": "cueille",
+          "tu": "cueilles",
+          "il/elle": "cueille",
+          "nous": "cueillons",
+          "vous": "cueillez",
+          "ils/elles": "cueillent"
+        },
+        "passé composé": {
+          "j'": "ai cueilli",
+          "tu": "as cueilli",
+          "il/elle": "a cueilli",
+          "nous": "avons cueilli",
+          "vous": "avez cueilli",
+          "ils/elles": "ont cueilli"
+        },
+        "imparfait": {
+          "je": "cueillais",
+          "tu": "cueillais",
+          "il/elle": "cueillait",
+          "nous": "cueillions",
+          "vous": "cueilliez",
+          "ils/elles": "cueillaient"
+        },
+        "passé simple": {
+          "je": "cueillis",
+          "tu": "cueillis",
+          "il/elle": "cueillit",
+          "nous": "cueillîmes",
+          "vous": "cueillîtes",
+          "ils/elles": "cueillirent"
+        },
+        "futur simple": {
+          "je": "cueillerai",
+          "tu": "cueilleras",
+          "il/elle": "cueillera",
+          "nous": "cueillerons",
+          "vous": "cueillerez",
+          "ils/elles": "cueilleront"
+        },
+        "imparfait du subjonctif": {
+          "que je": "cueillisse",
+          "que tu": "cueillisses",
+          "qu'il/elle": "cueillît",
+          "que nous": "cueillissions",
+          "que vous": "cueillissiez",
+          "qu'ils/elles": "cueillissent"
+        },
+        "subjonctif passé": {
+          "que je": "aie cueilli",
+          "que tu": "aies cueilli",
+          "qu'il/elle": "ait cueilli",
+          "que nous": "ayons cueilli",
+          "que vous": "ayez cueilli",
+          "qu'ils/elles": "aient cueilli"
+        },
+        "conditionnel présent": {
+          "je": "cueillerais",
+          "tu": "cueillerais",
+          "il/elle": "cueillerait",
+          "nous": "cueillerions",
+          "vous": "cueilleriez",
+          "ils/elles": "cueilleraient"
+        },
+        "plus-que-parfait": {
+          "j'": "avais cueilli",
+          "tu": "avais cueilli",
+          "il/elle": "avait cueilli",
+          "nous": "avions cueilli",
+          "vous": "aviez cueilli",
+          "ils/elles": "avaient cueilli"
+        },
+        "passé antérieur": {
+          "j'": "eus cueilli",
+          "tu": "eus cueilli",
+          "il/elle": "eut cueilli",
+          "nous": "eûmes cueilli",
+          "vous": "eûtes cueilli",
+          "ils/elles": "eurent cueilli"
+        },
+        "futur antérieur": {
+          "je": "aurai cueilli",
+          "tu": "auras cueilli",
+          "il/elle": "aura cueilli",
+          "nous": "aurons cueilli",
+          "vous": "aurez cueilli",
+          "ils/elles": "auront cueilli"
+        },
+        "conditionnel passé première forme": {
+          "je": "aurais cueilli",
+          "tu": "aurais cueilli",
+          "il/elle": "aurait cueilli",
+          "nous": "aurions cueilli",
+          "vous": "auriez cueilli",
+          "ils/elles": "auraient cueilli"
+        }
+      }
+    },
+    {
+      "infinitive": "frémir",
+      "conjugations": {
+        "présent": {
+          "je": "frémis",
+          "tu": "frémis",
+          "il/elle": "frémit",
+          "nous": "frémissons",
+          "vous": "frémissez",
+          "ils/elles": "frémissent"
+        },
+        "passé composé": {
+          "j'": "ai frémi",
+          "tu": "as frémi",
+          "il/elle": "a frémi",
+          "nous": "avons frémi",
+          "vous": "avez frémi",
+          "ils/elles": "ont frémi"
+        },
+        "imparfait": {
+          "je": "frémissais",
+          "tu": "frémissais",
+          "il/elle": "frémissait",
+          "nous": "frémissions",
+          "vous": "frémissiez",
+          "ils/elles": "frémissaient"
+        },
+        "passé simple": {
+          "je": "frémis",
+          "tu": "frémis",
+          "il/elle": "frémit",
+          "nous": "frémîmes",
+          "vous": "frémîtes",
+          "ils/elles": "frémirent"
+        },
+        "futur simple": {
+          "je": "frémirai",
+          "tu": "frémiras",
+          "il/elle": "frémira",
+          "nous": "frémirons",
+          "vous": "frémirez",
+          "ils/elles": "frémiront"
+        },
+        "imparfait du subjonctif": {
+          "que je": "frémisse",
+          "que tu": "frémisses",
+          "qu'il/elle": "frémît",
+          "que nous": "frémissions",
+          "que vous": "frémissiez",
+          "qu'ils/elles": "frémissent"
+        },
+        "subjonctif passé": {
+          "que je": "aie frémi",
+          "que tu": "aies frémi",
+          "qu'il/elle": "ait frémi",
+          "que nous": "ayons frémi",
+          "que vous": "ayez frémi",
+          "qu'ils/elles": "aient frémi"
+        },
+        "conditionnel présent": {
+          "je": "frémirais",
+          "tu": "frémirais",
+          "il/elle": "frémirait",
+          "nous": "frémirions",
+          "vous": "frémiriez",
+          "ils/elles": "frémiraient"
+        },
+        "plus-que-parfait": {
+          "j'": "avais frémi",
+          "tu": "avais frémi",
+          "il/elle": "avait frémi",
+          "nous": "avions frémi",
+          "vous": "aviez frémi",
+          "ils/elles": "avaient frémi"
+        },
+        "passé antérieur": {
+          "j'": "eus frémi",
+          "tu": "eus frémi",
+          "il/elle": "eut frémi",
+          "nous": "eûmes frémi",
+          "vous": "eûtes frémi",
+          "ils/elles": "eurent frémi"
+        },
+        "futur antérieur": {
+          "je": "aurai frémi",
+          "tu": "auras frémi",
+          "il/elle": "aura frémi",
+          "nous": "aurons frémi",
+          "vous": "aurez frémi",
+          "ils/elles": "auront frémi"
+        },
+        "conditionnel passé première forme": {
+          "je": "aurais frémi",
+          "tu": "aurais frémi",
+          "il/elle": "aurait frémi",
+          "nous": "aurions frémi",
+          "vous": "auriez frémi",
+          "ils/elles": "auraient frémi"
+        }
+      }
+    },
+    {
+      "infinitive": "tordre",
+      "conjugations": {
+        "présent": {
+          "je": "tords",
+          "tu": "tords",
+          "il/elle": "tord",
+          "nous": "tordons",
+          "vous": "tordez",
+          "ils/elles": "tordent"
+        },
+        "passé composé": {
+          "j'": "ai tordu",
+          "tu": "as tordu",
+          "il/elle": "a tordu",
+          "nous": "avons tordu",
+          "vous": "avez tordu",
+          "ils/elles": "ont tordu"
+        },
+        "imparfait": {
+          "je": "tordais",
+          "tu": "tordais",
+          "il/elle": "tordait",
+          "nous": "tordions",
+          "vous": "tordiez",
+          "ils/elles": "tordaient"
+        },
+        "passé simple": {
+          "je": "tordis",
+          "tu": "tordis",
+          "il/elle": "tordit",
+          "nous": "tordîmes",
+          "vous": "tordîtes",
+          "ils/elles": "tordirent"
+        },
+        "futur simple": {
+          "je": "tordrai",
+          "tu": "tordras",
+          "il/elle": "tordra",
+          "nous": "tordrons",
+          "vous": "tordrez",
+          "ils/elles": "tordront"
+        },
+        "imparfait du subjonctif": {
+          "que je": "tordisse",
+          "que tu": "tordisses",
+          "qu'il/elle": "tordît",
+          "que nous": "tordissions",
+          "que vous": "tordissiez",
+          "qu'ils/elles": "tordissent"
+        },
+        "subjonctif passé": {
+          "que je": "aie tordu",
+          "que tu": "aies tordu",
+          "qu'il/elle": "ait tordu",
+          "que nous": "ayons tordu",
+          "que vous": "ayez tordu",
+          "qu'ils/elles": "aient tordu"
+        },
+        "conditionnel présent": {
+          "je": "tordrais",
+          "tu": "tordrais",
+          "il/elle": "tordrait",
+          "nous": "tordrions",
+          "vous": "tordriez",
+          "ils/elles": "tordraient"
+        },
+        "plus-que-parfait": {
+          "j'": "avais tordu",
+          "tu": "avais tordu",
+          "il/elle": "avait tordu",
+          "nous": "avions tordu",
+          "vous": "aviez tordu",
+          "ils/elles": "avaient tordu"
+        },
+        "passé antérieur": {
+          "j'": "eus tordu",
+          "tu": "eus tordu",
+          "il/elle": "eut tordu",
+          "nous": "eûmes tordu",
+          "vous": "eûtes tordu",
+          "ils/elles": "eurent tordu"
+        },
+        "futur antérieur": {
+          "je": "aurai tordu",
+          "tu": "auras tordu",
+          "il/elle": "aura tordu",
+          "nous": "aurons tordu",
+          "vous": "aurez tordu",
+          "ils/elles": "auront tordu"
+        },
+        "conditionnel passé première forme": {
+          "je": "aurais tordu",
+          "tu": "aurais tordu",
+          "il/elle": "aurait tordu",
+          "nous": "aurions tordu",
+          "vous": "auriez tordu",
+          "ils/elles": "auraient tordu"
+        }
+      }
+    },
     {
       "infinitive": "pouvoir",
       "conjugations": {
