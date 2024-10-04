@@ -112,36 +112,6 @@ body, html {
     background-color: #536dfe;
 }
 
-/* Jauge de Combo */
-#combo-container {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    text-align: center;
-}
-
-#combo-container span {
-    display: block;
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: #424242;
-}
-
-#combo-gauge {
-    width: 100%;
-    height: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#combo-fill {
-    width: 0%;
-    height: 100%;
-    background-color: #76ff03; /* Vert vif */
-    transition: width 0.3s ease-in-out;
-}
-
 /* Tentatives restantes */
 #attempts-display {
     font-size: 18px;
@@ -180,6 +150,29 @@ button {
 
 button:hover {
     background-color: #536dfe;
+}
+
+/* Jauge de Combo */
+#combo-container {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#combo-gauge-container {
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 20px;
+}
+
+#combo-gauge {
+    width: 0%;
+    height: 100%;
+    background-color: #ff9800; /* Couleur de la jauge Combo */
+    transition: width 0.3s ease-in-out;
 }
 
 /* Bulle "Bonne Réponse !" */
@@ -224,22 +217,4 @@ button:hover {
 
 .duo-mode #game-container {
     background: linear-gradient(to right, #ffcc80, #ffab40);
-}
-
-/* Bulle "Combo !" (si vous utilisez le CSS) */
-.combo-bubble {
-    position: fixed;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 40px;
-    font-size: 24px;
-    background-color: rgba(255, 215, 0, 0.95); /* Jaune doré */
-    color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    display: none; /* Cacher par défaut */
-    z-index: 10000; /* Toujours au-dessus */
-    transition: opacity 0.5s ease-in-out;
 }
