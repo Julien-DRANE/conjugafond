@@ -166,13 +166,14 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     height: 20px;
+    border: 1px solid #ccc; /* Contour fin */
 }
 
 #combo-gauge {
     width: 0%;
     height: 100%;
-    background-color: #ff9800; /* Couleur de la jauge Combo */
-    transition: width 0.3s ease-in-out;
+    background: linear-gradient(to right, orange, yellow, green); /* Gradient de couleurs */
+    transition: width 0.3s ease-in-out, background 0.5s ease-in-out; /* Transition fluide pour le background */
 }
 
 /* Bulle "Bonne Réponse !" */
