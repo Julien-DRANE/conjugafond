@@ -166,14 +166,14 @@ button:hover {
     border-radius: 10px;
     overflow: hidden;
     height: 20px;
-    border: 1px solid #ccc; /* Contour fin */
+    border: 1px solid #999; /* Contour fin */
 }
 
 #combo-gauge {
     width: 0%;
     height: 100%;
-    background: linear-gradient(to right, orange, yellow, green); /* Gradient de couleurs */
-    transition: width 0.3s ease-in-out, background 0.5s ease-in-out; /* Transition fluide pour le background */
+    background: linear-gradient(90deg, #ff9800, #ffeb3b, #4caf50); /* Du orange au jaune, puis au vert */
+    transition: width 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 /* Bulle "Bonne Réponse !" */
@@ -208,7 +208,7 @@ button:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
     display: none; /* Cacher par défaut */
-    z-index: 1000; /* Toujours au-dessus */
+    z-index: 10000; /* Toujours au-dessus */
 }
 
 /* Styles spécifiques aux modes */
