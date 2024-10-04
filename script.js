@@ -3,6 +3,7 @@ const normalTenses = [
     "présent",
     "passé composé",
     "imparfait",
+    "passé simple",
     "futur simple"
 ];
 
@@ -10,7 +11,6 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "passé simple",
     "plus-que-parfait",
     "passé antérieur",
     "futur antérieur",
@@ -33,17 +33,13 @@ let duoMode = false;
 let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 let gameActive = true;
 
-// Variables pour le Combo
-let comboCount = 0;
-const COMBO_THRESHOLD = 4; // Nombre de bonnes réponses consécutives pour un Combo
-let maxCombo = 10; // Pour définir la jauge à 100%
-
-// Récupérer l'élément audio pour le Combo
-let comboSound = document.getElementById("combo-sound");
+let comboCount = 0; // Ajouter une variable pour le Combo
+const maxCombo = 4; // Nombre de bonnes réponses consécutives pour le Combo
 
 // Variables pour les sons
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
+let comboSound = document.getElementById("combo-sound"); // Ajouter la référence au son Combo
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
@@ -132,74 +128,10 @@ function spin() {
     // Réinitialiser la révélation de la réponse
     revealAnswerUsed = false;
 
+    // Mettre à jour la jauge Combo
+    updateComboGauge();
+
     console.log(`Nouvelle question : ${currentPronoun} ${currentVerb} à ${currentTense}`);
-}
-
-// Fonction pour mettre à jour la jauge de Combo
-function updateComboGauge() {
-    const comboFill = document.getElementById("combo-fill");
-    const comboPercentage = (comboCount / COMBO_THRESHOLD) * 100;
-    // Limiter la jauge à 100%
-    const cappedPercentage = comboPercentage > 100 ? 100 : comboPercentage;
-    comboFill.style.width = `${cappedPercentage}%`;
-}
-
-// Fonction pour réinitialiser la jauge de Combo
-function resetCombo() {
-    comboCount = 0;
-    updateComboGauge();
-    document.getElementById("combo-count").textContent = comboCount;
-}
-
-// Fonction pour augmenter le Combo
-function increaseCombo() {
-    comboCount += 1;
-    if (comboCount > COMBO_THRESHOLD) {
-        comboCount = COMBO_THRESHOLD; // Limiter à la jauge max
-    }
-    document.getElementById("combo-count").textContent = comboCount;
-    updateComboGauge();
-
-    // Vérifier si un Combo est atteint
-    if (comboCount === COMBO_THRESHOLD) {
-        // Ajouter un bonus de points, par exemple +5 points
-        points += 5;
-        document.getElementById("points").textContent = `${points} / 33`;
-        document.getElementById("message").textContent = "Combo! +5 points bonus!";
-        document.getElementById("message").classList.remove("error");
-        document.getElementById("message").classList.add("success");
-        document.getElementById("message").style.display = "block";
-        successSound.play();
-
-        // Afficher la bulle "Combo !"
-        showComboBubble();
-
-        // Réinitialiser le Combo après le bonus
-        resetCombo();
-    }
-}
-
-// Fonction pour afficher la bulle "Combo !"
-function showComboBubble() {
-    const bubble = document.createElement("div");
-    bubble.classList.add("combo-bubble");
-    bubble.textContent = "Combo! +5 points!";
-    document.body.appendChild(bubble);
-
-    // Afficher la bulle
-    bubble.style.display = "block";
-    setTimeout(() => {
-        bubble.style.opacity = "1";
-    }, 10); // Légère pause pour déclencher la transition
-
-    // Cacher la bulle après 1,5 seconde
-    setTimeout(() => {
-        bubble.style.opacity = "0"; // Rendre invisible
-        setTimeout(() => {
-            bubble.style.display = "none"; // Cacher complètement
-            bubble.remove();
-        }, 500); // Temps de transition
-    }, 1500);
 }
 
 // Fonction pour vérifier la réponse
@@ -218,6 +150,7 @@ function checkAnswer() {
         if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
             points += duoMode ? 2 : (extremeMode ? 3 : 1); // Points normaux, doublés ou triplés en fonction du mode
         }
+        points = Math.max(points, 0); // Assurez-vous que les points ne descendent pas en dessous de 0
         document.getElementById("points").textContent = `${points} / 33`;
         document.getElementById("message").textContent = "Bonne réponse !";
         document.getElementById("message").classList.remove("error");
@@ -225,11 +158,23 @@ function checkAnswer() {
         document.getElementById("message").style.display = "block";
         successSound.play();
 
+        // Incrémenter le Combo
+        comboCount += 1;
+        updateComboGauge();
+
+        // Vérifier si le Combo est atteint
+        if (comboCount === maxCombo) {
+            points += 5; // Bonus de points pour le Combo
+            document.getElementById("points").textContent = `${points} / 33`;
+            document.getElementById("message").textContent += " Combo ! +5 points !";
+            comboSound.play(); // Jouer le son Combo
+            // Réinitialiser le Combo
+            comboCount = 0;
+            updateComboGauge();
+        }
+
         // Afficher la bulle "Bonne Réponse !" pendant 1,5 seconde
         showGoodAnswerBubble();
-
-        // Augmenter le Combo
-        increaseCombo();
 
         // Vérifier la fin de partie (atteinte de 33 points)
         if (points >= 33) {
@@ -239,13 +184,16 @@ function checkAnswer() {
             setTimeout(spin, 2000); // 2 secondes
         }
     } else {
-        // Incrémenter le nombre d'échecs
+        // Mauvaise réponse
+        comboCount = 0; // Réinitialiser le Combo
+        updateComboGauge();
         attemptsLeft -= 1;
         document.getElementById("attempts").textContent = attemptsLeft;
 
         if (attemptsLeft === 0) {
             // Après trois échecs
             points -= 1; // Retirer 1 point
+            points = Math.max(points, 0); // Assurez-vous que les points ne descendent pas en dessous de 0
             document.getElementById("points").textContent = `${points} / 33`;
             document.getElementById("message").textContent = `Mauvaise réponse. La bonne réponse était : ${expectedAnswer}`;
             document.getElementById("message").classList.remove("success");
@@ -257,9 +205,6 @@ function checkAnswer() {
             attemptsLeft = 3;
             document.getElementById("attempts").textContent = attemptsLeft;
 
-            // Réinitialiser le Combo
-            resetCombo();
-
             // Charger un nouveau verbe après un délai
             setTimeout(spin, 2000); // 2 secondes
         } else {
@@ -269,9 +214,6 @@ function checkAnswer() {
             document.getElementById("message").classList.add("error");
             document.getElementById("message").style.display = "block";
             wrongSound.play();
-
-            // Réinitialiser le Combo car une erreur a été faite
-            resetCombo();
         }
     }
 
@@ -314,11 +256,19 @@ function showWinningMessage() {
 function resetGame() {
     points = 0;
     attemptsLeft = 3;
+    comboCount = 0; // Réinitialiser le Combo
     document.getElementById("points").textContent = `${points} / 33`;
     document.getElementById("attempts").textContent = attemptsLeft;
-    resetCombo(); // Réinitialiser le Combo
+    updateComboGauge(); // Réinitialiser la jauge Combo
     spin();
     gameActive = true;
+}
+
+// Fonction pour mettre à jour la jauge Combo
+function updateComboGauge() {
+    const comboGauge = document.getElementById("combo-gauge");
+    const percentage = (comboCount / maxCombo) * 100;
+    comboGauge.style.width = `${percentage}%`;
 }
 
 // Écouteurs d'événements
@@ -338,9 +288,6 @@ document.getElementById("show-answer-btn").addEventListener("click", () => {
     document.getElementById("message").classList.add("success");
     document.getElementById("message").style.display = "block";
     revealAnswerUsed = true; // Marquer que la réponse a été révélée
-
-    // Réinitialiser le Combo car la réponse a été révélée
-    resetCombo();
 });
 
 // Validation par la touche Entrée
