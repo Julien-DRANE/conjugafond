@@ -12,7 +12,7 @@
           "ils/elles": "sont"
         },
         "passé composé": {
-          "je": "ai été",
+          "j'": "ai été",
           "tu": "as été",
           "il/elle": "a été",
           "nous": "avons été",
@@ -20,7 +20,7 @@
           "ils/elles": "ont été"
         },
         "imparfait": {
-          "je": "étais",
+          "j'": "étais",
           "tu": "étais",
           "il/elle": "était",
           "nous": "étions",
@@ -52,7 +52,7 @@
           "qu'ils/elles": "fussent"
         },
         "subjonctif passé": {
-          "que je": "aie été",
+          "que j'": "aie été",
           "que tu": "aies été",
           "qu'il/elle": "ait été",
           "que nous": "ayons été",
@@ -68,7 +68,7 @@
           "ils/elles": "seraient"
         },
         "plus-que-parfait": {
-          "je": "avais été",
+          "j'": "avais été",
           "tu": "avais été",
           "il/elle": "avait été",
           "nous": "avions été",
@@ -76,7 +76,7 @@
           "ils/elles": "avaient été"
         },
         "passé antérieur": {
-          "je": "eus été",
+          "j'": "eus été",
           "tu": "eus été",
           "il/elle": "eut été",
           "nous": "eûmes été",
@@ -84,7 +84,7 @@
           "ils/elles": "eurent été"
         },
         "futur antérieur": {
-          "je": "aurai été",
+          "j'": "aurai été",
           "tu": "auras été",
           "il/elle": "aura été",
           "nous": "aurons été",
@@ -92,7 +92,7 @@
           "ils/elles": "auront été"
         },
         "conditionnel passé première forme": {
-          "je": "aurais été",
+          "j'": "aurais été",
           "tu": "aurais été",
           "il/elle": "aurait été",
           "nous": "aurions été",
@@ -105,7 +105,7 @@
       "infinitive": "avoir",
       "conjugations": {
         "présent": {
-          "je": "ai",
+          "j'": "ai",
           "tu": "as",
           "il/elle": "a",
           "nous": "avons",
@@ -113,7 +113,7 @@
           "ils/elles": "ont"
         },
         "passé composé": {
-          "je": "ai eu",
+          "j'": "ai eu",
           "tu": "as eu",
           "il/elle": "a eu",
           "nous": "avons eu",
@@ -121,7 +121,7 @@
           "ils/elles": "ont eu"
         },
         "imparfait": {
-          "je": "avais",
+          "j'": "avais",
           "tu": "avais",
           "il/elle": "avait",
           "nous": "avions",
@@ -129,7 +129,7 @@
           "ils/elles": "avaient"
         },
         "passé simple": {
-          "je": "eus",
+          "j'": "eus",
           "tu": "eus",
           "il/elle": "eut",
           "nous": "eûmes",
@@ -137,7 +137,7 @@
           "ils/elles": "eurent"
         },
         "futur simple": {
-          "je": "aurai",
+          "j'": "aurai",
           "tu": "auras",
           "il/elle": "aura",
           "nous": "aurons",
@@ -145,7 +145,7 @@
           "ils/elles": "auront"
         },
         "imparfait du subjonctif": {
-          "que je": "eusse",
+          "que j'": "eusse",
           "que tu": "eusses",
           "qu'il/elle": "eût",
           "que nous": "eussions",
@@ -153,7 +153,7 @@
           "qu'ils/elles": "eussent"
         },
         "subjonctif passé": {
-          "que je": "aie eu",
+          "que j'": "aie eu",
           "que tu": "aies eu",
           "qu'il/elle": "ait eu",
           "que nous": "ayons eu",
@@ -161,7 +161,7 @@
           "qu'ils/elles": "aient eu"
         },
         "conditionnel présent": {
-          "je": "aurais",
+          "j'": "aurais",
           "tu": "aurais",
           "il/elle": "aurait",
           "nous": "aurions",
@@ -169,7 +169,7 @@
           "ils/elles": "auraient"
         },
         "plus-que-parfait": {
-          "je": "avais eu",
+          "j'": "avais eu",
           "tu": "avais eu",
           "il/elle": "avait eu",
           "nous": "avions eu",
@@ -177,7 +177,7 @@
           "ils/elles": "avaient eu"
         },
         "passé antérieur": {
-          "je": "eus eu",
+          "j'": "eus eu",
           "tu": "eus eu",
           "il/elle": "eut eu",
           "nous": "eûmes eu",
@@ -185,7 +185,7 @@
           "ils/elles": "eurent eu"
         },
         "futur antérieur": {
-          "je": "aurai eu",
+          "j'": "aurai eu",
           "tu": "auras eu",
           "il/elle": "aura eu",
           "nous": "aurons eu",
@@ -193,7 +193,7 @@
           "ils/elles": "auront eu"
         },
         "conditionnel passé première forme": {
-          "je": "aurais eu",
+          "j'": "aurais eu",
           "tu": "aurais eu",
           "il/elle": "aurait eu",
           "nous": "aurions eu",
@@ -222,7 +222,7 @@
           "ils/elles": "sont allés"
         },
         "imparfait": {
-          "je": "allais",
+          "j'": "allais",
           "tu": "allais",
           "il/elle": "allait",
           "nous": "allions",
@@ -230,7 +230,7 @@
           "ils/elles": "allaient"
         },
         "passé simple": {
-          "je": "allai",
+          "j'": "allai",
           "tu": "allas",
           "il/elle": "alla",
           "nous": "allâmes",
@@ -238,7 +238,7 @@
           "ils/elles": "allèrent"
         },
         "futur simple": {
-          "je": "irai",
+          "j'": "irai",
           "tu": "iras",
           "il/elle": "ira",
           "nous": "irons",
@@ -246,7 +246,7 @@
           "ils/elles": "iront"
         },
         "imparfait du subjonctif": {
-          "que je": "allasse",
+          "que j'": "allasse",
           "que tu": "allasses",
           "qu'il/elle": "allât",
           "que nous": "allassions",
@@ -262,7 +262,7 @@
           "qu'ils/elles": "soient allés"
         },
         "conditionnel présent": {
-          "je": "irais",
+          "j'": "irais",
           "tu": "irais",
           "il/elle": "irait",
           "nous": "irions",
@@ -270,7 +270,7 @@
           "ils/elles": "iraient"
         },
         "plus-que-parfait": {
-          "je": "étais allé",
+          "j'": "étais allé",
           "tu": "étais allé",
           "il/elle": "était allé",
           "nous": "étions allés",
@@ -355,7 +355,7 @@
           "qu'ils/elles": "fissent"
         },
         "subjonctif passé": {
-          "que je": "aie fait",
+          "que j'": "aie fait",
           "que tu": "aies fait",
           "qu'il/elle": "ait fait",
           "que nous": "ayons fait",
@@ -371,7 +371,7 @@
           "ils/elles": "feraient"
         },
         "plus-que-parfait": {
-          "je": "avais fait",
+          "j'": "avais fait",
           "tu": "avais fait",
           "il/elle": "avait fait",
           "nous": "avions fait",
@@ -379,7 +379,7 @@
           "ils/elles": "avaient fait"
         },
         "passé antérieur": {
-          "je": "eus fait",
+          "j'": "eus fait",
           "tu": "eus fait",
           "il/elle": "eut fait",
           "nous": "eûmes fait",
@@ -395,7 +395,7 @@
           "ils/elles": "auront fait"
         },
         "conditionnel passé première forme": {
-          "je": "aurais fait",
+          "j'": "aurais fait",
           "tu": "aurais fait",
           "il/elle": "aurait fait",
           "nous": "aurions fait",
@@ -416,7 +416,7 @@
           "ils/elles": "voient"
         },
         "passé composé": {
-          "je": "ai vu",
+          "j'": "ai vu",
           "tu": "as vu",
           "il/elle": "a vu",
           "nous": "avons vu",
@@ -456,7 +456,7 @@
           "qu’ils/elles": "vissent"
         },
         "subjonctif passé": {
-          "que je": "aie vu",
+          "que j'": "aie vu",
           "que tu": "aies vu",
           "qu’il/elle": "ait vu",
           "que nous": "ayons vu",
@@ -472,7 +472,7 @@
           "ils/elles": "verraient"
         },
         "plus-que-parfait": {
-          "je": "avais vu",
+          "j'": "avais vu",
           "tu": "avais vu",
           "il/elle": "avait vu",
           "nous": "avions vu",
@@ -480,7 +480,7 @@
           "ils/elles": "avaient vu"
         },
         "passé antérieur": {
-          "je": "eus vu",
+          "j'": "eus vu",
           "tu": "eus vu",
           "il/elle": "eut vu",
           "nous": "eûmes vu",
@@ -488,7 +488,7 @@
           "ils/elles": "eurent vu"
         },
         "futur antérieur": {
-          "je": "aurai vu",
+          "j'": "aurai vu",
           "tu": "auras vu",
           "il/elle": "aura vu",
           "nous": "aurons vu",
@@ -496,7 +496,7 @@
           "ils/elles": "auront vu"
         },
         "conditionnel passé première forme": {
-          "je": "aurais vu",
+          "j'": "aurais vu",
           "tu": "aurais vu",
           "il/elle": "aurait vu",
           "nous": "aurions vu",
@@ -557,7 +557,7 @@
           "qu’ils/elles": "voulussent"
         },
         "subjonctif passé": {
-          "que je": "aie voulu",
+          "que j'": "aie voulu",
           "que tu": "aies voulu",
           "qu’il/elle": "ait voulu",
           "que nous": "ayons voulu",
@@ -573,7 +573,7 @@
           "ils/elles": "voudraient"
         },
         "plus-que-parfait": {
-          "je": "avais voulu",
+          "j'": "avais voulu",
           "tu": "avais voulu",
           "il/elle": "avait voulu",
           "nous": "avions voulu",
@@ -581,7 +581,7 @@
           "ils/elles": "avaient voulu"
         },
         "passé antérieur": {
-          "je": "eus voulu",
+          "j'": "eus voulu",
           "tu": "eus voulu",
           "il/elle": "eut voulu",
           "nous": "eûmes voulu",
@@ -589,7 +589,7 @@
           "ils/elles": "eurent voulu"
         },
         "futur antérieur": {
-          "je": "aurai voulu",
+          "j'": "aurai voulu",
           "tu": "auras voulu",
           "il/elle": "aura voulu",
           "nous": "aurons voulu",
@@ -597,7 +597,7 @@
           "ils/elles": "auront voulu"
         },
         "conditionnel passé première forme": {
-          "je": "aurais voulu",
+          "j'": "aurais voulu",
           "tu": "aurais voulu",
           "il/elle": "aurait voulu",
           "nous": "aurions voulu",
