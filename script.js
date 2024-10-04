@@ -10,8 +10,8 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "plus-que-parfait",
     "passé simple",
+    "plus-que-parfait",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
@@ -33,14 +33,14 @@ let duoMode = false;
 let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 let gameActive = true;
 
-let comboCount = 0; // Ajouter une variable pour le Combo
+let comboCount = 0; // Variable pour le Combo
 const maxCombo = 4; // Nombre de bonnes réponses consécutives pour le Combo
 
 // Variables pour les sons
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
-let comboSound = document.getElementById("combo-sound"); // Ajouter la référence au son Combo
-let applauseSound = document.getElementById("applause-sound"); // Ajouter la référence au son d'applaudissements
+let comboSound = document.getElementById("combo-sound"); // Référence au son Combo
+let applauseSound = document.getElementById("applause-sound"); // Référence au son d'applaudissements
 
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
@@ -146,6 +146,47 @@ function checkAnswer() {
         return;
     }
     let expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun].toLowerCase();
+
+    // Vérification du cheat code "majorel"
+    if (userInput === "majorel") {
+        points = 33; // Atteindre le score nécessaire pour gagner
+        document.getElementById("points").textContent = `${points} / 33`;
+        document.getElementById("message").textContent = "Cheat activé ! Vous avez gagné !";
+        document.getElementById("message").classList.remove("error");
+        document.getElementById("message").classList.add("success");
+        document.getElementById("message").style.display = "block";
+        successSound.play();
+
+        // Jouer le son d'applaudissements et lancer les confettis
+        applauseSound.play();
+        confetti({
+            particleCount: 200,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+
+        // Réinitialiser le Combo
+        comboCount = 0;
+        updateComboGauge();
+
+        // Afficher la bulle "Cheat Activé !"
+        const cheatBubble = document.getElementById("cheat-bubble");
+        cheatBubble.style.display = "block";
+        cheatBubble.style.opacity = "1";
+
+        // Cacher la bulle après 3 secondes
+        setTimeout(() => {
+            cheatBubble.style.opacity = "0";
+            setTimeout(() => {
+                cheatBubble.style.display = "none";
+            }, 500); // Temps de transition
+        }, 3000); // 3 secondes
+
+        // Afficher la bulle "Gagné !" immédiatement
+        showWinningMessage();
+
+        return; // Sortir de la fonction pour éviter toute autre logique
+    }
 
     if (userInput === expectedAnswer) {
         if (!revealAnswerUsed) { // Si la réponse n'a pas été révélée
