@@ -160,7 +160,7 @@ function checkAnswer() {
         // Jouer le son d'applaudissements et lancer les confettis
         applauseSound.play();
         confetti({
-            particleCount: 200,
+            particleCount: 400,
             spread: 70,
             origin: { y: 0.6 }
         });
@@ -288,7 +288,7 @@ function showWinningMessage() {
 
     // Lancer l'animation de confettis
     confetti({
-        particleCount: 200,
+        particleCount: 400,
         spread: 70,
         origin: { y: 0.6 }
     });
@@ -319,9 +319,9 @@ function updateComboGauge() {
     comboGauge.style.width = `${percentage}%`;
 
     // Changer la couleur de la jauge en fonction du pourcentage
-    if (percentage < 50) {
+    if (percentage < 30) {
         comboGauge.style.background = "#ff9800"; // Orange
-    } else if (percentage < 100) {
+    } else if (percentage < 65) {
         comboGauge.style.background = "#ffeb3b"; // Jaune
     } else {
         comboGauge.style.background = "#4caf50"; // Vert
