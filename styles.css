@@ -211,6 +211,24 @@ button:hover {
     z-index: 10000; /* Toujours au-dessus */
 }
 
+/* Bulle "Cheat Activé !" */
+.cheat-bubble {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 40px;
+    font-size: 24px;
+    background-color: rgba(255, 215, 0, 0.95); /* Jaune doré semi-transparent */
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    display: none; /* Cacher par défaut */
+    z-index: 10001; /* Au-dessus de la bulle "Gagné !" */
+    transition: opacity 0.5s ease-in-out;
+}
+
 /* Styles spécifiques aux modes */
 .extreme-mode #game-container {
     background: linear-gradient(to right, #ff6f61, #ffcccb);
