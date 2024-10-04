@@ -38,6 +38,9 @@ let comboCount = 0;
 const COMBO_THRESHOLD = 4; // Nombre de bonnes réponses consécutives pour un Combo
 let maxCombo = 10; // Pour définir la jauge à 100%
 
+// Récupérer l'élément audio pour le Combo
+let comboSound = document.getElementById("combo-sound");
+
 // Variables pour les sons
 let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
