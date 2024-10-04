@@ -620,10 +620,10 @@
         "passé composé": {
           "je": "suis venu",
           "tu": "es venu",
-          "il/elle": "est venue",
+          "il": "est venu",
           "nous": "sommes venus",
           "vous": "êtes venus",
-          "ils/elles": "sont venues"
+          "ils": "sont venus"
         },
         "imparfait": {
           "je": "venais",
@@ -660,7 +660,7 @@
         "subjonctif passé": {
           "que je": "aie venu",
           "que tu": "aies venu",
-          "qu’il/elle": "ait venu",
+          "qu’il": "ait venu",
           "que nous": "ayons venu",
           "que vous": "ayez venu",
           "qu’ils/elles": "aient venu"
@@ -674,36 +674,36 @@
           "ils/elles": "viendraient"
         },
         "plus-que-parfait": {
-          "je": "avais venu",
-          "tu": "avais venu",
-          "il/elle": "avait venu",
-          "nous": "avions venu",
-          "vous": "aviez venu",
-          "ils/elles": "avaient venu"
+          "j'": "étais venu",
+          "tu": "étais venu",
+          "il": "était venu",
+          "nous": "étions venus",
+          "vous": "étiez venus",
+          "ils": "étaient venus"
         },
         "passé antérieur": {
-          "je": "eus venu",
-          "tu": "eus venu",
-          "il/elle": "eut venu",
-          "nous": "eûmes venu",
-          "vous": "eûtes venu",
-          "ils/elles": "eurent venu"
+          "je": "fus venu",
+          "tu": "fus venu",
+          "il/elle": "fut venu",
+          "nous": "fûmes venus",
+          "vous": "fûtes venus",
+          "ils/elles": "furent venus"
         },
         "futur antérieur": {
-          "je": "aurai venu",
-          "tu": "auras venu",
-          "il/elle": "aura venu",
-          "nous": "aurons venu",
-          "vous": "aurez venu",
-          "ils/elles": "auront venu"
+          "je": "serai venu",
+          "tu": "seras venu",
+          "il": "sera venu",
+          "nous": "serons venus",
+          "vous": "serez venus",
+          "ils/elles": "seront venus"
         },
         "conditionnel passé première forme": {
-          "je": "aurais venu",
-          "tu": "aurais venu",
-          "il/elle": "aurait venu",
-          "nous": "aurions venu",
-          "vous": "auriez venu",
-          "ils/elles": "auraient venu"
+          "je": "serais venu",
+          "tu": "serais venu",
+          "il/elle": "serait venu",
+          "nous": "serions venus",
+          "vous": "seriez venus",
+          "ils/elles": "seraient venus"
         }
       }
     },
@@ -1769,7 +1769,7 @@
           "qu'ils/elles": "cherchassent"
         },
         "subjonctif passé": {
-          "que j'": "aie cherché",
+          "que je": "aie cherché",
           "que tu": "aies cherché",
           "qu'il/elle": "ait cherché",
           "que nous": "ayons cherché",
@@ -1801,7 +1801,7 @@
           "ils/elles": "eurent cherché"
         },
         "futur antérieur": {
-          "j'": "aurai cherché",
+          "je": "aurai cherché",
           "tu": "auras cherché",
           "il/elle": "aura cherché",
           "nous": "aurons cherché",
