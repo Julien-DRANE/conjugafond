@@ -10,8 +10,8 @@ const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
     "conditionnel présent",
-    "passé simple",
     "plus-que-parfait",
+    "passé simple",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
@@ -42,18 +42,26 @@ let wrongSound = document.getElementById("wrong-sound");
 let comboSound = document.getElementById("combo-sound"); // Référence au son Combo
 let applauseSound = document.getElementById("applause-sound"); // Référence au son d'applaudissements
 
+// Variable pour la liste de verbes actuelle
+let currentVerbList = 'verbs-.json'; // Fichier par défaut
+
 // JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
 let verbData = {};
 
 // Charger le JSON depuis un fichier local
-fetch('verbs.json')
-    .then(response => response.json())
-    .then(data => {
-        verbData = data;
-        console.log("JSON Loaded:", verbData);
-        spin(); // Démarrer le premier tour
-    })
-    .catch(error => console.error("Error loading JSON:", error));
+function loadVerbs() {
+    fetch(currentVerbList)
+        .then(response => response.json())
+        .then(data => {
+            verbData = data;
+            console.log(`JSON Loaded: ${currentVerbList}`, verbData);
+            spin(); // Démarrer le premier tour
+        })
+        .catch(error => console.error("Error loading JSON:", error));
+}
+
+// Initialiser le chargement des verbes
+loadVerbs();
 
 // Fonction pour activer/désactiver le mode extrême
 function toggleExtremeMode() {
@@ -160,7 +168,7 @@ function checkAnswer() {
         // Jouer le son d'applaudissements et lancer les confettis
         applauseSound.play();
         confetti({
-            particleCount: 400,
+            particleCount: 200,
             spread: 70,
             origin: { y: 0.6 }
         });
@@ -260,6 +268,9 @@ function checkAnswer() {
     }
 
     document.getElementById("user-input").value = "";
+
+    // Vérifier les récompenses après mise à jour des points
+    checkRewards();
 }
 
 // Fonction pour afficher la bulle "Bonne Réponse !"
@@ -288,7 +299,7 @@ function showWinningMessage() {
 
     // Lancer l'animation de confettis
     confetti({
-        particleCount: 400,
+        particleCount: 200,
         spread: 70,
         origin: { y: 0.6 }
     });
@@ -328,32 +339,51 @@ function updateComboGauge() {
     }
 }
 
-// Écouteurs d'événements
-document.getElementById("spin-btn").addEventListener("click", spin);
-document.getElementById("submit-btn").addEventListener("click", checkAnswer);
-document.getElementById("toggle-mode-btn").addEventListener("click", toggleExtremeMode);
-document.getElementById("toggle-duo-btn").addEventListener("click", toggleDuoMode);
-document.getElementById("show-answer-btn").addEventListener("click", () => {
-    const verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
-    if (!verbEntry) {
-        console.error(`Verbe ${currentVerb} non trouvé dans le JSON.`);
-        return;
-    }
-    const expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun];
-    document.getElementById("message").textContent = `Réponse : ${expectedAnswer}`;
-    document.getElementById("message").classList.remove("error");
-    document.getElementById("message").classList.add("success");
-    document.getElementById("message").style.display = "block";
-    revealAnswerUsed = true; // Marquer que la réponse a été révélée
+// Fonction pour vérifier et attribuer des récompenses
+const rewards = [
+    { id: 1, name: "Combo Master", criteria: 10 }, // 10 combos
+    { id: 2, name: "Perfect Streak", criteria: 20 }, // 20 combos
+    // Ajoutez d'autres récompenses ici
+];
 
-    // Ne pas incrémenter le Combo si la réponse a été révélée
-    comboCount = 0;
-    updateComboGauge();
-});
+function checkRewards() {
+    rewards.forEach(reward => {
+        if (points >= reward.criteria && !localStorage.getItem(`reward_${reward.id}`)) {
+            // Attribuer la récompense
+            addRewardBadge(reward);
+            // Enregistrer que la récompense a été attribuée
+            localStorage.setItem(`reward_${reward.id}`, true);
+        }
+    });
+}
 
-// Validation par la touche Entrée
-document.getElementById("user-input").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") {
-        checkAnswer();
+// Fonction pour ajouter un badge de récompense à l'interface
+function addRewardBadge(reward) {
+    const rewardsList = document.getElementById("rewards-list");
+    const badge = document.createElement("div");
+    badge.classList.add("reward-badge");
+    badge.setAttribute("data-reward", reward.name);
+    rewardsList.appendChild(badge);
+    
+    // Jouer un son de récompense (optionnel)
+    let rewardSound = new Audio("sounds/reward.mp3");
+    rewardSound.play();
+    
+    // Afficher une notification (optionnel)
+    alert(`Félicitations ! Vous avez gagné la récompense : ${reward.name}`);
+}
+
+// Gestion du Switch Mode Verbes
+document.getElementById("mode-switch").addEventListener("change", function() {
+    if (this.checked) {
+        // Switch activé - Mode Difficile
+        currentVerbList = 'verbs-difficult.json';
+        document.getElementById("mode-label").textContent = "Mode Normal";
+    } else {
+        // Switch désactivé - Mode Normal
+        currentVerbList = 'verbs-.json';
+        document.getElementById("mode-label").textContent = "Mode Difficile";
     }
+    // Charger la nouvelle liste de verbes
+    loadVerbs();
 });
