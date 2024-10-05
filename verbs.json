@@ -1155,12 +1155,12 @@
           "ils/elles": "devront"
         },
         "imparfait du subjonctif": {
-          "que je": "devisse",
-          "que tu": "devisses",
-          "qu’il/elle": "devît",
-          "que nous": "devissions",
-          "que vous": "devissiez",
-          "qu’ils/elles": "devissent"
+          "que je": "dusses",
+          "que tu": "dusses",
+          "qu’il/elle": "dût",
+          "que nous": "dussions",
+          "que vous": "dussiez",
+          "qu’ils/elles": "dussent"
         },
         "subjonctif passé": {
           "que je": "aie dû",
