@@ -9,9 +9,9 @@ const normalTenses = [
 const extremeTenses = [
     "imparfait du subjonctif",
     "subjonctif passé",
+    "passé simple",
     "conditionnel présent",
     "plus-que-parfait",
-    "passé simple",
     "passé antérieur",
     "futur antérieur",
     "conditionnel passé première forme"
@@ -30,6 +30,7 @@ let attemptsLeft = 3;
 let points = 0;
 let extremeMode = false;
 let duoMode = false;
+let hardMode = false; // Variable pour le mode difficile
 let revealAnswerUsed = false; // Variable pour vérifier si le joueur a révélé la réponse
 let gameActive = true;
 
@@ -41,27 +42,29 @@ let successSound = document.getElementById("success-sound");
 let wrongSound = document.getElementById("wrong-sound");
 let comboSound = document.getElementById("combo-sound"); // Référence au son Combo
 let applauseSound = document.getElementById("applause-sound"); // Référence au son d'applaudissements
+let rewardSound = document.getElementById("reward-sound"); // Référence au son de récompense
 
-// Variable pour la liste de verbes actuelle
-let currentVerbList = 'verbs-.json'; // Fichier par défaut
+// Variables pour les éléments HTML supplémentaires
+let cheatBubble = document.getElementById("cheat-bubble");
 
-// JSON des conjugaisons de verbes (à remplir avec votre JSON des conjugaisons)
+// JSON des conjugaisons de verbes
 let verbData = {};
 
 // Charger le JSON depuis un fichier local
-function loadVerbs() {
-    fetch(currentVerbList)
+function loadVerbData() {
+    let verbFile = hardMode ? 'verbs-hard.json' : 'verbs-.json';
+    fetch(verbFile)
         .then(response => response.json())
         .then(data => {
             verbData = data;
-            console.log(`JSON Loaded: ${currentVerbList}`, verbData);
+            console.log(`JSON Loaded: ${verbFile}`, verbData);
             spin(); // Démarrer le premier tour
         })
         .catch(error => console.error("Error loading JSON:", error));
 }
 
-// Initialiser le chargement des verbes
-loadVerbs();
+// Appel initial pour charger les données de verbes (mode facile par défaut)
+loadVerbData();
 
 // Fonction pour activer/désactiver le mode extrême
 function toggleExtremeMode() {
@@ -69,11 +72,14 @@ function toggleExtremeMode() {
 
     extremeMode = !extremeMode;
     duoMode = false; // Désactiver le mode duo si le mode extrême est activé
+    hardMode = false; // Désactiver le mode difficile si le mode extrême est activé
     document.body.classList.toggle("extreme-mode", extremeMode);
     document.body.classList.remove("duo-mode"); // Retirer la classe duo-mode
+    document.body.classList.remove("hard-mode"); // Retirer la classe hard-mode
     document.getElementById("toggle-mode-btn").textContent = extremeMode ? "Désactiver Mode Extrême" : "Mode Extrême";
     document.getElementById("toggle-duo-btn").textContent = "Mode Duo";
-    spin(); // Recharger un verbe avec les temps extrêmes
+    document.getElementById("toggle-difficulty-btn").textContent = "Mode Difficile";
+    loadVerbData(); // Recharger les verbes avec les temps extrêmes
 }
 
 // Fonction pour activer/désactiver le mode duo
@@ -82,11 +88,30 @@ function toggleDuoMode() {
 
     duoMode = !duoMode;
     extremeMode = false; // Désactiver le mode extrême si le mode duo est activé
+    hardMode = false; // Désactiver le mode difficile si le mode duo est activé
     document.body.classList.toggle("duo-mode", duoMode);
     document.body.classList.remove("extreme-mode"); // Retirer la classe extreme-mode
+    document.body.classList.remove("hard-mode"); // Retirer la classe hard-mode
     document.getElementById("toggle-duo-btn").textContent = duoMode ? "Désactiver Mode Duo" : "Mode Duo";
     document.getElementById("toggle-mode-btn").textContent = "Mode Extrême";
-    spin(); // Recharger un verbe avec les temps duo
+    document.getElementById("toggle-difficulty-btn").textContent = "Mode Difficile";
+    loadVerbData(); // Recharger les verbes avec les temps duo
+}
+
+// Fonction pour activer/désactiver le mode difficile
+function toggleHardMode() {
+    if (!gameActive) return;
+
+    hardMode = !hardMode;
+    extremeMode = false; // Désactiver le mode extrême si le mode difficile est activé
+    duoMode = false; // Désactiver le mode duo si le mode difficile est activé
+    document.body.classList.toggle("hard-mode", hardMode);
+    document.body.classList.remove("extreme-mode"); // Retirer la classe extreme-mode
+    document.body.classList.remove("duo-mode"); // Retirer la classe duo-mode
+    document.getElementById("toggle-difficulty-btn").textContent = hardMode ? "Désactiver Mode Difficile" : "Mode Difficile";
+    document.getElementById("toggle-mode-btn").textContent = "Mode Extrême";
+    document.getElementById("toggle-duo-btn").textContent = "Mode Duo";
+    loadVerbData(); // Recharger les verbes avec le mode difficile
 }
 
 // Fonction pour faire tourner les slots
@@ -178,7 +203,6 @@ function checkAnswer() {
         updateComboGauge();
 
         // Afficher la bulle "Cheat Activé !"
-        const cheatBubble = document.getElementById("cheat-bubble");
         cheatBubble.style.display = "block";
         cheatBubble.style.opacity = "1";
 
@@ -269,7 +293,7 @@ function checkAnswer() {
 
     document.getElementById("user-input").value = "";
 
-    // Vérifier les récompenses après mise à jour des points
+    // Vérifier et attribuer des récompenses
     checkRewards();
 }
 
@@ -318,34 +342,20 @@ function resetGame() {
     comboCount = 0; // Réinitialiser le Combo
     document.getElementById("points").textContent = `${points} / 33`;
     document.getElementById("attempts").textContent = attemptsLeft;
+    document.getElementById("message").style.display = "none";
     updateComboGauge(); // Réinitialiser la jauge Combo
     spin();
     gameActive = true;
 }
 
-// Fonction pour mettre à jour la jauge Combo
-function updateComboGauge() {
-    const comboGauge = document.getElementById("combo-gauge");
-    const percentage = (comboCount / maxCombo) * 100;
-    comboGauge.style.width = `${percentage}%`;
-
-    // Changer la couleur de la jauge en fonction du pourcentage
-    if (percentage < 30) {
-        comboGauge.style.background = "#ff9800"; // Orange
-    } else if (percentage < 65) {
-        comboGauge.style.background = "#ffeb3b"; // Jaune
-    } else {
-        comboGauge.style.background = "#4caf50"; // Vert
-    }
-}
-
-// Fonction pour vérifier et attribuer des récompenses
+// Liste des récompenses
 const rewards = [
     { id: 1, name: "Combo Master", criteria: 10 }, // 10 combos
     { id: 2, name: "Perfect Streak", criteria: 20 }, // 20 combos
     // Ajoutez d'autres récompenses ici
 ];
 
+// Fonction pour vérifier et attribuer des récompenses
 function checkRewards() {
     rewards.forEach(reward => {
         if (points >= reward.criteria && !localStorage.getItem(`reward_${reward.id}`)) {
@@ -360,30 +370,63 @@ function checkRewards() {
 // Fonction pour ajouter un badge de récompense à l'interface
 function addRewardBadge(reward) {
     const rewardsList = document.getElementById("rewards-list");
+    if (!rewardsList) return; // Si la section des récompenses n'existe pas
+
     const badge = document.createElement("div");
     badge.classList.add("reward-badge");
     badge.setAttribute("data-reward", reward.name);
     rewardsList.appendChild(badge);
     
     // Jouer un son de récompense (optionnel)
-    let rewardSound = new Audio("sounds/reward.mp3");
     rewardSound.play();
     
     // Afficher une notification (optionnel)
     alert(`Félicitations ! Vous avez gagné la récompense : ${reward.name}`);
 }
 
-// Gestion du Switch Mode Verbes
-document.getElementById("mode-switch").addEventListener("change", function() {
-    if (this.checked) {
-        // Switch activé - Mode Difficile
-        currentVerbList = 'verbs-difficult.json';
-        document.getElementById("mode-label").textContent = "Mode Normal";
+// Fonction pour mettre à jour la jauge Combo
+function updateComboGauge() {
+    const comboGauge = document.getElementById("combo-gauge");
+    const percentage = (comboCount / maxCombo) * 100;
+    comboGauge.style.width = `${percentage}%`;
+
+    // Changer la couleur de la jauge en fonction du pourcentage
+    if (percentage < 50) {
+        comboGauge.style.background = "#ff9800"; // Orange
+    } else if (percentage < 100) {
+        comboGauge.style.background = "#ffeb3b"; // Jaune
     } else {
-        // Switch désactivé - Mode Normal
-        currentVerbList = 'verbs-.json';
-        document.getElementById("mode-label").textContent = "Mode Difficile";
+        comboGauge.style.background = "#4caf50"; // Vert
     }
-    // Charger la nouvelle liste de verbes
-    loadVerbs();
+}
+
+// Écouteurs d'événements
+document.getElementById("spin-btn").addEventListener("click", spin);
+document.getElementById("submit-btn").addEventListener("click", checkAnswer);
+document.getElementById("toggle-mode-btn").addEventListener("click", toggleExtremeMode);
+document.getElementById("toggle-duo-btn").addEventListener("click", toggleDuoMode);
+document.getElementById("toggle-difficulty-btn").addEventListener("click", toggleHardMode);
+document.getElementById("show-answer-btn").addEventListener("click", () => {
+    const verbEntry = verbData.verbs.find(v => v.infinitive === currentVerb);
+    if (!verbEntry) {
+        console.error(`Verbe ${currentVerb} non trouvé dans le JSON.`);
+        return;
+    }
+    const expectedAnswer = verbEntry.conjugations[currentTense][currentPronoun];
+    document.getElementById("message").textContent = `Réponse : ${expectedAnswer}`;
+    document.getElementById("message").classList.remove("error");
+    document.getElementById("message").classList.add("success");
+    document.getElementById("message").style.display = "block";
+    revealAnswerUsed = true; // Marquer que la réponse a été révélée
+
+    // Ne pas incrémenter le Combo si la réponse a été révélée
+    comboCount = 0;
+    updateComboGauge();
+});
+
+// Validation par la touche Entrée
+document.getElementById("user-input").addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+        checkAnswer();
+    }
 });
