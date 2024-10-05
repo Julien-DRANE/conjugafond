@@ -56,15 +56,7 @@
             <button id="toggle-mode-btn">Mode Extrême</button>
             <button id="toggle-duo-btn">Mode Duo</button>
             <button id="show-answer-btn">Afficher la réponse</button>
-            
-            <!-- Interrupteur de Difficulté -->
-            <div id="difficulty-container">
-                <label class="switch">
-                    <input type="checkbox" id="difficulty-toggle">
-                    <span class="slider round"></span>
-                </label>
-                <span id="difficulty-label">Mode Facile</span>
-            </div>
+            <button id="toggle-difficulty-btn">Mode Difficile</button> <!-- Bouton pour changer la difficulté -->
         </div>
     </div>
 
@@ -74,14 +66,15 @@
     <!-- Bulle "Gagné !" -->
     <div id="winning-bubble" class="winning-bubble">Gagné ! Votre score : 33 / 33</div>
 
-    <!-- Bulle "Cheat Activé !" (Facultatif) -->
+    <!-- Bulle "Cheat Activé !" -->
     <div id="cheat-bubble" class="cheat-bubble">Cheat Activé ! Gagné !</div>
 
     <!-- Sons du jeu -->
     <audio id="success-sound" src="sounds/success.mp3" preload="auto"></audio>
     <audio id="wrong-sound" src="sounds/wrong.mp3" preload="auto"></audio>
     <audio id="combo-sound" src="sounds/combo.mp3" preload="auto"></audio>
-    <audio id="applause-sound" src="sounds/applause.mp3" preload="auto"></audio> <!-- Ajouté -->
+    <audio id="applause-sound" src="sounds/applause.mp3" preload="auto"></audio>
+    <audio id="reward-sound" src="sounds/reward.mp3" preload="auto"></audio> <!-- Son de récompense -->
 
     <!-- Bibliothèque Confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
